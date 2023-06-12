@@ -3,6 +3,7 @@
 #include <QQmlContext>
 #include <QQuickStyle>
 #include <QFont>
+#include "src/utils/application_event_filter.h"
 
 int main(int argc, char *argv[]) {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
@@ -19,6 +20,11 @@ int main(int argc, char *argv[]) {
 #endif
 
     QQmlApplicationEngine engine;
+
+    // 全局特殊事件处理
+    ApplicationEventFilter *app_event_filter = new ApplicationEventFilter();
+    app.installEventFilter(app_event_filter);
+    engine.rootContext()->setContextProperty("AppEventFilter", app_event_filter);
 
     const QUrl url(QStringLiteral("qrc:/src_qml/main.qml"));
     QObject::connect(

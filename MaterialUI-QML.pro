@@ -13,9 +13,11 @@ QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.15
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-HEADERS +=
+HEADERS += \
+    src/utils/application_event_filter.h
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    src/utils/application_event_filter.cpp
 
 RESOURCES += qml.qrc
 

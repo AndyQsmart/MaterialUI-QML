@@ -1,1 +1,0 @@
-pyside2-rcc .\common_resources.qrc -o rc_common_resources.py

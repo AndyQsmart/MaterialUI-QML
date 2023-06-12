@@ -12,71 +12,112 @@ Pane {
     x: 0
     y: 0
     padding: 0
-    width: 150
+    width: 200
+
+    property var buttonList: [
+        {
+            name: "Inputs 输入框",
+            subList: [
+                {
+                    name: "Button 按钮",
+                    url: "/buttonpage"
+                }
+            ]
+        },
+        {
+            name: "Surfaces 表面展示",
+            subList: [
+                {
+                    name: "Paper 纸张",
+                    url: "/"
+                }
+            ]
+        }
+    ]
+
     background: Rectangle {
         color: Color.primary
     }
 
-    Item {
+    MOverflowYBox {
         anchors.fill: parent
 
-        ColumnLayout {
-            anchors.fill: parent
-            anchors.bottomMargin: 10
-            anchors.topMargin: 10
+        Column {
+            width: parent.width
+            topPadding: 10
+            bottomPadding: 10
 
-            MListItem {
-                id: button_task_list
-                button: true
-                Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-                ColumnLayout.fillWidth: true
-                color: Color.white
+            Repeater {
+                id: button_list
+                model: buttonList
 
-                RowLayout {
-                    anchors.fill: parent
-                    anchors.leftMargin: parent.rightPadding
-                    anchors.rightMargin: parent.rightPadding
+                Column {
+                    width: parent.width
 
-                    MIcon {
-                        name: "download"
-                        size: 14
+                    MListItem {
+                        id: listTitle
+                        property var listData: modelData
+                        width: parent.width
+                        button: true
                         color: Color.white
+
+                        RowLayout {
+                            anchors.fill: parent
+                            anchors.leftMargin: parent.rightPadding
+                            anchors.rightMargin: parent.rightPadding
+
+                            MTypography {
+                                RowLayout.fillWidth: true
+                                leftPadding: 0
+                                text: listTitle.listData.name
+                                variant: "body2"
+                                color: Color.white
+                                font.weight: Font.DemiBold
+                            }
+                        }
                     }
 
-                    MTypography {
-                        RowLayout.fillWidth: true
-                        leftPadding: 10
-                        text: qsTr("下载")
-                        color: Color.white
+                    Repeater {
+                        model: modelData.subList
+
+                        MListItem {
+                            property var listData: modelData
+                            width: parent.width
+                            button: true
+                            color: Color.white
+
+                            RowLayout {
+                                anchors.fill: parent
+                                anchors.leftMargin: parent.rightPadding
+                                anchors.rightMargin: parent.rightPadding
+
+                                MTypography {
+                                    RowLayout.fillWidth: true
+                                    leftPadding: 20
+                                    text: listData.name
+                                    variant: "body2"
+                                    color: Color.white
+                                }
+                            }
+
+                            onClicked: {
+                                Route.redirectTo(listData.url)
+                            }
+                        }
                     }
                 }
-
-                onClicked: {
-                    Route.redirectTo("/")
-                }
-            }
-
-            Item {
-                ColumnLayout.fillHeight: true
             }
 
             MListItem {
                 id: button_about
+                width: parent.width
                 button: true
-                Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-                ColumnLayout.fillWidth: true
                 color: Color.white
 
                 RowLayout {
                     anchors.fill: parent
                     anchors.leftMargin: parent.leftPadding
                     anchors.rightMargin: parent.rightPadding
-
-                    MIcon {
-                        name: "info-circle"
-                        size: 14
-                        color: Color.white
-                    }
 
                     MTypography {
                         RowLayout.fillWidth: true

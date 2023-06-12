@@ -6,11 +6,11 @@ import Qt.labs.platform 1.1
 import "./common_js/Color.js" as Color
 import "./common_component/Route"
 import "./common_component/MaterialUI"
-import "./common_component/Signal/QtSignal"
 import "./common_qml"
 import "./instance_component/SQLTable/SettingData"
 import "./instance_component/SystemTray"
 import "./pages/HomePage"
+import "./pages/ButtonPage"
 
 Window {
     id: mainWindow
@@ -24,6 +24,15 @@ Window {
     function quitApp() {
         console.log("quitApp")
         Qt.quit()
+    }
+
+    function onAppEvent(type, data) {
+        if (type === "MAC_ApplicationActive") {
+            mainWindow.show()
+        }
+        else if (type === "MAC_Quit") {
+            quitApp()
+        }
     }
 
     // 可能是qmltype信息不全，有M16警告，这里屏蔽下
@@ -44,10 +53,11 @@ Window {
         padding: 0
         width: parent.width
         height: parent.height
-//        initialItem: test_page
-        initialItem: home_page
+        initialItem: button_page
+//        initialItem: home_page
 
         Component.onCompleted: {
+            AppEventFilter.appEvent.connect(onAppEvent)
             SettingData.getValue('RouteStack', function(value) {
                 console.log("(main.qml)Recover route", JSON.stringify(value))
                 if (!value || value.length === 0) {
@@ -75,9 +85,14 @@ Window {
         HomePage { }
     }
 
+    Component {
+        id: button_page
+        ButtonPage { }
+    }
+
     property var route_map: {
         "/": home_page,
-//        "/live/historyrecordpage": history_record_page,
+        "/buttonpage": button_page,
 //        "/live/liverecordpage": live_record_page,
     }
 

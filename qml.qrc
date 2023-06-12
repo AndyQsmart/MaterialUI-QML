@@ -3,8 +3,6 @@
         <file>src_qml/main.qml</file>
         <file>src_qml/common_component/Route/qmldir</file>
         <file>src_qml/common_component/Route/Route.qml</file>
-        <file>src_qml/common_component/Signal/QtSignal/QtSignal.qml</file>
-        <file>src_qml/common_component/Signal/QtSignal/qmldir</file>
         <file>src_qml/common_component/SQL/QSQL/persistence.js</file>
         <file>src_qml/common_component/SQL/QSQL/persistence.store.sql.js</file>
         <file>src_qml/common_component/SQL/QSQL/qmldir</file>
@@ -21,10 +19,6 @@
         <file>src_qml/common_component/Timer/OnceTimer/OnceTimer.qml</file>
         <file>src_qml/common_image/Icon/logo.png</file>
         <file>src_qml/common_js/ComponentConfig.js</file>
-        <file>src_qml/common_resources/font/font_awesome/fontawesome-webfont.ttf</file>
-        <file>src_qml/common_resources/common_resources.qrc</file>
-        <file>src_qml/common_resources/gen_qrc_py.sh</file>
-        <file>src_qml/common_resources/rc_common_resources.py</file>
         <file>src_qml/instance_component/AboutDialog/AboutDialog.qml</file>
         <file>src_qml/instance_component/Navbar/Navbar.qml</file>
         <file>src_qml/instance_component/SQLTable/SettingData/qmldir</file>
@@ -78,15 +72,8 @@
         <file>src_qml/common_component/MaterialUI/MIcon.qml</file>
         <file>src_qml/common_component/MaterialUI/MTimePicker.qml</file>
         <file>src_qml/common_component/MaterialUI/MToast.qml</file>
-        <file>src_qml/pages/HomePage/Component/CreateDialog.qml</file>
         <file>src_qml/common_component/MaterialUI/styles/MShadow.qml</file>
         <file>src_qml/common_component/MaterialUI/styles/Palette.qml</file>
-        <file>src_qml/pages/HomePage/Component/DownloadItem.qml</file>
-        <file>src_qml/pages/HomePage/Component/DownloadInfo.qml</file>
-        <file>src_qml/pages/HomePage/View/DownloadView.qml</file>
-        <file>src_qml/pages/HomePage/View/HistoryView.qml</file>
-        <file>src_qml/pages/HomePage/View/DeleteView.qml</file>
-        <file>src_qml/pages/HomePage/Component/DownloadInfoFileItem.qml</file>
         <file>src_qml/common_component/MaterialUI/MPopover.qml</file>
         <file>src_qml/common_component/MaterialUI/MGrow.qml</file>
         <file>src_qml/common_component/MaterialUI/MMenu.qml</file>
@@ -95,5 +82,6 @@
         <file>src_qml/common_qml/qmldir</file>
         <file>src_qml/common_qml/Aria2Util.qml</file>
         <file>src_qml/common_qml/GlobalTaskList.qml</file>
+        <file>src_qml/pages/ButtonPage/ButtonPage.qml</file>
     </qresource>
 </RCC>
