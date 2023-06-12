@@ -1,0 +1,4 @@
+singleton Indigo 1.0 Indigo.qml
+singleton Pink 1.0 Pink.qml
+singleton Red 1.0 Red.qml
+singleton Grey 1.0 Grey.qml

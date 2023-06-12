@@ -1,0 +1,2 @@
+// qmldir
+singleton Route 1.0 Route.qml

@@ -1,0 +1,2 @@
+// qmldir
+singleton QtSignal 1.0 QtSignal.qml

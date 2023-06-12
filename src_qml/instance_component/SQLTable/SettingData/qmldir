@@ -1,0 +1,2 @@
+// qmldir
+singleton SettingData 1.0 SettingData.qml

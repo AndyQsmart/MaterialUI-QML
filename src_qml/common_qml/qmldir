@@ -1,0 +1,4 @@
+// qmldir
+singleton QHttp 1.0 QHttp.qml
+singleton Aria2Util 1.0 Aria2Util.qml
+singleton GlobalTaskList 1.0 GlobalTaskList.qml

@@ -1,0 +1,2 @@
+// qmldir
+singleton FontAwesomeFont 1.0 FontAwesomeFont.qml

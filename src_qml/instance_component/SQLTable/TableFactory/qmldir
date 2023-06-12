@@ -1,0 +1,2 @@
+// qmldir
+singleton TableFactory 1.0 TableFactory.qml

@@ -1,0 +1,2 @@
+// qmldir
+singleton SQLTools 1.0 SQLTools.qml
