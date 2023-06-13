@@ -6,8 +6,11 @@ MButton {
     property string title: qsTr('请选择文件') // 窗口标题
     property bool multiple: false
     property string accept: ''
+    property string acceptName: ""
+    property string acceptExt: ""
+    property bool acceptAll: true
 
-    signal change(var url_list)
+    signal change(var fileUrls)
 
     onClicked: {
         file_dialog.open()
@@ -23,8 +26,22 @@ MButton {
                 case "srt":
                     ans.push("字幕文件 (*.srt)")
                     break
+                case "image":
+                    ans.push("图片文件 (*.jpg *.jp2 *.jpeg *.png *.gif *.tiff)")
+                    break
+                case "audio":
+                    ans.push("音频文件 (*.mp3 *.3gpp *.ac3 *.au *.mp2 *.mp4)")
+                    break
+                case "video":
+                    ans.push("视频文件 (*.mp4 *.3gpp *.mpeg *.mpg *.rmvb *.mkv)")
+                    break
             }
-            ans.push("所有文件 (*)")
+            if ((acceptName && acceptName !== "") || (acceptExt && acceptExt !== "")) {
+                ans.push(`${acceptName} (${acceptExt})`)
+            }
+            if (acceptAll) {
+                ans.push("所有文件 (*)")
+            }
             return ans
         }
         onAccepted: {

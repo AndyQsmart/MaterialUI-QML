@@ -123,6 +123,12 @@ MButtonBase {
         color: {
             let ans = ''
 
+            if (disabled) {
+                if (variant == 'contained') {
+                    return Palette.lightActionDisabledBackground
+                }
+            }
+
             if (button.hovered) {
                 ans = Colors.alpha('#000000', 0.04)
                 switch (variant) {

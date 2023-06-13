@@ -47,8 +47,30 @@ Pane {
             topPadding: 10
             bottomPadding: 10
 
+            MListItem {
+                width: parent.width
+                button: true
+                color: Color.white
+
+                RowLayout {
+                    anchors.fill: parent
+                    anchors.leftMargin: parent.leftPadding
+                    anchors.rightMargin: parent.rightPadding
+
+                    MTypography {
+                        RowLayout.fillWidth: true
+                        leftPadding: 10
+                        text: qsTr("首页")
+                        color: Color.white
+                    }
+                }
+
+                onClicked: {
+                    Route.redirectTo("/")
+                }
+            }
+
             Repeater {
-                id: button_list
                 model: buttonList
 
                 Column {
@@ -109,7 +131,6 @@ Pane {
             }
 
             MListItem {
-                id: button_about
                 width: parent.width
                 button: true
                 color: Color.white
