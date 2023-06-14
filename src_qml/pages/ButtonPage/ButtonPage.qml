@@ -21,10 +21,6 @@ Pane {
         anchors.fill: parent
         spacing: 0
 
-        Navbar {
-            RowLayout.fillHeight: true
-        }
-
         MOverflowYBox {
             RowLayout.fillHeight: true
             RowLayout.fillWidth: true

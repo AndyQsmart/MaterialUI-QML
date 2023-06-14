@@ -4,11 +4,14 @@ import QtQuick.Controls.Styles 1.4
 import "./styles"
 import "./colors"
 
-Item {
-    property int timeout: 225
+// do not support common use
+MAnimation {
+    id: control
+    timeout: 225
     property string direction: 'down' // 'down' 'left' 'right' 'up'
 
-    property Transition enter: Transition {
+    enter: Transition {
+        to: "enter"
         NumberAnimation {
             duration: timeout
             property: {
@@ -25,7 +28,7 @@ Item {
             }
             easing.type: Easing.InOutQuad
             from: direction == 'left' || direction == 'right' ? 250 : 500
-            to: 0.0;
+            to: 0.0
         }
     }
 

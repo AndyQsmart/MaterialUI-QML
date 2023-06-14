@@ -6,41 +6,51 @@ import "./colors"
 
 MAnimation {
     id: control
-    timeout: 225
+    timeout: 300
 
     enter: Transition {
         to: "enter"
         NumberAnimation {
-            duration: timeout
-            property: "opacity"
+            duration: timeout*0.666
+            property: "height"
             easing.type: Easing.InOutQuad
-            from: 0.0
-            to: 1.0
+            from: 0
+        }
+        PropertyAnimation {
+            duration: 0
+            property: "clip"
+            to: true
         }
     }
     enterState: State {
         name: "enter"
         PropertyChanges {
             target: control.target
-            opacity: 1
+            height: undefined
+            clip: true
         }
     }
 
     exit: Transition {
         to: "exit"
         NumberAnimation {
-            duration: timeout
-            property: "opacity"
+            duration: timeout*0.666
+            property: "height"
             easing.type: Easing.InOutQuad
-            from: 1.0
-            to: 0.0
+            to: 0
+        }
+        PropertyAnimation {
+            duration: 0
+            property: "clip"
+            to: true
         }
     }
     exitState: State {
         name: "exit"
         PropertyChanges {
             target: control.target
-            opacity: 0
+            height: 0
+            clip: true
         }
     }
 }

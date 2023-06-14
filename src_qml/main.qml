@@ -2,11 +2,13 @@ import QtQuick 2.13
 import QtQuick.Window 2.13
 import QtQuick.Controls.Material 2.0
 import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.11
 import Qt.labs.platform 1.1
 import "./common_js/Color.js" as Color
 import "./common_component/Route"
 import "./common_component/MaterialUI"
 import "./common_qml"
+import "./instance_component/Navbar"
 import "./instance_component/SQLTable/SettingData"
 import "./instance_component/SystemTray"
 import "./pages/HomePage"
@@ -46,37 +48,44 @@ Window {
         closeevent.accepted = false
     }
 
-    StackView {
-        id: stackView
-        x: 0
-        y: 0
-        padding: 0
-        width: parent.width
-        height: parent.height
-        initialItem: button_page
-//        initialItem: home_page
+    RowLayout {
+        id: main_area
+        anchors.fill: parent
+        spacing: 0
 
-        Component.onCompleted: {
-            AppEventFilter.appEvent.connect(onAppEvent)
-            SettingData.getValue('RouteStack', function(value) {
-                console.log("(main.qml)Recover route", JSON.stringify(value))
-                if (!value || value.length === 0) {
-                    return
-                }
+        Navbar {
+            RowLayout.fillHeight: true
+        }
 
-                if (value.length === 1 && value[0].url === '/') {
-                    return
-                }
+        StackView {
+            id: stackView
+            RowLayout.fillHeight: true
+            RowLayout.fillWidth: true
+//            initialItem: button_page
+            initialItem: home_page
 
-                Route.setStack(value)
+            Component.onCompleted: {
+                AppEventFilter.appEvent.connect(onAppEvent)
+                SettingData.getValue('RouteStack', function(value) {
+                    console.log("(main.qml)Recover route", JSON.stringify(value))
+                    if (!value || value.length === 0) {
+                        return
+                    }
 
-                stackView.pop()
-                for (let i = 0; i < value.length; i++) {
-                    let url = value[i].url
-                    console.log(url)
-                    stackView.push(route_map[url], StackView.Immediate)
-                }
-            })
+                    if (value.length === 1 && value[0].url === '/') {
+                        return
+                    }
+
+                    Route.setStack(value)
+
+                    stackView.pop()
+                    for (let i = 0; i < value.length; i++) {
+                        let url = value[i].url
+                        console.log(url)
+                        stackView.push(route_map[url], StackView.Immediate)
+                    }
+                })
+            }
         }
     }
 

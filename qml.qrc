@@ -84,5 +84,7 @@
         <file>src_qml/common_qml/GlobalTaskList.qml</file>
         <file>src_qml/pages/ButtonPage/ButtonPage.qml</file>
         <file>src_qml/common_component/MaterialUI/MCopyText.qml</file>
+        <file>src_qml/common_component/MaterialUI/MAnimation.qml</file>
+        <file>src_qml/common_component/MaterialUI/MCollapse.qml</file>
     </qresource>
 </RCC>

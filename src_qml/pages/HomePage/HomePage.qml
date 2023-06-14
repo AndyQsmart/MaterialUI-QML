@@ -20,10 +20,6 @@ Pane {
         anchors.fill: parent
         spacing: 0
 
-        Navbar {
-            RowLayout.fillHeight: true
-        }
-
         Rectangle {
             id: right_area
             RowLayout.fillHeight: true
