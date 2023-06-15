@@ -110,11 +110,17 @@ Window {
         ButtonBaseApi { }
     }
 
+    Component {
+        id: icon_api
+        IconApi { }
+    }
+
     property var route_map: {
         "/": home_page,
         "/buttonpage": button_page,
         "/api/button": button_api,
         "/api/buttonbase": buttonbase_api,
+        "/api/icon": icon_api,
     }
 
     Connections {

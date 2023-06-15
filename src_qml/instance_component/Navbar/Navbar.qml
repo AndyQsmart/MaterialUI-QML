@@ -43,9 +43,17 @@ Pane {
             name: "Component API",
             subList: [
                 {
-                    name: "MButton",
+                    name: "Button",
                     url: "/api/button"
-                }
+                },
+                {
+                    name: "Button Base",
+                    url: "/api/buttonbase"
+                },
+                {
+                    name: "Icon",
+                    url: "/api/icon"
+                },
             ]
         }
     ]

@@ -90,5 +90,6 @@
         <file>src_qml/pages/Api/PropsTable.qml</file>
         <file>src_qml/pages/Api/BaseApi.qml</file>
         <file>src_qml/pages/Api/ButtonBaseApi.qml</file>
+        <file>src_qml/pages/Api/IconApi.qml</file>
     </qresource>
 </RCC>
