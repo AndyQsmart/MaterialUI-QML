@@ -24,10 +24,9 @@ Pane {
         MOverflowYBox {
             RowLayout.fillHeight: true
             RowLayout.fillWidth: true
-            // ScrollBar.vertical.policy: ScrollBar.AlwaysOn
 
             ColumnLayout {
-                width: parent.width
+                width: main_area.width
                 spacing: 0
 
                 Column {
@@ -1238,6 +1237,9 @@ MButton {
                         MButton {
                             color: "secondary"
                             text: "MButton { }"
+                            onClicked: {
+                                Route.redirectTo("/api/button")
+                            }
                         }
                     }
 

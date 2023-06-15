@@ -12,7 +12,8 @@ import "./instance_component/Navbar"
 import "./instance_component/SQLTable/SettingData"
 import "./instance_component/SystemTray"
 import "./pages/HomePage"
-import "./pages/ButtonPage"
+import "./pages/Display"
+import "./pages/Api"
 
 Window {
     id: mainWindow
@@ -61,8 +62,8 @@ Window {
             id: stackView
             RowLayout.fillHeight: true
             RowLayout.fillWidth: true
-//            initialItem: button_page
-            initialItem: home_page
+            initialItem: button_api
+//            initialItem: home_page
 
             Component.onCompleted: {
                 AppEventFilter.appEvent.connect(onAppEvent)
@@ -99,10 +100,15 @@ Window {
         ButtonPage { }
     }
 
+    Component {
+        id: button_api
+        ButtonApi { }
+    }
+
     property var route_map: {
         "/": home_page,
         "/buttonpage": button_page,
-//        "/live/liverecordpage": live_record_page,
+        "/api/button": button_api,
     }
 
     Connections {

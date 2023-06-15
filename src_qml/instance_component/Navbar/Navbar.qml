@@ -36,14 +36,15 @@ Pane {
                         }
                     ]
                 }
-            ]
+            ],
+            open: true
         },
         {
             name: "Component API",
             subList: [
                 {
                     name: "MButton",
-                    url: "/"
+                    url: "/api/button"
                 }
             ]
         }
@@ -122,7 +123,12 @@ Pane {
                         width: parent.width
 
                         Component.onCompleted: {
-                            sub_list_animation.open = false
+                            if (listData1.open) {
+                                sub_list_animation.open = true
+                            }
+                            else {
+                                sub_list_animation.open = false
+                            }
                         }
 
                         Repeater {
