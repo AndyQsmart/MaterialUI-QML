@@ -62,8 +62,8 @@ Window {
             id: stackView
             RowLayout.fillHeight: true
             RowLayout.fillWidth: true
-//            initialItem: buttonbase_api
-            initialItem: home_page
+            initialItem: paper_page
+//            initialItem: home_page
 
             Component.onCompleted: {
                 AppEventFilter.appEvent.connect(onAppEvent)
@@ -101,6 +101,11 @@ Window {
     }
 
     Component {
+        id: paper_page
+        PaperPage { }
+    }
+
+    Component {
         id: button_api
         ButtonApi { }
     }
@@ -115,12 +120,19 @@ Window {
         IconApi { }
     }
 
+    Component {
+        id: paper_api
+        PaperApi { }
+    }
+
     property var route_map: {
         "/": home_page,
         "/buttonpage": button_page,
+        "/paperpage": paper_page,
         "/api/button": button_api,
         "/api/buttonbase": buttonbase_api,
         "/api/icon": icon_api,
+        "/api/paper": paper_api,
     }
 
     Connections {

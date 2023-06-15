@@ -32,7 +32,7 @@ Pane {
                     subList: [
                         {
                             name: "Paper 纸张",
-                            url: "/"
+                            url: "/paperpage"
                         }
                     ]
                 }
@@ -53,6 +53,10 @@ Pane {
                 {
                     name: "Icon",
                     url: "/api/icon"
+                },
+                {
+                    name: "Paper",
+                    url: "/api/paper"
                 },
             ]
         }

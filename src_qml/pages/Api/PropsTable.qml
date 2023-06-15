@@ -21,7 +21,7 @@ ColumnLayout {
         Layout.fillWidth: true
 
         Column {
-            width: parent.width/6
+            width: parent.width/5
             leftPadding: 10
             bottomPadding: 10
 
@@ -31,7 +31,7 @@ ColumnLayout {
             }
         }
         Column {
-            width: parent.width/6
+            width: parent.width/5
             bottomPadding: 10
 
             MTypography {
@@ -40,7 +40,7 @@ ColumnLayout {
             }
         }
         Column {
-            width: parent.width/6
+            width: parent.width/5
             bottomPadding: 10
 
             MTypography {
@@ -50,7 +50,7 @@ ColumnLayout {
 
         }
         Column {
-            width: parent.width/2
+            width: parent.width*2/5
             bottomPadding: 10
 
             MTypography {
