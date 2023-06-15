@@ -88,5 +88,7 @@
         <file>src_qml/common_component/MaterialUI/MCollapse.qml</file>
         <file>src_qml/pages/Api/ButtonApi.qml</file>
         <file>src_qml/pages/Api/PropsTable.qml</file>
+        <file>src_qml/pages/Api/BaseApi.qml</file>
+        <file>src_qml/pages/Api/ButtonBaseApi.qml</file>
     </qresource>
 </RCC>

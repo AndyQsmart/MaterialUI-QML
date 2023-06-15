@@ -10,30 +10,22 @@ import "../../instance_component/Navbar"
 import "../../common_js/Color.js" as Color
 import "../../common_js/Tools.js" as Tools
 
-// Button Group Demo 跳转未实现
-
 BaseApi {
-    name: "Button"
-    props_description: "Any other props supplied will be provided to the root Item (MButtonBase)."
-    inheritance_description: "The props of the ButtonBase component are also available. You can take advantage of this behavior to target nested components."
+    name: "ButtonBase"
+    props_description: "Any other props supplied will be provided to the root Item (native Button Item)."
+    inheritance_description: ""
     props_list: [
         {
             name: "children",
             type: "Item",
             default_value: "",
-            description: "The content of the button.",
+            description: "The content of the Item.",
         },
         {
             name: "text",
             type: "string",
             default_value: "",
-            description: "The text content of the button.",
-        },
-        {
-            name: "color",
-            type: "'default'\n| 'inherit'\n| 'primary'\n| 'secondary'",
-            default_value: "'default'",
-            description: "The color of the component. It supports those theme colors that make sense for this component.",
+            description: "The text content of the Item.",
         },
         {
             name: "textColor",
@@ -54,12 +46,6 @@ BaseApi {
             description: "If true, the button will be disabled.",
         },
         {
-            name: "disableElevation",
-            type: "bool",
-            default_value: "false",
-            description: "If true, no elevation is used.",
-        },
-        {
             name: "disableRipple",
             type: "bool",
             default_value: "false",
@@ -71,24 +57,8 @@ BaseApi {
             default_value: "false",
             description: "[new] If true, the cursor style effect will be disabled.",
         },
-        {
-            name: "size",
-            type: "'large'\n| 'medium'\n| 'small'",
-            default_value: "'medium'",
-            description: "The size of the button. small is equivalent to the dense button styling.",
-        },
-        {
-            name: "variant",
-            type: "'contained'\n| 'outlined'\n| 'text'",
-            default_value: "'text'",
-            description: "The variant to use.",
-        },
     ]
     demos_list: [
-        {
-            name: "Button Group",
-            // url: "",
-        },
         {
             name: "Buttons",
             url: "/buttonpage",

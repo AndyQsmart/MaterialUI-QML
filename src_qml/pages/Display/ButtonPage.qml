@@ -10,6 +10,8 @@ import "../../instance_component/Navbar"
 import "../../common_js/Color.js" as Color
 import "../../common_js/Tools.js" as Tools
 
+// MIcon API 跳转未实现
+
 Pane {
     id: container
     x: 0
@@ -1251,6 +1253,9 @@ MButton {
                         MButton {
                             color: "secondary"
                             text: "MButtonBase { }"
+                            onClicked: {
+                                Route.redirectTo("/api/buttonbase")
+                            }
                         }
                     }
 

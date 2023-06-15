@@ -62,8 +62,8 @@ Window {
             id: stackView
             RowLayout.fillHeight: true
             RowLayout.fillWidth: true
-            initialItem: button_api
-//            initialItem: home_page
+//            initialItem: buttonbase_api
+            initialItem: home_page
 
             Component.onCompleted: {
                 AppEventFilter.appEvent.connect(onAppEvent)
@@ -105,10 +105,16 @@ Window {
         ButtonApi { }
     }
 
+    Component {
+        id: buttonbase_api
+        ButtonBaseApi { }
+    }
+
     property var route_map: {
         "/": home_page,
         "/buttonpage": button_page,
         "/api/button": button_api,
+        "/api/buttonbase": buttonbase_api,
     }
 
     Connections {
