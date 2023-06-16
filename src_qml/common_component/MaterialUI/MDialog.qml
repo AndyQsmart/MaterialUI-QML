@@ -11,7 +11,13 @@ Popup {
     property bool fullWidth: false
     property bool disableBackdropClick: false
     property string maxWidth: 'sm' //'lg' 'md' 'sm' 'xl' 'xs' false
-    property Item transitionComponent: null
+    property MAnimation transitionComponent: null
+
+    onTransitionComponentChanged: {
+        if (transitionComponent) {
+            transitionComponent.type = "dialog"
+        }
+    }
 
     x: ((parent ? parent.width : 0) - dialog.width)/2
     y: ((parent ? parent.height : 0) - dialog.height)/2

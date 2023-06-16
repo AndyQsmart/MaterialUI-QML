@@ -93,5 +93,8 @@
         <file>src_qml/pages/Api/IconApi.qml</file>
         <file>src_qml/pages/Display/PaperPage.qml</file>
         <file>src_qml/pages/Api/PaperApi.qml</file>
+        <file>src_qml/common_component/MaterialUI/MToolTip.qml</file>
+        <file>src_qml/pages/Display/TransitionsPage.qml</file>
+        <file>src_qml/common_component/MaterialUI/MZoom.qml</file>
     </qresource>
 </RCC>

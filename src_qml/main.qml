@@ -25,6 +25,9 @@ Window {
     title: qsTr("MaterialUI")
 
     function quitApp() {
+        let route_stack = Route.getStack()
+        console.log("(main.qml)Save route", JSON.stringify(route_stack))
+        SettingData.setValue('RouteStack', route_stack)
         console.log("quitApp")
         Qt.quit()
     }
@@ -41,9 +44,6 @@ Window {
     // 可能是qmltype信息不全，有M16警告，这里屏蔽下
     // @disable-check M16
     onClosing: function(closeevent) {
-        let route_stack = Route.getStack()
-        console.log("(main.qml)Save route", JSON.stringify(route_stack))
-        SettingData.setValue('RouteStack', route_stack)
         mainWindow.hide()
 //        CloseEvent的accepted设置为false就能忽略该事件
         closeevent.accepted = false
@@ -62,8 +62,7 @@ Window {
             id: stackView
             RowLayout.fillHeight: true
             RowLayout.fillWidth: true
-            initialItem: paper_page
-//            initialItem: home_page
+            initialItem: home_page
 
             Component.onCompleted: {
                 AppEventFilter.appEvent.connect(onAppEvent)
@@ -106,6 +105,11 @@ Window {
     }
 
     Component {
+        id: transitions_page
+        TransitionsPage { }
+    }
+
+    Component {
         id: button_api
         ButtonApi { }
     }
@@ -129,6 +133,7 @@ Window {
         "/": home_page,
         "/buttonpage": button_page,
         "/paperpage": paper_page,
+        "/transitionspage": transitions_page,
         "/api/button": button_api,
         "/api/buttonbase": buttonbase_api,
         "/api/icon": icon_api,

@@ -12,7 +12,7 @@ Pane {
     x: 0
     y: 0
     padding: 0
-    width: 200
+    width: 230
 
     property var buttonList: [
         {
@@ -35,7 +35,16 @@ Pane {
                             url: "/paperpage"
                         }
                     ]
-                }
+                },
+                {
+                    name: "Utils 工具包",
+                    subList: [
+                        {
+                            name: "Transitions 过度动画",
+                            url: "/transitionspage"
+                        }
+                    ]
+                },
             ],
             open: true
         },
@@ -143,6 +152,12 @@ Pane {
                             }
                         }
 
+                        MCollapse {
+                            id: sub_list_animation
+                            open: false
+                            target: parent
+                        }
+
                         Repeater {
                             model: listData1.subList
 
@@ -206,12 +221,6 @@ Pane {
                                 }
                             }
                         }
-
-                        MCollapse {
-                            id: sub_list_animation
-                            open: false
-                            target: sub_list
-                        }
                     }
 
                 }
@@ -244,6 +253,7 @@ Pane {
 
     AboutDialog {
         id: aboutDialog
+        transitionComponent: MSlide { }
         x: (parent.parent.parent.width-aboutDialog.width)/2
         y: (parent.parent.parent.height-aboutDialog.height)/2
     }

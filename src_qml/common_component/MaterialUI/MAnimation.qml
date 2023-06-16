@@ -4,13 +4,14 @@ import QtQuick.Controls.Styles 1.4
 
 Item {
     id: control
-    property var open: null
+    property bool open: false
     property int timeout: 242
-    property Item target: null
+    property Item target: Item { }
     property Transition enter: null
     property Transition exit: null
     property State enterState: null
     property State exitState: null
+    property string type: "default" // "default" "dialog"
 
     onOpenChanged: {
         if (open) {
@@ -21,12 +22,13 @@ Item {
         }
     }
 
-    state: {
-        if (open == null) {
-            return ""
+    Component.onCompleted: {
+        if (open) {
+            control.state = "enter"
         }
-
-        return open ? "enter" : "exit"
+        else {
+            control.state = "exit"
+        }
     }
 
     states: [enterState, exitState]

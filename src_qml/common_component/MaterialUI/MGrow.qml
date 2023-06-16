@@ -7,6 +7,7 @@ import "./colors"
 MAnimation {
     id: control
     timeout: 242
+    property int transformOrigin: Item.Center // Item.Center Item.BottomRight Item.TopLeft ...
 
     enter: Transition {
         to: "enter"
@@ -33,7 +34,7 @@ MAnimation {
         PropertyAnimation {
             duration: 0
             property: "transformOrigin"
-            to: Item.TopLeft
+            to: transformOrigin
         }
     }
     enterState: State {
@@ -43,7 +44,7 @@ MAnimation {
             opacity: 1
             scale: 1
             height: undefined
-            transformOrigin: Item.TopLeft
+            transformOrigin: transformOrigin
         }
     }
 
@@ -72,7 +73,7 @@ MAnimation {
         PropertyAnimation {
             duration: 0
             property: "transformOrigin"
-            to: Item.TopLeft
+            to: transformOrigin
         }
     }
     exitState: State {
@@ -82,7 +83,7 @@ MAnimation {
             opacity: 0
             scale: 0
             height: 0
-            transformOrigin: Item.TopLeft
+            transformOrigin: transformOrigin
         }
     }
 }
