@@ -13,11 +13,11 @@ int main(int argc, char *argv[]) {
 #endif
 
     QGuiApplication app(argc, argv);
-#ifdef Q_OS_MAC
+//#ifdef Q_OS_MAC
     QFont default_font;
     default_font.setFamily("Arial");
     app.setFont(default_font);
-#endif
+//#endif
 
     QQmlApplicationEngine engine;
 

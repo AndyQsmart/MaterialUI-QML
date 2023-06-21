@@ -9,6 +9,7 @@ Text {
     property bool noWrap: false
     property string align: 'inherit' // 'inherit' 'left' 'center' 'right' 'justify'
     property bool paragraph: false
+    property real fontSize: -1 // new, need to TypographyStyle.convertFontSize
 
     elide: {
         if (noWrap) {
