@@ -13,6 +13,8 @@ TextArea {
     property bool noWrap: false
     property string align: 'inherit' // 'inherit' 'left' 'center' 'right' 'justify'
     property bool paragraph: false
+    property real fontSize: -1 // new
+
     signal copied(string text)
 //    height: contentHeight
 
@@ -70,6 +72,10 @@ TextArea {
     }
 
     font.pointSize: {
+        if (fontSize > 0) {
+            return TypographyStyle.convertFontSize(fontSize)
+        }
+
         let fontStyleList = TypographyStyle.fontStyleList
         if (!variant) {
             return fontStyleList.body2.size

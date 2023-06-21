@@ -17,13 +17,13 @@ MButtonBase {
 
     fontSize: {
         if (size == 'small') {
-            return TypographyStyle.convertFontSize(13)
+            return 13
         }
         else if (size == 'large') {
-            return TypographyStyle.convertFontSize(15)
+            return 15
         }
         else {
-            return TypographyStyle.convertFontSize(14)
+            return 14
         }
     }
 

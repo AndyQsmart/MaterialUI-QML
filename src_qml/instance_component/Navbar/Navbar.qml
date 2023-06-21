@@ -253,7 +253,6 @@ Pane {
 
     AboutDialog {
         id: aboutDialog
-        transitionComponent: MSlide { }
         x: (parent.parent.parent.width-aboutDialog.width)/2
         y: (parent.parent.parent.height-aboutDialog.height)/2
     }

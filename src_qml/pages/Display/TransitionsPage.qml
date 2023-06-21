@@ -778,7 +778,7 @@ Row {
                     MTypography {
                         width: parent.width-40
                         variant: "h5"
-                        text: "TransitionComponent 属性"
+                        text: "transitionComponent 属性"
                         gutterBottom: true
                     }
 

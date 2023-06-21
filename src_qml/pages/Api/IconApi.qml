@@ -39,7 +39,7 @@ BaseApi {
             name: "size",
             type: "int",
             default_value: "",
-            description: "The fontSize applied to the icon.The alias of font.pointSize",
+            description: "The fontSize applied to the icon.",
         },
     ]
     demos_list: [

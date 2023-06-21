@@ -13,11 +13,11 @@ int main(int argc, char *argv[]) {
 #endif
 
     QGuiApplication app(argc, argv);
-//#ifdef Q_OS_MAC
     QFont default_font;
     default_font.setFamily("Arial");
     app.setFont(default_font);
-//#endif
+    app.setOrganizationName("AndyQsmart");
+    app.setOrganizationDomain("https://github.com/AndyQsmart/MaterialUI-QML");
 
     QQmlApplicationEngine engine;
 

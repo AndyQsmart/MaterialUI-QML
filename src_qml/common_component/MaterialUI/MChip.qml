@@ -126,7 +126,7 @@ Control {
         MTypography {
             RowLayout.alignment: Qt.AlignVCenter
             text: control.label
-            font.pointSize: 13
+            fontSize: 13
             lineHeight: 1
             leftPadding: control.size == 'small' ? 8 : 12
             rightPadding: control.size == 'small' ? 8 : 12

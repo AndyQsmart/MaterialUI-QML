@@ -25,7 +25,7 @@ Button {
         align: 'center'
         // 字体不居中特殊处理
         lineHeight: 1
-        font.pointSize: button.fontSize
+        font.pointSize: TypographyStyle.convertFontSize(button.fontSize)
         topPadding: (TypographyStyle.fontStyleList.button.line_height-1)*TypographyStyle.fontStyleList.button.size/2
         bottomPadding: (TypographyStyle.fontStyleList.button.line_height-1)*TypographyStyle.fontStyleList.button.size/2
         // 字体不居中特殊处理

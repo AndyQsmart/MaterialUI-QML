@@ -36,14 +36,14 @@ Pane {
                     Layout.alignment: Qt.AlignHCenter
                     text: "MaterialUI-QML"
                     textColor: "primary"
-                    font.pointSize: 48
+                    fontSize: 48
                 }
 
                 MTypography {
                     Layout.alignment: Qt.AlignHCenter
                     text: "QML组件用于更快速、更简便的QML开发。"
                     textColor: "primary"
-                    font.pointSize: 24
+                    fontSize: 24
                 }
 
                 Rectangle {
