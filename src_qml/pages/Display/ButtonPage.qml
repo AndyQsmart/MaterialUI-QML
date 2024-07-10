@@ -35,17 +35,21 @@ Pane {
                     topPadding: 20
 
                     MTypography {
+                        width: parent.width-40
                         variant: "h4"
                         text: "Button 按钮"
                     }
 
                     MTypography {
+                        width: parent.width-40
                         variant: "h5"
                         text: "只需轻点按钮，用户就可以触发动作或做出选择。"
                         gutterBottom: true
                     }
 
                     Row {
+                        width: parent.width-40
+
                         MTypography {
                             variant: "body1"
                             textColor: "secondary"
