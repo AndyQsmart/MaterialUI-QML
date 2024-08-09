@@ -13,7 +13,8 @@ import "./common_component/MaterialUI"
 In this case,I place "Material UI" in folder "common_component".You can move the "Material UI" to anywhere you want.
 
 # Example
-You can run the example project.It is an example that show some usage of compoents.
+You can run the example project.It is an example that show some usage of components.
+
 ![image](https://github.com/AndyQsmart/MaterialUI-QML/blob/main/readme_image/image1.jpg)
 ![image](https://github.com/AndyQsmart/MaterialUI-QML/blob/main/readme_image/image2.jpg)
 
