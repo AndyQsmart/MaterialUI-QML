@@ -21,10 +21,12 @@ You can run the example project.It is an example that show some usage of compone
 # Components (until now)
 ```
 MButton.qml
+MButtonGroup.qml
 MCheckbox.qml
 MChip.qml
 MCircularProgress.qml
 MCollapse.qml
+MColorPicker.qml
 MCopyText.qml
 MDatePicker.qml
 MDateSelector.qml
