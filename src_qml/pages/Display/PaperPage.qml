@@ -67,11 +67,10 @@ Pane {
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
                     Layout.topMargin: 10
-                    height: paper_display.height
+                    height: childrenRect.height
                     color: "#f5f5f5"
 
                     Row {
-                        id: paper_display
                         spacing: 20
                         leftPadding: 20
                         rightPadding: 20
@@ -102,20 +101,20 @@ Pane {
                     Layout.fillWidth: true
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
-                    color: Color.black
-                    height: paper_code.height
+                    color: "#272c34"
+                    height: childrenRect.height
                     radius: 4
 
 
                     Column {
-                        id: paper_code
                         Layout.fillWidth: true
-                        leftPadding: 20
-                        rightPadding: 20
+                        padding: 20
 
                         MCopyText {
                             color: Color.white
+                            textFormat: TextEdit.RichText
                             text: `
+<pre>
 MPaper {
     width: 128
     height: 128
@@ -132,6 +131,7 @@ MPaper {
     height: 128
     elevation: 3
 }
+</pre>
                             `
                         }
                     }
@@ -164,10 +164,9 @@ MPaper {
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
                     Layout.topMargin: 10
-                    height: outlined_paper_display.height
+                    height: childrenRect.height
 
                     Row {
-                        id: outlined_paper_display
                         spacing: 20
                         leftPadding: 20
                         rightPadding: 20
@@ -194,20 +193,20 @@ MPaper {
                     Layout.fillWidth: true
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
-                    color: Color.black
-                    height: outlined_paper_code.height
+                    color: "#272c34"
+                    height: childrenRect.height
                     radius: 4
 
 
                     Column {
-                        id: outlined_paper_code
                         Layout.fillWidth: true
-                        leftPadding: 20
-                        rightPadding: 20
+                        padding: 20
 
                         MCopyText {
                             color: Color.white
+                            textFormat: TextEdit.RichText
                             text: `
+<pre>
 MPaper {
     width: 128
     height: 128
@@ -220,6 +219,7 @@ MPaper {
     variant: "outlined"
     square: true
 }
+</pre>
                             `
                         }
                     }

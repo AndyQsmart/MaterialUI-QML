@@ -71,22 +71,19 @@ Pane {
                     Layout.fillWidth: true
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
-                    color: Color.black
-                    height: import_code.height
+                    color: "#272c34"
+                    height: childrenRect.height
                     radius: 4
 
 
                     Column {
-                        id: import_code
                         Layout.fillWidth: true
-                        topPadding: 20
-                        bottomPadding: 20
-                        leftPadding: 20
-                        rightPadding: 20
+                        padding: 20
 
                         MCopyText {
                             color: Color.white
-                            text: `import "./common_component/MaterialUI"`
+                            textFormat: TextEdit.RichText
+                            text: `<pre>import "./common_component/MaterialUI"</pre>`
                         }
                     }
                 }
@@ -180,7 +177,6 @@ Pane {
                                     if (modelData.url) {
                                         Route.redirectTo(modelData.url)
                                     }
-
                                 }
                             }
                         }

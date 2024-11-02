@@ -14,7 +14,7 @@ Rectangle {
 
     Rectangle {
         anchors.fill: parent
-        radius: paper.square ? 0 : 4
+        radius: paper.square ? 0 : Palette.borderRadius
         color: Colors.commonWhite
 
         border.width: paper.variant === 'outlined' ? 1 : 0

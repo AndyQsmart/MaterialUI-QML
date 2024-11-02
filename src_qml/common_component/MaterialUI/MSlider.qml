@@ -22,16 +22,15 @@ Slider {
         width: control.availableWidth
         height: implicitHeight
         radius: 2
-        color: Colors.alpha(color == 'secondary' ? Palette.secondaryMain : Palette.primaryMain, 0.38)
+        color: Colors.alpha(control.color == 'secondary' ? Palette.secondaryMain : Palette.primaryMain, 0.38)
 
         Rectangle {
             width: control.visualPosition * parent.width
             height: parent.height
-            color: color == 'secondary' ? Palette.secondaryMain : Palette.primaryMain
+            color: control.color == 'secondary' ? Palette.secondaryMain : Palette.primaryMain
             radius: 2
         }
     }
-
 
     handle: Rectangle {
         x: control.leftPadding + control.visualPosition * control.availableWidth - width/2
@@ -39,7 +38,7 @@ Slider {
         implicitWidth: _handleSize
         implicitHeight: _handleSize
         radius: _handleSize / 2
-        color: color == 'secondary' ? Palette.secondaryMain : Palette.primaryMain
+        color: control.color == 'secondary' ? Palette.secondaryMain : Palette.primaryMain
 
         Rectangle {
             id: outer
@@ -55,7 +54,7 @@ Slider {
                 }
             }
             height: width
-            color: Colors.alpha(color == 'secondary' ? Palette.secondaryMain : Palette.primaryMain, 0.12)
+            color: Colors.alpha(control.color == 'secondary' ? Palette.secondaryMain : Palette.primaryMain, 0.12)
             radius: width/2
 
             Behavior on width {

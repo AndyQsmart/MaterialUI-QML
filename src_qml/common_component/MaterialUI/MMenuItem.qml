@@ -26,6 +26,12 @@ MButton {
     bottomPadding: m_padding[2]
     leftPadding: m_padding[3]
 
+    contentItem: MTypography {
+        variant: 'body1'
+        text: list_item.text
+        color: list_item.textColor
+    }
+
     background: Rectangle {
         color: {
             if (list_item.selected) {

@@ -119,7 +119,7 @@ MButtonBase {
                 return Colors.alpha('#000000', 0.23)
             }
         }
-        radius: 4
+        radius: Palette.borderRadius
         color: {
             let ans = ''
 

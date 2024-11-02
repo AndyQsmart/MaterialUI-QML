@@ -4,7 +4,6 @@ import QtQuick.Controls.Styles 1.4
 import "./styles"
 import "./colors"
 
-
 Popup {
     id: dialog
     property bool fullScreen: false
@@ -12,6 +11,8 @@ Popup {
     property bool disableBackdropClick: false
     property string maxWidth: 'sm' //'lg' 'md' 'sm' 'xl' 'xs' false
     property MAnimation transitionComponent: null
+    parent: Overlay.overlay
+    anchors.centerIn: parent
 
     onTransitionComponentChanged: {
         if (transitionComponent) {
@@ -19,8 +20,8 @@ Popup {
         }
     }
 
-    x: ((parent ? parent.width : 0) - dialog.width)/2
-    y: ((parent ? parent.height : 0) - dialog.height)/2
+//    x: ((parent ? parent.width : 0) - dialog.width)/2
+//    y: ((parent ? parent.height : 0) - dialog.height)/2
     padding: 0
     visible: false
     modal: true

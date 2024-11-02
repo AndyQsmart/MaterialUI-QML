@@ -61,6 +61,7 @@ QtObject {
     readonly property string errorDark: Red._700
 
     readonly property int unit: 8
+    readonly property int borderRadius: 4
 
     function string2Color(color_name, default_color) {
         switch (color_name) {

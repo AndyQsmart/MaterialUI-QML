@@ -24,6 +24,10 @@ Pane {
                         {
                             name: "Button 按钮",
                             url: "/buttonpage"
+                        },
+                        {
+                            name: "Button groups 按钮组",
+                            url: "/buttongrouppage"
                         }
                     ]
                 },
@@ -58,6 +62,10 @@ Pane {
                 {
                     name: "Button Base",
                     url: "/api/buttonbase"
+                },
+                {
+                    name: "Button Group",
+                    url: "/api/buttongroup"
                 },
                 {
                     name: "Icon",
@@ -253,7 +261,5 @@ Pane {
 
     AboutDialog {
         id: aboutDialog
-        x: (parent.parent.parent.width-aboutDialog.width)/2
-        y: (parent.parent.parent.height-aboutDialog.height)/2
     }
 }

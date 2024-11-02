@@ -100,6 +100,11 @@ Window {
     }
 
     Component {
+        id: buttongroup_page
+        ButtonGroupPage { }
+    }
+
+    Component {
         id: paper_page
         PaperPage { }
     }
@@ -120,6 +125,11 @@ Window {
     }
 
     Component {
+        id: buttongroup_api
+        ButtonGroupApi { }
+    }
+
+    Component {
         id: icon_api
         IconApi { }
     }
@@ -132,10 +142,12 @@ Window {
     property var route_map: {
         "/": home_page,
         "/buttonpage": button_page,
+        "/buttongrouppage": buttongroup_page,
         "/paperpage": paper_page,
         "/transitionspage": transitions_page,
         "/api/button": button_api,
         "/api/buttonbase": buttonbase_api,
+        "/api/buttongroup": buttongroup_api,
         "/api/icon": icon_api,
         "/api/paper": paper_api,
     }

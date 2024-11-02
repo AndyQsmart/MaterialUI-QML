@@ -54,6 +54,7 @@
         <file>src_qml/common_component/MaterialUI/MCheckbox.qml</file>
         <file>src_qml/common_component/MaterialUI/MChip.qml</file>
         <file>src_qml/common_component/MaterialUI/MCircularProgress.qml</file>
+        <file>src_qml/common_component/MaterialUI/MColorPicker.qml</file>
         <file>src_qml/common_component/MaterialUI/MDatePicker.qml</file>
         <file>src_qml/common_component/MaterialUI/MDialog.qml</file>
         <file>src_qml/common_component/MaterialUI/MDivider.qml</file>
@@ -96,5 +97,9 @@
         <file>src_qml/common_component/MaterialUI/MToolTip.qml</file>
         <file>src_qml/pages/Display/TransitionsPage.qml</file>
         <file>src_qml/common_component/MaterialUI/MZoom.qml</file>
+        <file>src_qml/common_component/MaterialUI/MButtonGroup.qml</file>
+        <file>src_qml/pages/Display/ButtonGroupPage.qml</file>
+        <file>src_qml/common_component/MaterialUI/MMenuList.qml</file>
+        <file>src_qml/pages/Api/ButtonGroupApi.qml</file>
     </qresource>
 </RCC>

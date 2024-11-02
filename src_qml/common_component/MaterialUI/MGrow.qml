@@ -25,12 +25,6 @@ MAnimation {
             from: 0
             to: 1
         }
-        NumberAnimation {
-            duration: timeout*0.666
-            property: "height"
-            easing.type: Easing.InOutQuad
-            from: 0
-        }
         PropertyAnimation {
             duration: 0
             property: "transformOrigin"
@@ -43,7 +37,6 @@ MAnimation {
             target: control.target
             opacity: 1
             scale: 1
-            height: undefined
             transformOrigin: transformOrigin
         }
     }
@@ -64,12 +57,6 @@ MAnimation {
             from: 1
             to: 0
         }
-        NumberAnimation {
-            duration: timeout*0.666
-            property: "height"
-            easing.type: Easing.InOutQuad
-            to: 0
-        }
         PropertyAnimation {
             duration: 0
             property: "transformOrigin"
@@ -82,7 +69,6 @@ MAnimation {
             target: control.target
             opacity: 0
             scale: 0
-            height: 0
             transformOrigin: transformOrigin
         }
     }

@@ -4,6 +4,9 @@ import QtQuick.Layouts 1.11
 import "./styles"
 
 MPopover {
-    topPadding: Palette.unit
-    bottomPadding: Palette.unit
+    default property alias children: menu_list.children
+
+    MMenuList {
+        id: menu_list
+    }
 }

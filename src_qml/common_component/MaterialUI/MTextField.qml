@@ -34,7 +34,7 @@ TextInput {
             z: -1
             anchors.fill: parent
             enabled: false
-            radius: 5
+            radius: Palette.borderRadius
             border.width: textInput.activeFocus ? 2 : 1
             border.color: textInput.activeFocus ? textInput._main_color : '#3B000000'
             color: Colors.commonTransparent

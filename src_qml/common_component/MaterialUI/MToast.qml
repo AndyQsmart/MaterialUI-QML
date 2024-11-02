@@ -9,8 +9,8 @@ ToolTip {
     visible: false
     font.bold: true
     font.pointSize: TypographyStyle.fontStyleList.body1.size
-    x: (parent.width-width)/2
-    y: (parent.height-height)/2
+    parent: Overlay.overlay
+    anchors.centerIn: parent
     opacity: 0.8
     timeout: 3000
     property string color: "green"

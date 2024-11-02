@@ -89,11 +89,10 @@ Pane {
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
                     Layout.topMargin: 10
-                    height: collapse_display.height
+                    height: childrenRect.height
                     color: "#f5f5f5"
 
                     Column {
-                        id: collapse_display
                         spacing: 20
                         leftPadding: 20
                         rightPadding: 20
@@ -176,7 +175,7 @@ Pane {
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
                     visible: false
-                    color: Color.black
+                    color: "#272c34"
                     height: 420
                     radius: 4
 
@@ -186,7 +185,9 @@ Pane {
                         MCopyText {
                             padding: 20
                             color: Color.white
+                            textFormat: TextEdit.RichText
                             text: `
+<pre >
 Row {
     id: row
     MSwitch {
@@ -239,6 +240,8 @@ Row {
         }
     }
 }
+</pre>
+<hr/>
                             `
                         }
                     }
@@ -329,14 +332,16 @@ Row {
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
                     visible: false
-                    color: Color.black
+                    color: "#272c34"
                     height: childrenRect.height
                     radius: 4
 
                     MCopyText {
                         padding: 20
                         color: Color.white
+                        textFormat: TextEdit.RichText
                         text: `
+<pre>
 Row {
     MSwitch {
         id: fade_check
@@ -359,6 +364,8 @@ Row {
         }
     }
 }
+<pre>
+<hr/>
                         `
                     }
                 }
@@ -484,7 +491,7 @@ Row {
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
                     visible: false
-                    color: Color.black
+                    color: "#272c34"
                     height: 420
                     radius: 4
 
@@ -494,7 +501,9 @@ Row {
                         MCopyText {
                             padding: 20
                             color: Color.white
+                            textFormat: TextEdit.RichText
                             text: `
+<pre>
 Row {
     MSwitch {
         id: grow_check
@@ -549,6 +558,8 @@ Row {
         }
     }
 }
+</pre>
+<hr/>
                             `
 
                         }
@@ -649,14 +660,16 @@ Row {
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
                     visible: false
-                    color: Color.black
+                    color: "#272c34"
                     height: childrenRect.height
                     radius: 4
 
                     MCopyText {
                         padding: 20
                         color: Color.white
+                        textFormat: TextEdit.RichText
                         text: `
+<pre>
 Row {
     MSwitch {
         id: slide_check
@@ -681,6 +694,8 @@ Row {
         }
     }
 }
+</pre>
+<hr/>
                         `
                     }
                 }
@@ -764,6 +779,79 @@ Row {
                                 }
                             }
                         }
+                    }
+                }
+
+                RowLayout {
+                    Layout.topMargin: 10
+                    Layout.bottomMargin: 10
+                    Layout.leftMargin: 20
+                    Layout.rightMargin: 20
+
+                    MButton {
+                        variant: "outlined"
+                        text: "< > Code"
+
+                        onClicked: {
+                            zoom_code.visible = !zoom_code.visible
+                        }
+                    }
+                }
+
+                Rectangle {
+                    id: zoom_code
+                    Layout.fillWidth: true
+                    Layout.leftMargin: 20
+                    Layout.rightMargin: 20
+                    visible: false
+                    color: "#272c34"
+                    height: childrenRect.height
+                    radius: 4
+
+                    MCopyText {
+                        padding: 20
+                        color: Color.white
+                        textFormat: TextEdit.RichText
+                        text: `
+<pre>
+Row {
+    MSwitch {
+        id: zoom_check
+        anchors.verticalCenter: parent.verticalCenter
+    }
+    MTypography {
+        anchors.verticalCenter: parent.verticalCenter
+        text: "Show"
+    }
+}
+
+Row {
+    spacing: 20
+
+    MPaper {
+        width: 128
+        height: 128
+
+        MZoom {
+            target: parent
+            open: zoom_check.checked
+        }
+    }
+
+    MPaper {
+        width: 128
+        height: 128
+
+        MZoom {
+            target: parent
+            timeout: 1000
+            open: zoom_check.checked
+        }
+    }
+}
+</pre>
+<hr/>
+                        `
                     }
                 }
 

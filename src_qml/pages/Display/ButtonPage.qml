@@ -122,18 +122,18 @@ Pane {
                     Layout.fillWidth: true
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
-                    height: contained_button_display.height
+                    height: childrenRect.height
                     border.width: 1
                     border.color: Color.ddd
                     radius: 4
 
                     Row {
-                        id: contained_button_display
                         spacing: 20
                         leftPadding: 20
                         rightPadding: 20
                         topPadding: 20
                         bottomPadding: 20
+                        anchors.horizontalCenter: parent.horizontalCenter
 
                         MButton {
                             variant: "contained"
@@ -165,20 +165,19 @@ Pane {
                     Layout.fillWidth: true
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
-                    color: Color.black
-                    height: contained_button_code.height
+                    color: "#272c34"
+                    height: childrenRect.height
                     radius: 4
 
-
                     Column {
-                        id: contained_button_code
                         Layout.fillWidth: true
-                        leftPadding: 20
-                        rightPadding: 20
+                        padding: 20
 
                         MCopyText {
                             color: Color.white
+                            textFormat: TextEdit.RichText
                             text: `
+<pre>
 MButton {
     variant: "contained"
     text: "DEFAULT"
@@ -201,6 +200,7 @@ MButton {
     disabled: true
     text: "DISABLED"
 }
+</pre>
                             `
                         }
                     }
@@ -219,18 +219,18 @@ MButton {
                     Layout.fillWidth: true
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
-                    height: contained_button_disableElevation_display.height
+                    height: childrenRect.height
                     border.width: 1
                     border.color: Color.ddd
                     radius: 4
 
                     Row {
-                        id: contained_button_disableElevation_display
                         spacing: 20
                         leftPadding: 20
                         rightPadding: 20
                         topPadding: 20
                         bottomPadding: 20
+                        anchors.horizontalCenter: parent.horizontalCenter
 
                         MButton {
                             variant: "contained"
@@ -246,26 +246,27 @@ MButton {
                     Layout.fillWidth: true
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
-                    color: Color.black
-                    height: contained_button_disableElevation_code.height
+                    color: "#272c34"
+                    height: childrenRect.height
                     radius: 4
 
 
                     Column {
-                        id: contained_button_disableElevation_code
                         Layout.fillWidth: true
-                        leftPadding: 20
-                        rightPadding: 20
+                        padding: 20
 
                         MCopyText {
                             color: Color.white
+                            textFormat: TextEdit.RichText
                             text: `
+<pre>
 MButton {
     variant: "contained"
     color: "primary"
     disableElevation: true
     text: "Disable elevation"
 }
+</pre>
                             `
                         }
                     }
@@ -321,18 +322,18 @@ MButton {
                     Layout.fillWidth: true
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
-                    height: text_button_display.height
+                    height: childrenRect.height
                     border.width: 1
                     border.color: Color.ddd
                     radius: 4
 
                     Row {
-                        id: text_button_display
                         spacing: 20
                         leftPadding: 20
                         rightPadding: 20
                         topPadding: 20
                         bottomPadding: 20
+                        anchors.horizontalCenter: parent.horizontalCenter
 
                         MButton {
                             text: "DEFAULT"
@@ -360,19 +361,19 @@ MButton {
                     Layout.fillWidth: true
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
-                    color: Color.black
-                    height: text_button_code.height
+                    color: "#272c34"
+                    height: childrenRect.height
                     radius: 4
 
                     Column {
-                        id: text_button_code
                         Layout.fillWidth: true
-                        leftPadding: 20
-                        rightPadding: 20
+                        padding: 20
 
                         MCopyText {
                             color: Color.white
+                            textFormat: TextEdit.RichText
                             text: `
+<pre>
 MButton {
     text: "DEFAULT"
 }
@@ -391,6 +392,7 @@ MButton {
     disabled: true
     text: "DISABLED"
 }
+</pre>
                             `
                         }
                     }
@@ -441,18 +443,18 @@ MButton {
                     Layout.fillWidth: true
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
-                    height: outlined_button_display.height
+                    height: childrenRect.height
                     border.width: 1
                     border.color: Color.ddd
                     radius: 4
 
                     Row {
-                        id: outlined_button_display
                         spacing: 20
                         leftPadding: 20
                         rightPadding: 20
                         topPadding: 20
                         bottomPadding: 20
+                        anchors.horizontalCenter: parent.horizontalCenter
 
                         MButton {
                             variant: "outlined"
@@ -484,19 +486,19 @@ MButton {
                     Layout.fillWidth: true
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
-                    color: Color.black
-                    height: outlined_button_code.height
+                    color: "#272c34"
+                    height: childrenRect.height
                     radius: 4
 
                     Column {
-                        id: outlined_button_code
                         Layout.fillWidth: true
-                        leftPadding: 20
-                        rightPadding: 20
+                        padding: 20
 
                         MCopyText {
                             color: Color.white
+                            textFormat: TextEdit.RichText
                             text: `
+<pre>
 MButton {
     variant: "outlined"
     text: "DEFAULT"
@@ -519,6 +521,7 @@ MButton {
     disabled: true
     text: "DISABLED"
 }
+</pre>
                             `
                         }
                     }
@@ -548,18 +551,18 @@ MButton {
                     Layout.fillWidth: true
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
-                    height: handing_clicks_button_display.height
+                    height: childrenRect.height
                     border.width: 1
                     border.color: Color.ddd
                     radius: 4
 
                     Row {
-                        id: handing_clicks_button_display
                         spacing: 20
                         leftPadding: 20
                         rightPadding: 20
                         topPadding: 20
                         bottomPadding: 20
+                        anchors.horizontalCenter: parent.horizontalCenter
 
                         MButton {
                             text: "请点击我"
@@ -575,25 +578,26 @@ MButton {
                     Layout.fillWidth: true
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
-                    color: Color.black
-                    height: handing_clicks_button_code.height
+                    color: "#272c34"
+                    height: childrenRect.height
                     radius: 4
 
                     Column {
-                        id: handing_clicks_button_code
                         Layout.fillWidth: true
-                        leftPadding: 20
-                        rightPadding: 20
+                        padding: 20
 
                         MCopyText {
                             color: Color.white
+                            textFormat: TextEdit.RichText
                             text: `
+<pre>
 MButton {
     text: "请点击我"
     onClicked: {
         toast.success("clicked")
     }
 }
+</pre>
                             `
                         }
                     }
@@ -623,18 +627,18 @@ MButton {
                     Layout.fillWidth: true
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
-                    height: upload_button_display.height
+                    height: childrenRect.height
                     border.width: 1
                     border.color: Color.ddd
                     radius: 4
 
                     Row {
-                        id: upload_button_display
                         spacing: 20
                         leftPadding: 20
                         rightPadding: 20
                         topPadding: 20
                         bottomPadding: 20
+                        anchors.horizontalCenter: parent.horizontalCenter
 
                         MFileButton {
                             title: "视频选择器"
@@ -679,19 +683,19 @@ MButton {
                     Layout.fillWidth: true
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
-                    color: Color.black
-                    height: upload_button_code.height
+                    color: "#272c34"
+                    height: childrenRect.height
                     radius: 4
 
                     Column {
-                        id: upload_button_code
                         Layout.fillWidth: true
-                        leftPadding: 20
-                        rightPadding: 20
+                        padding: 20
 
                         MCopyText {
                             color: Color.white
+                            textFormat: TextEdit.RichText
                             text: `
+<pre>
 MFileButton {
     title: "视频选择器"
     variant: "contained"
@@ -727,6 +731,7 @@ MDirectoryButton {
         toast.success(JSON.stringify(url))
     }
 }
+</pre>
                             `
                         }
                     }
@@ -756,18 +761,18 @@ MDirectoryButton {
                     Layout.fillWidth: true
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
-                    height: size_button_display.height
+                    height: childrenRect.height
                     border.width: 1
                     border.color: Color.ddd
                     radius: 4
 
                     Column {
-                        id: size_button_display
                         leftPadding: 20
                         rightPadding: 20
                         topPadding: 20
                         bottomPadding: 20
                         spacing: 20
+                        anchors.horizontalCenter: parent.horizontalCenter
 
                         Row {
                             spacing: 20
@@ -845,54 +850,84 @@ MDirectoryButton {
                     Layout.fillWidth: true
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
-                    color: Color.black
-                    height: size_button_code.height
+                    color: "#272c34"
+                    height: childrenRect.height
                     radius: 4
 
                     Column {
-                        id: size_button_code
                         Layout.fillWidth: true
-                        leftPadding: 20
-                        rightPadding: 20
+                        padding: 20
 
                         MCopyText {
                             color: Color.white
+                            textFormat: TextEdit.RichText
                             text: `
-MFileButton {
-    title: "视频选择器"
-    variant: "contained"
-    color: "primary"
-    text: "视频选择"
-    accept: "video"
-    acceptAll: false
-    onChange: {
-        toast.success(JSON.stringify(fileUrls))
-    }
-}
+<pre>
+Column {
+    Row {
+        MButton {
+            size: "small"
+            text: "Small"
+        }
 
-MFileButton {
-    title: "xlsx选择器"
-    variant: "contained"
-    color: "primary"
-    text: "自定义xlsx选择"
-    multiple: true
-    acceptName: "xlsx选择"
-    acceptExt: "*.xlsx"
-    acceptAll: false
-    onChange: {
-        toast.success(JSON.stringify(fileUrls))
-    }
-}
+        MButton {
+            size: "medium"
+            text: "Medium"
+        }
 
-MDirectoryButton {
-    title: "文件夹选择器"
-    variant: "contained"
-    color: "primary"
-    text: "文件夹选择"
-    onChange: {
-        toast.success(JSON.stringify(url))
+        MButton {
+            size: "large"
+            text: "Large"
+        }
+    }
+
+    Row {
+        MButton {
+            variant: "outlined"
+            color: "primary"
+            size: "small"
+            text: "Small"
+        }
+
+        MButton {
+            variant: "outlined"
+            color: "primary"
+            size: "medium"
+            text: "Medium"
+        }
+
+        MButton {
+            variant: "outlined"
+            color: "primary"
+            size: "large"
+            text: "Large"
+        }
+    }
+
+    Row {
+        MButton {
+            variant: "contained"
+            color: "primary"
+            size: "small"
+            text: "Small"
+        }
+
+        MButton {
+            variant: "contained"
+            color: "primary"
+            size: "medium"
+            text: "Medium"
+        }
+
+        MButton {
+            variant: "contained"
+            color: "primary"
+            size: "large"
+            text: "Large"
+        }
     }
 }
+</pre>
                             `
                         }
                     }
@@ -934,18 +969,18 @@ MDirectoryButton {
                     Layout.fillWidth: true
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
-                    height: icon_button_display.height
+                    height: childrenRect.height
                     border.width: 1
                     border.color: Color.ddd
                     radius: 4
 
                     Column {
-                        id: icon_button_display
                         leftPadding: 20
                         rightPadding: 20
                         topPadding: 20
                         bottomPadding: 20
                         spacing: 20
+                        anchors.horizontalCenter: parent.horizontalCenter
 
                         Row {
                             spacing: 20
@@ -1040,19 +1075,19 @@ MDirectoryButton {
                     Layout.fillWidth: true
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
-                    color: Color.black
-                    height: icon_button_code.height
+                    color: "#272c34"
+                    height: childrenRect.height
                     radius: 4
 
                     Column {
-                        id: icon_button_code
                         Layout.fillWidth: true
-                        leftPadding: 20
-                        rightPadding: 20
+                        padding: 20
 
                         MCopyText {
                             color: Color.white
+                            textFormat: TextEdit.RichText
                             text: `
+<pre>
 MButton {
     variant: "contained"
     color: "secondary"
@@ -1134,6 +1169,7 @@ MButton {
         }
     }
 }
+</pre>
                             `
                         }
                     }
@@ -1167,18 +1203,18 @@ MButton {
                     Layout.fillWidth: true
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
-                    height: cursor_button_display.height
+                    height: childrenRect.height
                     border.width: 1
                     border.color: Color.ddd
                     radius: 4
 
                     Row {
-                        id: cursor_button_display
                         leftPadding: 20
                         rightPadding: 20
                         topPadding: 20
                         bottomPadding: 20
                         spacing: 20
+                        anchors.horizontalCenter: parent.horizontalCenter
 
                         MButton {
                             variant: "contained"
@@ -1194,25 +1230,26 @@ MButton {
                     Layout.fillWidth: true
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
-                    color: Color.black
-                    height: cursor_button_code.height
+                    color: "#272c34"
+                    height: childrenRect.height
                     radius: 4
 
                     Column {
-                        id: cursor_button_code
                         Layout.fillWidth: true
-                        leftPadding: 20
-                        rightPadding: 20
+                        padding: 20
 
                         MCopyText {
                             color: Color.white
+                            textFormat: TextEdit.RichText
                             text: `
+<pre>
 MButton {
     variant: "contained"
     color: "primary"
     text: "禁用鼠标悬浮"
     disableCursor: true
 }
+</pre>
                             `
                         }
                     }
