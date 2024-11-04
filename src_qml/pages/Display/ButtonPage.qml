@@ -47,20 +47,12 @@ Pane {
                         gutterBottom: true
                     }
 
-                    Row {
+                    MTypography {
                         width: parent.width-40
-
-                        MTypography {
-                            variant: "body1"
-                            textColor: "secondary"
-                            text: "按钮"
-                        }
-
-                        MTypography {
-                            variant: "body1"
-                            text: "传达了一系列用户可以执行的操作命令。 他们通常直接放置在您的用户界面中，例如："
-                            gutterBottom: true
-                        }
+                        variant: "body1"
+                        textFormat: MTypography.RichText
+                        text: `<p><span style="color: ${Palette.secondaryMain}" >按钮</span>传达了一系列用户可以执行的操作命令。他们通常直接放置在您的用户界面中，例如：</p>`
+                        wrapMode: MTypography.WordWrap
                     }
 
                     MTypography {
@@ -98,23 +90,12 @@ Pane {
                         text: "Contained Buttons 实心按钮"
                     }
 
-                    Row {
-                        MTypography {
-                            variant: "body1"
-                            textColor: "secondary"
-                            text: "实心按钮 "
-                        }
-
-                        MTypography {
-                            variant: "body1"
-                            text: "表示高度的强调，你根据它们的立体效果和填充颜色来区分彼此。"
-                            gutterBottom: true
-                        }
-                    }
                     MTypography {
+                        width: parent.width-40
                         variant: "body1"
-                        text: "它们用于触发应用程序所具有的主要功能。"
-                        gutterBottom: true
+                        textFormat: MTypography.RichText
+                        text: `<p><span style="color: ${Palette.secondaryMain}" >实心按钮</span>表示高度的强调，你根据它们的立体效果和填充颜色来区分彼此。它们用于触发应用程序所具有的主要功能。</p>`
+                        wrapMode: MTypography.WordWrap
                     }
                 }
 
