@@ -261,8 +261,4 @@ MPaper {
             }
         }
     }
-
-    MToast {
-        id: toast
-    }
 }

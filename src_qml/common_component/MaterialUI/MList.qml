@@ -30,5 +30,12 @@ Item {
         id: column_layout
         y: topPadding
         spacing: 0
+
+        onChildrenChanged: {
+            for (let i = 0; i < children.length; i++) {
+                let the_child = children[i]
+                the_child.Layout.fillWidth = true
+            }
+        }
     }
 }

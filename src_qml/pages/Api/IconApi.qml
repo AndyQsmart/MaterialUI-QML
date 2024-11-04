@@ -10,8 +10,6 @@ import "../../instance_component/Navbar"
 import "../../common_js/Color.js" as Color
 import "../../common_js/Tools.js" as Tools
 
-// Icon demo 未实现
-
 BaseApi {
     name: "Icon"
     props_description: "Any other props supplied will be provided to the root Item (native Text Item)."

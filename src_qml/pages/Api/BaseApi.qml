@@ -75,7 +75,6 @@ Pane {
                     height: childrenRect.height
                     radius: 4
 
-
                     Column {
                         Layout.fillWidth: true
                         padding: 20
@@ -83,7 +82,7 @@ Pane {
                         MCopyText {
                             color: Color.white
                             textFormat: TextEdit.RichText
-                            text: `<pre>import "./common_component/MaterialUI"</pre>`
+                            text: `<pre>import "./MaterialUI"</pre>`
                         }
                     }
                 }

@@ -28,7 +28,19 @@ Pane {
                         {
                             name: "Button groups 按钮组",
                             url: "/buttongrouppage"
-                        }
+                        },
+                        {
+                            name: "Checkbox 多选框",
+                            url: "/checkboxpage"
+                        },
+                        {
+                            name: "Radio 单选框",
+                            url: "/radiopage"
+                        },
+                        {
+                            name: "Select 选择器",
+                            url: '/selectpage'
+                        },
                     ]
                 },
                 {
@@ -68,12 +80,28 @@ Pane {
                     url: "/api/buttongroup"
                 },
                 {
+                    name: "Checkbox",
+                    url: "/api/checkbox"
+                },
+                {
+                    name: "Form Control Label",
+                    url: "/api/formcontrollabel"
+                },
+                {
                     name: "Icon",
                     url: "/api/icon"
                 },
                 {
                     name: "Paper",
                     url: "/api/paper"
+                },
+                {
+                    name: "Radio",
+                    url: "/api/radio"
+                },
+                {
+                    name: "Radio Group",
+                    url: "/api/radiogroup"
                 },
             ]
         }

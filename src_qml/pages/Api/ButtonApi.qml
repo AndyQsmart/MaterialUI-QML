@@ -10,8 +10,6 @@ import "../../instance_component/Navbar"
 import "../../common_js/Color.js" as Color
 import "../../common_js/Tools.js" as Tools
 
-// Button Group Demo 跳转未实现
-
 BaseApi {
     name: "Button"
     props_description: "Any other props supplied will be provided to the root Item (MButtonBase)."
@@ -31,7 +29,7 @@ BaseApi {
         },
         {
             name: "color",
-            type: "'default'\n| 'inherit'\n| 'primary'\n| 'secondary'",
+            type: "'default'\n| 'primary'\n| 'secondary'\n|  color",
             default_value: "'default'",
             description: "The color of the component. It supports those theme colors that make sense for this component.",
         },

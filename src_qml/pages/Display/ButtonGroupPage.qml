@@ -37,15 +37,13 @@ Pane {
                     MTypography {
                         width: parent.width-40
                         variant: "h4"
-                        text: "Button groups 按钮组组件
-"
+                        text: "Button groups 按钮组组件"
                     }
 
                     MTypography {
                         width: parent.width-40
                         variant: "h5"
                         text: "按钮组组件可用于对相关按钮进行分组。"
-                        gutterBottom: true
                     }
                 }
 
@@ -134,7 +132,6 @@ Pane {
                             }
                         }
                     }
-
                 }
 
                 RowLayout {
@@ -585,7 +582,6 @@ MButtonGroup {
                                 model: ['Create a merge commit', 'Squash and merge', 'Rebase and merge']
 
                                 delegate: MMenuItem {
-                                    Layout.fillWidth: true
                                     text: modelData
                                     disabled: index === 2
 
@@ -848,9 +844,5 @@ MButtonGroup {
                 }
             }
         }
-    }
-
-    MToast {
-        id: toast
     }
 }

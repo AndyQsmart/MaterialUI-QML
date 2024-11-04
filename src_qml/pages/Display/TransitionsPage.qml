@@ -991,8 +991,4 @@ Row {
             }
         }
     }
-
-    MToast {
-        id: toast
-    }
 }

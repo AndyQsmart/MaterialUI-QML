@@ -125,8 +125,8 @@ TextArea {
 
         onPressed: {
             if (mouse.button === Qt.RightButton) {
-                let the_x = mouseX+control.x
-                let the_y = mouseY+control.y
+                let the_x = mouseX
+                let the_y = mouseY
                 // console.log(the_x, the_y)
                 right_menu.x = the_x
                 right_menu.y = the_y
@@ -143,39 +143,40 @@ TextArea {
 
     MMenu {
         id: right_menu
+        parent: control
         width: 120
         focus: false
         property bool copy_after_close: false
 
-        ColumnLayout {
-            width: parent.width
+        MMenuItem {
+            focusPolicy: Qt.NoFocus
+            width: 120
+            implicitWidth: 120
 
-            MMenuItem {
-                Layout.fillWidth: true
-                focusPolicy: Qt.NoFocus
+            Row {
+                width: parent.width
+                leftPadding: parent.leftPadding
+                rightPadding: parent.rightPadding
+                anchors.verticalCenter: parent.verticalCenter
 
-                RowLayout {
-                    anchors.fill: parent
-                    anchors.leftMargin: parent.leftPadding
-                    anchors.rightMargin: parent.rightPadding
-
-                    MIcon {
-                        name: "copy"
-                        size: 14
-                    }
-
-                    MTypography {
-                        RowLayout.fillWidth: true
-                        leftPadding: 10
-                        text: "复制"
-                    }
+                MIcon {
+                    name: "copy"
+                    size: 14
+                    anchors.verticalCenter: parent.verticalCenter
                 }
 
-                onClicked: {
-                    control.copy()
-                    copied(selectedText)
-                    right_menu.close()
+                MTypography {
+                    RowLayout.fillWidth: true
+                    leftPadding: 10
+                    text: "复制"
+                    anchors.verticalCenter: parent.verticalCenter
                 }
+            }
+
+            onClicked: {
+                control.copy()
+                copied(selectedText)
+                right_menu.close()
             }
         }
     }

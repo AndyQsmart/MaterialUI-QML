@@ -10,7 +10,6 @@ import "../../instance_component/Navbar"
 import "../../common_js/Color.js" as Color
 import "../../common_js/Tools.js" as Tools
 
-
 ColumnLayout {
     property var propsList: []
 

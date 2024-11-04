@@ -105,6 +105,21 @@ Window {
     }
 
     Component {
+        id: checkbox_page
+        CheckboxPage { }
+    }
+
+    Component {
+        id: radio_page
+        RadioPage { }
+    }
+
+    Component {
+        id: select_page
+        SelectPage { }
+    }
+
+    Component {
         id: paper_page
         PaperPage { }
     }
@@ -130,6 +145,16 @@ Window {
     }
 
     Component {
+        id: formcontrollabel_api
+        FormControlLabelApi { }
+    }
+
+    Component {
+        id: checkbox_api
+        CheckboxApi { }
+    }
+
+    Component {
         id: icon_api
         IconApi { }
     }
@@ -139,17 +164,34 @@ Window {
         PaperApi { }
     }
 
+    Component {
+        id: radio_api
+        RadioApi { }
+    }
+
+    Component {
+        id: radiogroup_api
+        RadioGroupApi { }
+    }
+
     property var route_map: {
         "/": home_page,
         "/buttonpage": button_page,
         "/buttongrouppage": buttongroup_page,
+        "/checkboxpage": checkbox_page,
+        "/radiopage": radio_page,
+        "/selectpage": select_page,
         "/paperpage": paper_page,
         "/transitionspage": transitions_page,
         "/api/button": button_api,
         "/api/buttonbase": buttonbase_api,
         "/api/buttongroup": buttongroup_api,
+        "/api/checkbox": checkbox_api,
+        "/api/formcontrollabel": formcontrollabel_api,
         "/api/icon": icon_api,
         "/api/paper": paper_api,
+        "/api/radio": radio_api,
+        "/api/radiogroup": radiogroup_api,
     }
 
     Connections {

@@ -5,7 +5,7 @@ import "./colors"
 // 原版
 MButtonBase {
     id: button
-    property string color: 'default' // 'default' 'inherit' 'primary' 'secondary'
+    property string color: 'default' // 'default' ''primary' 'secondary' color
     disabled: false
     property string size: 'medium' // 'large' 'medium' 'small'
     // property bool fullWidth: false
