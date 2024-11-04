@@ -10,18 +10,26 @@ Popup {
     property bool fullWidth: false
     property bool disableBackdropClick: false
     property string maxWidth: 'sm' //'lg' 'md' 'sm' 'xl' 'xs' false
-    property MAnimation transitionComponent: null
+    property MAnimation transitionComponent: MFade { }
     parent: Overlay.overlay
-    anchors.centerIn: parent
+//    anchors.centerIn: parent // 为了使用通用动画，故不使用该属性进行居中
 
-    onTransitionComponentChanged: {
-        if (transitionComponent) {
-            transitionComponent.type = "dialog"
-        }
+    Binding {
+        target: transitionComponent
+        property: "offsetX"
+        value: ((parent ? parent.width : 0) - dialog.width)/2
     }
 
-//    x: ((parent ? parent.width : 0) - dialog.width)/2
-//    y: ((parent ? parent.height : 0) - dialog.height)/2
+    Binding {
+        target: transitionComponent
+        property: "offsetY"
+        value: ((parent ? parent.height : 0) - dialog.height)/2
+    }
+
+    x: ((parent ? parent.width : 0) - dialog.width)/2
+    y: ((parent ? parent.height : 0) - dialog.height)/2
+
+
     padding: 0
     visible: false
     modal: true
@@ -32,21 +40,6 @@ Popup {
         elevation: 24
     }
 
-    enter: {
-        if (transitionComponent) {
-            return transitionComponent.enter
-        }
-        else {
-            return null
-        }
-    }
-
-    exit: {
-        if (transitionComponent) {
-            return transitionComponent.exit
-        }
-        else {
-            return null
-        }
-    }
+    enter: transitionComponent ? transitionComponent.enter : null
+    exit: transitionComponent ? transitionComponent.exit : null
 }

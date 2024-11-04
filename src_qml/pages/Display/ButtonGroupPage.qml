@@ -521,8 +521,11 @@ MButtonGroup {
                     }
 
                     MTypography {
+                        width: parent.width-40
                         variant: "body1"
-                        text: "按钮组组件也可用于创建分体式按钮。 下拉列表可以用于更改按钮相关的操作（如本例所示），或者用于立即触发一个相关的操作。"
+                        textFormat: MTypography.RichText
+                        text: `<p><span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >按钮组组件</span> 也可用于创建分体式按钮。 下拉列表可以用于更改按钮相关的操作（如本例所示），或者用于立即触发一个相关的操作。</p>`
+                        wrapMode: MTypography.WordWrap
                     }
                 }
 
@@ -627,9 +630,10 @@ MButtonGroup {
                         MCopyText {
                             color: Color.white
                             padding: 20
+                            bottomPadding: 20
                             textFormat: TextEdit.RichText
                             text: `
-<pre>
+<pre >
 Row {
     MButtonGroup {
         variant: 'contained'
@@ -680,8 +684,7 @@ Row {
     }
 }
 </pre>
-<hr/>
-                            `
+`
                         }
                     }
                 }
@@ -700,8 +703,11 @@ Row {
                     }
 
                     MTypography {
-                        variant: "body1"
-                        text: "你也可以使用属性 disableElevation 属性来消除实心按钮的立体效果。"
+                        width: parent.width-40
+                        variant: "body1"                        
+                        textFormat: MTypography.RichText
+                        text: `<p>你也可以使用属性 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >disableElevation</span> 属性来消除实心按钮的立体效果。</p>`
+                        wrapMode: MTypography.WordWrap
                     }
                 }
 

@@ -188,11 +188,14 @@ MButton {
                 }
 
                 MTypography {
+                    Layout.fillWidth: true
                     Layout.topMargin: 20
                     Layout.leftMargin: 20
                     Layout.rightMargin: 20
                     variant: "body1"
-                    text: "你也可以使用属性 disableElevation 属性来消除实心按钮的立体效果。"
+                    textFormat: MTypography.RichText
+                    text: `<p>你也可以使用属性 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >disableElevation</span> 属性来消除实心按钮的立体效果。</p>`
+                    wrapMode: MTypography.WordWrap
                 }
 
                 Rectangle {
@@ -392,30 +395,19 @@ MButton {
                         text: "Outlined Buttons 描边按钮"
                     }
 
-                    Row {
-                        MTypography {
-                            variant: "body1"
-                            textColor: "secondary"
-                            text: "描边按钮 "
-                        }
-
-                        MTypography {
-                            variant: "body1"
-                            text: "表示中等程度的强调。 它们包含了一些重要的操作，"
-                        }
-                    }
                     MTypography {
+                        width: parent.width-40
                         variant: "body1"
-                        text: "但不是一个 app 中的主要操作。"
+                        textFormat: MTypography.RichText
+                        text: `<p><span style="color: ${Palette.secondaryMain}" >描边按钮</span>表示中等程度的强调。 它们包含了一些重要的操作，但不是一个 app 中的主要操作。</p>`
+                        wrapMode: MTypography.WordWrap
                     }
 
                     MTypography {
+                        width: parent.width-40
                         variant: "body1"
-                        text: "你也可以将描边按钮作为比实心按钮次要一点的替代方案，"
-                    }
-                    MTypography {
-                        variant: "body1"
-                        text: "或者用来作为比文本按钮重要一点的展示。"
+                        text: `你也可以将描边按钮作为比实心按钮次要一点的替代方案或者用来作为比文本按钮重要一点的展示。`
+                        wrapMode: MTypography.WordWrap
                     }
                 }
 
@@ -518,12 +510,15 @@ MButton {
 
                     MTypography {
                         variant: "h5"
-                        text: "Handling clicks 处理点击"
+                        text: "Handling clicks 处理点击"                        
                     }
 
                     MTypography {
+                        width: parent.width-40
                         variant: "body1"
-                        text: "所有组件都接受 onClick 处理程序，该处理程序被应用到根 DOM 元素中。"
+                        textFormat: MTypography.RichText
+                        text: `<p>所有组件都接受 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >onClicked</span> 处理程序。</p>`
+                        wrapMode: MTypography.WordWrap
                     }
                 }
 
@@ -598,8 +593,10 @@ MButton {
                     }
 
                     MTypography {
+                        width: parent.width-40
                         variant: "body1"
                         text: "MFileButton和MDirectoryButton提供了文件和文件夹选择的功能。"
+                        wrapMode: MTypography.WordWrap
                     }
                 }
 
@@ -732,8 +729,11 @@ MDirectoryButton {
                     }
 
                     MTypography {
+                        width: parent.width-40
                         variant: "body1"
-                        text: "您想要一个大一点或者小一点的按钮吗？ 我们提供了 size 这个属性供您调整。"
+                        textFormat: MTypography.RichText
+                        text: `<p>您想要一个大一点或者小一点的按钮吗？ 我们提供了 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >size</span> 这个属性供您调整。</p>`
+                        wrapMode: MTypography.WordWrap
                     }
                 }
 
@@ -761,16 +761,19 @@ MDirectoryButton {
                             MButton {
                                 size: "small"
                                 text: "Small"
+                                anchors.verticalCenter: parent.verticalCenter
                             }
 
                             MButton {
                                 size: "medium"
                                 text: "Medium"
+                                anchors.verticalCenter: parent.verticalCenter
                             }
 
                             MButton {
                                 size: "large"
                                 text: "Large"
+                                anchors.verticalCenter: parent.verticalCenter
                             }
                         }
 
@@ -782,6 +785,7 @@ MDirectoryButton {
                                 color: "primary"
                                 size: "small"
                                 text: "Small"
+                                anchors.verticalCenter: parent.verticalCenter
                             }
 
                             MButton {
@@ -789,6 +793,7 @@ MDirectoryButton {
                                 color: "primary"
                                 size: "medium"
                                 text: "Medium"
+                                anchors.verticalCenter: parent.verticalCenter
                             }
 
                             MButton {
@@ -796,6 +801,7 @@ MDirectoryButton {
                                 color: "primary"
                                 size: "large"
                                 text: "Large"
+                                anchors.verticalCenter: parent.verticalCenter
                             }
                         }
 
@@ -807,6 +813,7 @@ MDirectoryButton {
                                 color: "primary"
                                 size: "small"
                                 text: "Small"
+                                anchors.verticalCenter: parent.verticalCenter
                             }
 
                             MButton {
@@ -814,6 +821,7 @@ MDirectoryButton {
                                 color: "primary"
                                 size: "medium"
                                 text: "Medium"
+                                anchors.verticalCenter: parent.verticalCenter
                             }
 
                             MButton {
@@ -821,6 +829,7 @@ MDirectoryButton {
                                 color: "primary"
                                 size: "large"
                                 text: "Large"
+                                anchors.verticalCenter: parent.verticalCenter
                             }
                         }
                     }
@@ -928,20 +937,17 @@ Column {
                     }
 
                     MTypography {
+                        width: parent.width-40
                         variant: "body1"
-                        text: "有时您可能希望为某个按钮添加图标以增强应用程序的用户体验，"
+                        text: `有时您可能希望为某个按钮添加图标以增强应用程序的用户体验，因为我们识别徽标比纯文本更容易。例如，如果您有删除按钮，则可以使用垃圾箱图标对其进行标记。`
+                        wrapMode: MTypography.WordWrap
                     }
+
                     MTypography {
-                        variant: "body1"
-                        text: "因为我们识别徽标比纯文本更容易。"
-                    }
-                    MTypography {
-                        variant: "body1"
-                        text: "例如，如果您有删除按钮，则可以使用垃圾箱图标对其进行标记。"
-                    }
-                    MTypography {
+                        width: parent.width-40
                         textColor: "textSecondary"
                         text: "对于MIcon，使用的是FontAwesomeFont，您需要在MaterialUI/Font/IconsName.js中添加图标定义。"
+                        wrapMode: MTypography.WordWrap
                     }
                 }
 
@@ -1170,12 +1176,18 @@ MButton {
                     }
 
                     MTypography {
+                        width: parent.width-40
                         variant: "body1"
-                        text: "在设置了disabled的按钮上，鼠标悬浮的指针样式会被禁用。"
+                        textFormat: MTypography.RichText
+                        text: `<p>在设置了 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >disabled</span> 的按钮上，鼠标悬浮的指针样式会被禁用。</p>`
+                        wrapMode: MTypography.WordWrap
                     }
                     MTypography {
+                        width: parent.width-40
                         variant: "body1"
-                        text: "除此之外，您可以使用disableCursor来禁用鼠标悬浮的指针样式。"
+                        textFormat: MTypography.RichText
+                        text: `<p>除此之外，您可以使用 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >disableCursor</span> 来禁用鼠标悬浮的指针样式。</p>`
+                        wrapMode: MTypography.WordWrap
                     }
                 }
 

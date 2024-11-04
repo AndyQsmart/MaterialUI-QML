@@ -46,27 +46,19 @@ Pane {
                         text: "在一个集合内，用户可以通过多选框组件进行一项或者多项选择。"
                     }
 
-                    Row {
+                    MTypography {
                         width: parent.width-40
-
-                        MTypography {
-                            variant: "body1"
-                            textColor: "secondary"
-                            text: "多选框"
-                        }
-
-                        MTypography {
-                            variant: "body1"
-                            text: "可以在打开或者关闭一个选项中切换。"
-                            gutterBottom: true
-                        }
+                        variant: "body1"
+                        textFormat: MTypography.RichText
+                        text: `<p><span style="color: ${Palette.secondaryMain}" >多选框</span>可以在打开或者关闭一个选项中切换。</p>`
+                        wrapMode: MTypography.WordWrap
                     }
-
 
                     MTypography {
                         width: parent.width-40
                         variant: "body1"
                         text: "若一个列表存在多个选择项时，使用多选框替代开关控件，可以节省空间。 若只存在一个选择项，请避免使用多选框，而改用开关控件。"
+                        wrapMode: MTypography.WordWrap
                     }
                 }
 
@@ -154,6 +146,7 @@ Pane {
                         MCopyText {
                             color: Color.white
                             padding: 20
+                            bottomPadding: 20
                             textFormat: TextEdit.RichText
                             text: `
 <pre>
@@ -184,7 +177,6 @@ MCheckbox {
     color: "default"
 }
 </pre>
-<hr/>
                             `
                         }
                     }
@@ -204,8 +196,11 @@ MCheckbox {
                     }
 
                     MTypography {
+                        width: parent.width-40
                         variant: "body1"
-                        text: "借助 FormControlLabel 组件，多选框组件可以和标签一起使用。"
+                        textFormat: MTypography.RichText
+                        text: `<p>借助 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >FormControlLabel</span> 组件，<span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >多选框组件</span>可以和标签一起使用。</p>`
+                        wrapMode: MTypography.WordWrap
                     }
                 }
 
@@ -302,6 +297,7 @@ MCheckbox {
                         MCopyText {
                             color: Color.white
                             padding: 20
+                            bottomPadding: 20
                             textFormat: TextEdit.RichText
                             text: `
 <pre>
@@ -349,7 +345,6 @@ MFormControlLabel {
     }
 }
 </pre>
-<hr/>
                             `
                         }
                     }
@@ -462,6 +457,7 @@ MFormControlLabel {
                         MCopyText {
                             color: Color.white
                             padding: 20
+                            bottomPadding: 20
                             textFormat: TextEdit.RichText
                             text: `
 <pre>
@@ -511,7 +507,6 @@ Column {
     }
 }
 </pre>
-<hr/>
                             `
                         }
                     }

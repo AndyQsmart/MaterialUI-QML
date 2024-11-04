@@ -46,35 +46,19 @@ Pane {
                         text: "用户可以通过单选按钮从一组中选择一个选项。"
                     }
 
-                    Row {
-                        width: parent.width-40
-
-                        MTypography {
-                            variant: "body1"
-                            text: "当用户想要看到所有的选项时，可以使用"
-                        }
-
-                        MTypography {
-                            variant: "body1"
-                            textColor: "secondary"
-                            text: "单选按钮"
-                        }
-
-                        MTypography {
-                            variant: "body1"
-                            text: "。"
-                        }
-                    }
-
                     MTypography {
+                        width: parent.width-40
                         variant: "body1"
-                        text: "如果可用选项可以折叠，请您考虑使用占用空间更少的下拉菜单。"
+                        textFormat: MTypography.RichText
+                        text: `<p>当用户想要看到所有的选项时，可以使用 <span style="color: ${Palette.secondaryMain}" >单选按钮</span>。如果可用选项可以折叠，请您考虑使用占用空间更少的下拉菜单。</p>`
+                        wrapMode: MTypography.WordWrap
                     }
 
                     MTypography {
                         width: parent.width-40
                         variant: "body1"
                         text: "默认情况下，单选按钮应该选择了最常用的选项。"
+                        wrapMode: MTypography.WordWrap
                     }
                 }
 
@@ -95,8 +79,9 @@ Pane {
                     MTypography {
                         width: parent.width-40
                         variant: "body1"
-                        text: "RadioGroup 适用于一组 Radio，它提供相对简单的 API 并且能够使用键盘对该 RadioGroup 进行控制。"
-                        wrapMode: Text.WordWrap
+                        textFormat: MTypography.RichText
+                        text: `<p><span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >RadioGroup</span> 适用于一组 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >Radio</span>，它提供相对简单的 API 并且能够使用键盘对该 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >RadioGroup</span> 进行控制。</p>`
+                        wrapMode: MTypography.WordWrap
                     }
                 }
 
@@ -245,8 +230,9 @@ Column {
                     MTypography {
                         width: parent.width-40
                         variant: "body1"
-                        text: "Radio 也可以单独使用，无需额外的 RadioGroup wrapper。在同一父节点下的Radio会自动构成组。"
-                        wrapMode: Text.WordWrap
+                        textFormat: MTypography.RichText
+                        text: `<p><span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >Radio</span> 也可以单独使用，无需额外的 RadioGroup wrapper。在同一父节点下的Radio会自动构成组。</p>`
+                        wrapMode: MTypography.WordWrap
                     }
                 }
 
@@ -347,9 +333,9 @@ Row {
 
                     MTypography {
                         width: parent.width-40
-                        wrapMode: Text.WordWrap
-                        variant: "body1"
-                        text: "你可以用 FormControlLabel 组件的 labelPlacement 属性来改变标签的位置。"
+                        textFormat: MTypography.RichText
+                        text: `<p>你可以用 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >FormControlLabel</span> 组件的 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >labelPlacement</span> 属性来改变标签的位置。</p>`
+                        wrapMode: MTypography.WordWrap
                     }
                 }
 
@@ -446,6 +432,7 @@ Row {
                         MCopyText {
                             color: Color.white
                             padding: 20
+                            bottomPadding: 20
                             textFormat: TextEdit.RichText
                             text: `
 <pre>
@@ -498,7 +485,6 @@ Column {
     }
 }
 </pre>
-<hr/>
                             `
                         }
                     }

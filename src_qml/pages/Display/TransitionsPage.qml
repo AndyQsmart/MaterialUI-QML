@@ -58,7 +58,9 @@ Pane {
                     MTypography {
                         width: parent.width-40
                         variant: "body1"
-                        text: "Material-QML 提供了一系列的过渡效果，你可以将一些基本的动作添加到你的应用的组件中。"
+                        textFormat: MTypography.RichText
+                        text: `<p>Material-QML 提供了一系列的过渡效果，你可以将一些基本的<span style="color: ${Palette.secondaryMain}" >动作</span>添加到你的应用的组件中。</p>`
+                        wrapMode: MTypography.WordWrap
                     }
                 }
 
@@ -80,7 +82,9 @@ Pane {
                     MTypography {
                         width: parent.width-40
                         variant: "body1"
-                        text: "从子元素的顶部垂直扩展开来。 使用 collapsedSize 属性可以用于设置未扩展时的最小高度值。"
+                        textFormat: MTypography.RichText
+                        text: `<p>从子元素的顶部垂直扩展开来。 使用 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >collapsedSize</span> 属性可以用于设置未扩展时的最小高度值。</p>`
+                        wrapMode: MTypography.WordWrap
                     }
                 }
 
@@ -98,6 +102,7 @@ Pane {
                         rightPadding: 20
                         topPadding: 20
                         bottomPadding: 20
+                        anchors.horizontalCenter: parent.horizontalCenter
 
                         Row {
                             MSwitch {
@@ -184,6 +189,7 @@ Pane {
 
                         MCopyText {
                             padding: 20
+                            bottomPadding: 20
                             color: Color.white
                             textFormat: TextEdit.RichText
                             text: `
@@ -241,7 +247,6 @@ Row {
     }
 }
 </pre>
-<hr/>
                             `
                         }
                     }
@@ -284,6 +289,7 @@ Row {
                         rightPadding: 20
                         topPadding: 20
                         bottomPadding: 20
+                        anchors.horizontalCenter: parent.horizontalCenter
 
                         Row {
                             MSwitch {
@@ -338,6 +344,7 @@ Row {
 
                     MCopyText {
                         padding: 20
+                        bottomPadding: 20
                         color: Color.white
                         textFormat: TextEdit.RichText
                         text: `
@@ -364,8 +371,7 @@ Row {
         }
     }
 }
-<pre>
-<hr/>
+</pre>
                         `
                     }
                 }
@@ -394,7 +400,9 @@ Row {
                     MTypography {
                         width: parent.width-40
                         variant: "body1"
-                        text: "第二个示例演示如何更改 transformOrigin 属性，以及有条件地用 timeout 属性来改变元素进入的速度。"
+                        textFormat: MTypography.RichText
+                        text: `<p>第二个示例演示如何更改 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >transformOrigin</span> 属性，以及有条件地用 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >timeout</span> 属性来改变元素进入的速度。</p>`
+                        wrapMode: MTypography.WordWrap
                     }
                 }
 
@@ -413,6 +421,7 @@ Row {
                         rightPadding: 20
                         topPadding: 20
                         bottomPadding: 20
+                        anchors.horizontalCenter: parent.horizontalCenter
 
                         Row {
                             MSwitch {
@@ -500,6 +509,7 @@ Row {
 
                         MCopyText {
                             padding: 20
+                            bottomPadding: 20
                             color: Color.white
                             textFormat: TextEdit.RichText
                             text: `
@@ -559,7 +569,6 @@ Row {
     }
 }
 </pre>
-<hr/>
                             `
 
                         }
@@ -583,14 +592,18 @@ Row {
 
                     MTypography {
                         width: parent.width-40
-                        variant: "body1"
-                        text: "从屏幕边缘滑入。 使用 direction 属性能够控制从屏幕的哪一个边缘开始过渡。"
+                        variant: "body1"                        
+                        textFormat: MTypography.RichText
+                        text: `<p>从屏幕边缘滑入。 使用 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >direction</span> 属性能够控制从屏幕的哪一个边缘开始过渡。</p>`
+                        wrapMode: MTypography.WordWrap
                     }
 
                     MTypography {
                         width: parent.width-40
-                        variant: "body1"
-                        text: "横向的滑动你需要指定anchors.top或者anchors.bottom，纵向的滑动你需要指定anchors.left或者anchors.right，否则动画无法生效"
+                        variant: "body1"                       
+                        textFormat: MTypography.RichText
+                        text: `<p>动画会对元素的 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >x</span> 和 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >y</span> 属性进行修改，若要保证原始位置的正确，请传入 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >offsetX</span> 和 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >offsetY</span>来保证元素中 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >x</span> 和 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >y</span> 的原始位置。</p>`
+                        wrapMode: MTypography.WordWrap
                     }
                 }
 
@@ -609,6 +622,7 @@ Row {
                         rightPadding: 20
                         topPadding: 20
                         bottomPadding: 20
+                        anchors.horizontalCenter: parent.horizontalCenter
 
                         Row {
                             MSwitch {
@@ -625,7 +639,6 @@ Row {
                             MPaper {
                                 width: 128
                                 height: 128
-                                anchors.top: parent.top
 
                                 MSlide {
                                     target: parent
@@ -666,6 +679,7 @@ Row {
 
                     MCopyText {
                         padding: 20
+                        bottomPadding: 20
                         color: Color.white
                         textFormat: TextEdit.RichText
                         text: `
@@ -695,7 +709,6 @@ Row {
     }
 }
 </pre>
-<hr/>
                         `
                     }
                 }
@@ -743,6 +756,7 @@ Row {
                         rightPadding: 20
                         topPadding: 20
                         bottomPadding: 20
+                        anchors.horizontalCenter: parent.horizontalCenter
 
                         Row {
                             MSwitch {
@@ -810,6 +824,7 @@ Row {
 
                     MCopyText {
                         padding: 20
+                        bottomPadding: 20
                         color: Color.white
                         textFormat: TextEdit.RichText
                         text: `
@@ -850,7 +865,6 @@ Row {
     }
 }
 </pre>
-<hr/>
                         `
                     }
                 }
@@ -872,29 +886,39 @@ Row {
 
                     MTypography {
                         width: parent.width-40
-                        variant: "body1"
-                        text: "像Dialog之类的组件接收 transitionComponent 属性来自定义默认的过渡动画。 您可以使用上述的任何组件或者是您自己的组件。 它应遵守以下条件："
+                        variant: "body1"                        
+                        textFormat: MTypography.RichText
+                        text: `<p>像 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >Dialog</span> 之类的组件接收 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >transitionComponent</span> 属性来自定义默认的过渡动画。 您可以使用上述的任何组件或者是您自己的组件。 它应遵守以下条件：</p>`
+                        wrapMode: MTypography.WordWrap
                     }
 
                     MTypography {
                         width: parent.width-40
-                        variant: "body1"
-                        text: "○ 继承MAnimation组件，这是基本动画的基类。"
+                        variant: "body1"                        
+                        textFormat: MTypography.RichText
+                        text: `<p>○ 继承 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >MAnimation</span> 组件，这是基本动画的基类。</p>`
+                        wrapMode: MTypography.WordWrap
                     }
                     MTypography {
                         width: parent.width-40
                         variant: "body1"
-                        text: "○ 定义enter和enterState，指定进入过渡时的动画和状态。"
+                        textFormat: MTypography.RichText
+                        text: `<p>○ 定义 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >enter</span> 和 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >enterState</span>，指定进入过渡时的动画和状态。</p>`
+                        wrapMode: MTypography.WordWrap
+                    }
+                    MTypography {
+                        width: parent.width-40
+                        variant: "body1"                        
+                        textFormat: MTypography.RichText
+                        text: `<p>○ 定义 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >exit</span> 和 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >exitState</span>，指定退出过渡时的动画和状态。</p>`
+                        wrapMode: MTypography.WordWrap
                     }
                     MTypography {
                         width: parent.width-40
                         variant: "body1"
-                        text: "○ 定义exit和exitState，指定退出过渡时的动画和状态。"
-                    }
-                    MTypography {
-                        width: parent.width-40
-                        variant: "body1"
-                        text: "○ 如果只是传给Dialog组件，则只需要定义enter和exit属性。"
+                        textFormat: MTypography.RichText
+                        text: `<p>○ 如果只是传给 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >Dialog</span> 组件，则只需要定义 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >enter</span> 和 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >exit</span> 属性。</p>`
+                        wrapMode: MTypography.WordWrap
                     }
                 }
 

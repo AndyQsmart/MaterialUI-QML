@@ -5,7 +5,7 @@ import "./styles"
 import "./colors"
 
 // 原版
-TextArea {
+TextEdit {
     id: control
     property string variant: 'body2'
     property string textColor: 'initial' // 'initial' | 'primary' | 'secondary' | 'textPrimary' | 'textSecondary' | 'error'

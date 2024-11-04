@@ -155,7 +155,9 @@ MPaper {
                     MTypography {
                         width: parent.width-40
                         variant: "body1"
-                        text: "如果你想要一个轮廓的曲面，你可以使用 variant 属性。"
+                        textFormat: MTypography.RichText
+                        text: `<p>如果你想要一个轮廓的曲面，你可以使用 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >variant</span> 属性。</p>`
+                        wrapMode: MTypography.WordWrap
                     }
                 }
 
