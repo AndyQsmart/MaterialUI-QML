@@ -41,6 +41,14 @@ Pane {
                             name: "Select 选择器",
                             url: '/selectpage'
                         },
+                        {
+                            name: "Slider 滑块",
+                            url: '/sliderpage'
+                        },
+                        {
+                            name: "Switch 开关",
+                            url: '/switchpage'
+                        },
                     ]
                 },
                 {
@@ -84,6 +92,10 @@ Pane {
                     url: "/api/checkbox"
                 },
                 {
+                    name: "Complex Select",
+                    url: "/api/complexselect"
+                },
+                {
                     name: "Form Control Label",
                     url: "/api/formcontrollabel"
                 },
@@ -102,6 +114,18 @@ Pane {
                 {
                     name: "Radio Group",
                     url: "/api/radiogroup"
+                },
+                {
+                    name: "Select",
+                    url: "/api/select"
+                },
+                {
+                    name: "Slider",
+                    url: "/api/slider"
+                },
+                {
+                    name: "Switch",
+                    url: "/api/switch"
                 },
             ]
         }

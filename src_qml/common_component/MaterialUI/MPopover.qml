@@ -194,21 +194,6 @@ Popup {
         transitionComponent.transformOrigin = transformOrigin
     }
 
-    enter: {
-        if (transitionComponent) {
-            return transitionComponent.enter
-        }
-        else {
-            return null
-        }
-    }
-
-    exit: {
-        if (transitionComponent) {
-            return transitionComponent.exit
-        }
-        else {
-            return null
-        }
-    }
+    enter: transitionComponent ? transitionComponent.enter : null
+    exit: transitionComponent ? transitionComponent.exit : null
 }

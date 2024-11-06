@@ -120,6 +120,16 @@ Window {
     }
 
     Component {
+        id: slider_page
+        SliderPage { }
+    }
+
+    Component {
+        id: switch_page
+        SwitchPage { }
+    }
+
+    Component {
         id: paper_page
         PaperPage { }
     }
@@ -155,6 +165,11 @@ Window {
     }
 
     Component {
+        id: complexselect_api
+        ComplexSelect { }
+    }
+
+    Component {
         id: icon_api
         IconApi { }
     }
@@ -174,6 +189,21 @@ Window {
         RadioGroupApi { }
     }
 
+    Component {
+        id: select_api
+        SelectApi { }
+    }
+
+    Component {
+        id: slider_api
+        SliderApi { }
+    }
+
+    Component {
+        id: switch_api
+        SwitchApi { }
+    }
+
     property var route_map: {
         "/": home_page,
         "/buttonpage": button_page,
@@ -181,17 +211,23 @@ Window {
         "/checkboxpage": checkbox_page,
         "/radiopage": radio_page,
         "/selectpage": select_page,
+        "/sliderpage": slider_page,
+        "/switchpage": switch_page,
         "/paperpage": paper_page,
         "/transitionspage": transitions_page,
         "/api/button": button_api,
         "/api/buttonbase": buttonbase_api,
         "/api/buttongroup": buttongroup_api,
         "/api/checkbox": checkbox_api,
+        "/api/complexselect": complexselect_api,
         "/api/formcontrollabel": formcontrollabel_api,
         "/api/icon": icon_api,
         "/api/paper": paper_api,
         "/api/radio": radio_api,
         "/api/radiogroup": radiogroup_api,
+        "/api/select": select_api,
+        "/api/slider": slider_api,
+        "/api/switch": switch_api,
     }
 
     Connections {

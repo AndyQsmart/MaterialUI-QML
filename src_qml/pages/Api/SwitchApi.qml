@@ -11,19 +11,19 @@ import "../../common_js/Color.js" as Color
 import "../../common_js/Tools.js" as Tools
 
 BaseApi {
-    name: "FormControlLabel"
+    name: "Switch"
     props_list: [
         {
             name: "checked",
             type: "bool",
             default_value: "",
-            description: "If true, the component appears selected.",
+            description: "If true, the component is checked.",
         },
         {
-            name: "control",
-            type: "'Item",
-            default_value: "",
-            description: "A control element. For instance, it can be be a Radio, a Switch or a Checkbox.",
+            name: "color",
+            type: "'default'\n| 'primary'\n| 'secondary'\n|  color",
+            default_value: "'secondary'",
+            description: "The color of the component. It supports those theme colors that make sense for this component.",
         },
         {
             name: "disabled",
@@ -32,33 +32,19 @@ BaseApi {
             description: "If true, the button will be disabled.",
         },
         {
-            name: "label",
-            type: "string",
-            default_value: "",
-            description: "The text to be used in an enclosing label element.",
-        },
-        {
-            name: "labelPlacement",
-            type: "'bottom'\n| 'end'\n| 'start'\n| 'top'",
+            name: "disableRipple",
+            type: "bool",
             default_value: "false",
-            description: "The position of the label.",
+            description: "If true, the ripple effect will be disabled.",
         },
         {
             name: "value",
             type: "string",
             default_value: "",
-            description: "The value of the component.",
+            description: "The value of the component. ",
         },
     ]
     demos_list: [
-        {
-            name: "Checkboxes",
-            url: "/checkboxpage",
-        },
-        {
-            name: "Radio Buttons",
-            url: "/radiopage",
-        },
         {
             name: "Switches",
             url: "/switchpage",

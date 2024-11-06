@@ -13,6 +13,7 @@ CheckBox {
     property bool disabled: false
     property bool disableRipple: false
     property string size: 'medium' // 'medium' 'small' 暂未实现
+    property string value: ""
 
 
     checked: false

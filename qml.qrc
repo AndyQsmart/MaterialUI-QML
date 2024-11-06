@@ -109,7 +109,14 @@
         <file>src_qml/common_component/MaterialUI/MRadioGroup.qml</file>
         <file>src_qml/pages/Api/RadioApi.qml</file>
         <file>src_qml/pages/Api/RadioGroupApi.qml</file>
-        <file>src_qml/common_component/MaterialUI/MSimpleSelectInput.qml</file>
         <file>src_qml/pages/Display/SelectPage.qml</file>
+        <file>src_qml/common_component/MaterialUI/MSelectBase.qml</file>
+        <file>src_qml/common_component/MaterialUI/MComplexSelect.qml</file>
+        <file>src_qml/pages/Api/SelectApi.qml</file>
+        <file>src_qml/pages/Api/ComplexSelect.qml</file>
+        <file>src_qml/pages/Display/SliderPage.qml</file>
+        <file>src_qml/pages/Api/SliderApi.qml</file>
+        <file>src_qml/pages/Display/SwitchPage.qml</file>
+        <file>src_qml/pages/Api/SwitchApi.qml</file>
     </qresource>
 </RCC>

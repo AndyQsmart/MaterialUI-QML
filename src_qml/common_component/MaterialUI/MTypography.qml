@@ -25,7 +25,7 @@ Text {
             return Text.NoWrap
         }
         else {
-            return Text.WrapAnywhere
+            return Text.Wrap
         }
     }
 

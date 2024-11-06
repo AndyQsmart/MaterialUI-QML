@@ -16,16 +16,16 @@ BaseApi {
 //    inheritance_description: "The props of the ButtonBase component are also available. You can take advantage of this behavior to target nested components."
     props_list: [
         {
-            name: "children",
-            type: "MButton",
-            default_value: "",
-            description: "The content of the button group.",
-        },
-        {
             name: "buttonColor",
             type: "'default'\n| 'inherit'\n| 'primary'\n| 'secondary'",
             default_value: "'default'",
             description: "The color of the component. It supports those theme colors that make sense for this component.",
+        },
+        {
+            name: "children",
+            type: "MButton",
+            default_value: "",
+            description: "The content of the button group.",
         },
         {
             name: "disabled",

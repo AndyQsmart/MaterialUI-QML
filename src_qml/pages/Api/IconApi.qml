@@ -28,16 +28,16 @@ BaseApi {
             description: "The name of the icon.",
         },
         {
-            name: "text",
-            type: "string",
-            default_value: "",
-            description: "The text content of the Item.This will override name.",
-        },
-        {
             name: "size",
             type: "int",
             default_value: "",
             description: "The fontSize applied to the icon.",
+        },
+        {
+            name: "text",
+            type: "string",
+            default_value: "",
+            description: "The text content of the Item.This will override name.",
         },
     ]
     demos_list: [

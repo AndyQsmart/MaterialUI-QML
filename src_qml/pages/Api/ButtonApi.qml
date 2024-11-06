@@ -22,34 +22,22 @@ BaseApi {
             description: "The content of the button.",
         },
         {
-            name: "text",
-            type: "string",
-            default_value: "",
-            description: "The text content of the button.",
-        },
-        {
             name: "color",
             type: "'default'\n| 'primary'\n| 'secondary'\n|  color",
             default_value: "'default'",
             description: "The color of the component. It supports those theme colors that make sense for this component.",
         },
         {
-            name: "textColor",
-            type: "color",
-            default_value: "",
-            description: "[new] The text color of the component. If use this prop, ripple will be changed too.",
-        },
-        {
-            name: "fontSize",
-            type: "int",
-            default_value: "",
-            description: "[new] The text font size of the component. Usually, you do not need to change this prop.",
-        },
-        {
             name: "disabled",
             type: "bool",
             default_value: "false",
             description: "If true, the button will be disabled.",
+        },
+        {
+            name: "disableCursor",
+            type: "bool",
+            default_value: "false",
+            description: "[new] If true, the cursor style effect will be disabled.",
         },
         {
             name: "disableElevation",
@@ -64,16 +52,28 @@ BaseApi {
             description: "If true, the ripple effect will be disabled.",
         },
         {
-            name: "disableCursor",
-            type: "bool",
-            default_value: "false",
-            description: "[new] If true, the cursor style effect will be disabled.",
+            name: "fontSize",
+            type: "int",
+            default_value: "",
+            description: "[new] The text font size of the component. Usually, you do not need to change this prop.",
         },
         {
             name: "size",
             type: "'large'\n| 'medium'\n| 'small'",
             default_value: "'medium'",
             description: "The size of the button. small is equivalent to the dense button styling.",
+        },
+        {
+            name: "text",
+            type: "string",
+            default_value: "",
+            description: "The text content of the button.",
+        },
+        {
+            name: "textColor",
+            type: "color",
+            default_value: "",
+            description: "[new] The text color of the component. If use this prop, ripple will be changed too.",
         },
         {
             name: "variant",

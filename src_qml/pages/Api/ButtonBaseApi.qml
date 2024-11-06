@@ -22,6 +22,30 @@ BaseApi {
             description: "The content of the Item.",
         },
         {
+            name: "disabled",
+            type: "bool",
+            default_value: "false",
+            description: "If true, the button will be disabled.",
+        },
+        {
+            name: "disableCursor",
+            type: "bool",
+            default_value: "false",
+            description: "[new] If true, the cursor style effect will be disabled.",
+        },
+        {
+            name: "disableRipple",
+            type: "bool",
+            default_value: "false",
+            description: "If true, the ripple effect will be disabled.",
+        },
+        {
+            name: "fontSize",
+            type: "int",
+            default_value: "",
+            description: "[new] The text font size of the component. Usually, you do not need to change this prop.",
+        },
+        {
             name: "text",
             type: "string",
             default_value: "",
@@ -32,30 +56,6 @@ BaseApi {
             type: "color",
             default_value: "",
             description: "[new] The text color of the component. If use this prop, ripple will be changed too.",
-        },
-        {
-            name: "fontSize",
-            type: "int",
-            default_value: "",
-            description: "[new] The text font size of the component. Usually, you do not need to change this prop.",
-        },
-        {
-            name: "disabled",
-            type: "bool",
-            default_value: "false",
-            description: "If true, the button will be disabled.",
-        },
-        {
-            name: "disableRipple",
-            type: "bool",
-            default_value: "false",
-            description: "If true, the ripple effect will be disabled.",
-        },
-        {
-            name: "disableCursor",
-            type: "bool",
-            default_value: "false",
-            description: "[new] If true, the cursor style effect will be disabled.",
         },
     ]
     demos_list: [

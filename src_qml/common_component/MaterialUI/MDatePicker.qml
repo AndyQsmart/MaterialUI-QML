@@ -65,7 +65,7 @@ Rectangle {
             height: children[0].height
             cursorShape: Qt.PointingHandCursor
 
-            Icon {
+            MIcon {
                 name: 'calendar'
                 size: 16
                 color: Palette.lightTextSecondary
@@ -181,7 +181,7 @@ Rectangle {
         focus: true
         closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
 
-        DateSelector {
+        MDateSelector {
             id: dateSelector
 //            selectedDate: datePicker.value
 

@@ -97,4 +97,8 @@ QtObject {
     function convertFontSize(size) {
         return parseInt(size*scale)
     }
+
+    function convertLineHeight(line_height) {
+        return line_height/scale
+    }
 }
