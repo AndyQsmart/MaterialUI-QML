@@ -8,13 +8,16 @@ MPopover {
     id: control
     width: 220
     property var initColor: null
+
+    signal change(string color)
+
+
+
+    // 输入颜色相关
     property var defaultColor: ({
         r: 0, g: 0, b: 0, a: 100,
     })
-    // 输入颜色相关
     property var color_input: defaultColor
-
-    signal change(string color)
 
     onAboutToShow: {
         resetColor()
@@ -83,6 +86,7 @@ MPopover {
         if (!color_str) {
             return null
         }
+        color_str = color_str.toLowerCase()
         if (color_str[0] === '#' && color_str.length === 9 && /^[a-zA-Z0-9]+$/.test(color_str.substring(1, 9))) {
             let a_str = color_str.substring(1, 3)
             let r_str = color_str.substring(3, 5)

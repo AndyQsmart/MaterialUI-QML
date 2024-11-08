@@ -113,10 +113,18 @@
         <file>src_qml/common_component/MaterialUI/MSelectBase.qml</file>
         <file>src_qml/common_component/MaterialUI/MComplexSelect.qml</file>
         <file>src_qml/pages/Api/SelectApi.qml</file>
-        <file>src_qml/pages/Api/ComplexSelect.qml</file>
+        <file>src_qml/pages/Api/ComplexSelectApi.qml</file>
         <file>src_qml/pages/Display/SliderPage.qml</file>
         <file>src_qml/pages/Api/SliderApi.qml</file>
         <file>src_qml/pages/Display/SwitchPage.qml</file>
         <file>src_qml/pages/Api/SwitchApi.qml</file>
+        <file>src_qml/pages/Display/TextFieldPage.qml</file>
+        <file>src_qml/pages/Api/TextFieldApi.qml</file>
+        <file>src_qml/pages/Display/DateTimePickerPage.qml</file>
+        <file>src_qml/common_component/MaterialUI/MIconButton.qml</file>
+        <file>src_qml/pages/Api/DatePickerApi.qml</file>
+        <file>src_qml/pages/Api/TimePicker.qml</file>
+        <file>src_qml/pages/Display/ColoPickerPage.qml</file>
+        <file>src_qml/pages/Api/ColorPickerApi.qml</file>
     </qresource>
 </RCC>

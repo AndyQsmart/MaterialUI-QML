@@ -40,7 +40,7 @@ MSelectBase {
         variant: "body1"
         text: label ? label : value
         noWrap: true
-        lineHeight: TypographyStyle.convertLineHeight(1.2)
+        lineHeight: TypographyStyle.convertLineHeight(1.1876)
     }
 
     Binding {
@@ -57,6 +57,8 @@ MSelectBase {
     MMenu {
         id: menu_dialog
         anchorEl: control
+        anchorOrigin: Item.Bottom
+        transformOrigin: Item.Top
 
         onAboutToShow: {
             control.menuOpened = true

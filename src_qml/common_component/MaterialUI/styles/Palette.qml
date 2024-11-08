@@ -73,6 +73,8 @@ QtObject {
                 return lightTextPrimary
             case 'textSecondary':
                 return lightTextSecondary
+            case 'error':
+                return errorMain
             case 'default':
                 return default_color
             default:
@@ -86,6 +88,12 @@ QtObject {
                 return primaryDark
             case 'secondary':
                 return secondaryDark
+            case 'textPrimary':
+                return darkTextPrimary
+            case 'textSecondary':
+                return darkTextSecondary
+            case 'error':
+                return errorDark
             case 'default':
                 return default_color
             default:

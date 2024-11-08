@@ -15,22 +15,29 @@ Rectangle {
     property int index: -1
     property string value: ""
     property string selectColor: "primary"
+    property string size: 'medium' // 'medium' | 'small'
     property bool disabled: false
     property string placeholder: ""
     property real minWidth: 0
     property real maxWidth: -1
-    property var padding: variant === 'outlined' ? [18.5, 32, 18.5, 14] : (variant === 'filled' ? [18, 32, 19, 12] : [6, 24, 7, 0])
+    property var padding: {
+        if (size === 'small') {
+            variant === 'outlined' ? [10.5, 32, 10.5, 14] : (variant === 'filled' ? [14, 32, 15, 12] : [5, 24, 5, 0])
+        }
+        else {
+            variant === 'outlined' ? [18.5, 32, 18.5, 14] : (variant === 'filled' ? [18, 32, 19, 12] : [6, 24, 7, 0])
+        }
+    }
     property var topPadding: padding && padding[0] ? padding[0] : 0
     property var rightPadding: padding && padding[1] ? padding[1] : 0
     property var bottomPadding: padding && padding[2] ? padding[2] : 0
     property var leftPadding: padding && padding[3] ? padding[3] : 0
 
 
+
+
     signal change(string value, int index)
     signal selectOpen()
-
-
-
 
     width: text_container.width
     height: text_container.height
@@ -206,13 +213,20 @@ Rectangle {
             anchors.verticalCenter: parent.verticalCenter
         }
 
-        Image {
+        Item {
             width: 24
-            height: 24
-            sourceSize.width: width*2
-            sourceSize.height: height*2
-            source: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="${control.disabled ? "#bdbdbd" : "#757575"}" viewBox="0 0 24 24" ><path d="M7 10l5 5 5-5z"></path></svg>`
+            height: 10
             anchors.verticalCenter: parent.verticalCenter
+
+            Image {
+                anchors.centerIn: parent
+
+                width: 24
+                height: 24
+                sourceSize.width: width*2
+                sourceSize.height: height*2
+                source: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="${control.disabled ? "#bdbdbd" : "#757575"}" viewBox="0 0 24 24" ><path d="M7 10l5 5 5-5z"></path></svg>`
+            }
         }
     }
 

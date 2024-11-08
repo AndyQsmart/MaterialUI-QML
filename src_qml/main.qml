@@ -17,9 +17,9 @@ import "./pages/Api"
 
 Window {
     id: mainWindow
-    width: 900
+    width: 940
     height: 600
-    minimumWidth: 900
+    minimumWidth: 940
     minimumHeight: 600
     visible: true
     title: qsTr("MaterialUI")
@@ -110,6 +110,16 @@ Window {
     }
 
     Component {
+        id: datetimepicker_page
+        DateTimePickerPage { }
+    }
+
+    Component {
+        id: colorpicker_page
+        ColoPickerPage { }
+    }
+
+    Component {
         id: radio_page
         RadioPage { }
     }
@@ -127,6 +137,11 @@ Window {
     Component {
         id: switch_page
         SwitchPage { }
+    }
+
+    Component {
+        id: textfield_page
+        TextFieldPage { }
     }
 
     Component {
@@ -165,8 +180,18 @@ Window {
     }
 
     Component {
+        id: colorpicker_api
+        ColorPickerApi { }
+    }
+
+    Component {
         id: complexselect_api
-        ComplexSelect { }
+        ComplexSelectApi { }
+    }
+
+    Component {
+        id: datepicker_api
+        DatePickerApi { }
     }
 
     Component {
@@ -204,22 +229,37 @@ Window {
         SwitchApi { }
     }
 
+    Component {
+        id: textfield_api
+        TextFieldApi { }
+    }
+
+    Component {
+        id: timepicker_api
+        TimePicker { }
+    }
+
     property var route_map: {
         "/": home_page,
         "/buttonpage": button_page,
         "/buttongrouppage": buttongroup_page,
         "/checkboxpage": checkbox_page,
+        "/datetimepickerpage": datetimepicker_page,
+        "/colorpickerpage": colorpicker_page,
         "/radiopage": radio_page,
         "/selectpage": select_page,
         "/sliderpage": slider_page,
         "/switchpage": switch_page,
+        "/textfieldpage": textfield_page,
         "/paperpage": paper_page,
         "/transitionspage": transitions_page,
         "/api/button": button_api,
         "/api/buttonbase": buttonbase_api,
         "/api/buttongroup": buttongroup_api,
         "/api/checkbox": checkbox_api,
+        "/api/colorpicker": colorpicker_api,
         "/api/complexselect": complexselect_api,
+        "/api/datepicker": datepicker_api,
         "/api/formcontrollabel": formcontrollabel_api,
         "/api/icon": icon_api,
         "/api/paper": paper_api,
@@ -228,6 +268,8 @@ Window {
         "/api/select": select_api,
         "/api/slider": slider_api,
         "/api/switch": switch_api,
+        "/api/textfield": textfield_api,
+        "/api/timepicker": timepicker_api,
     }
 
     Connections {

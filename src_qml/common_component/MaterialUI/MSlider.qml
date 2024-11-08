@@ -115,6 +115,8 @@ Slider {
             property real shapeRadius: valueLabel.width/2
             rotation: control.isVertical ? 90 : 0
             transformOrigin: Item.TopLeft
+            smooth: true
+            antialiasing: true
 
             ShapePath {
                 strokeWidth: 0

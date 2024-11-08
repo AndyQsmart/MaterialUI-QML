@@ -207,6 +207,195 @@ MSelect {
                     }
                 }
 
+
+
+                // **********大小
+
+                Column {
+                    Layout.fillWidth: true
+                    leftPadding: 20
+                    rightPadding: 20
+                    topPadding: 40
+
+                    MTypography {
+                        variant: "h5"
+                        text: "大小"
+                    }
+
+                    MTypography {
+                        width: parent.width-40
+                        variant: "body1"
+                        textFormat: MTypography.RichText
+                        text: `<p>想要使用外观看起来比较小的选择器吗？ 你可以使用 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >size</span> 属性。</p>`
+                    }
+                }
+
+                Rectangle {
+                    Layout.fillWidth: true
+                    Layout.leftMargin: 20
+                    Layout.rightMargin: 20
+                    height: childrenRect.height
+                    implicitHeight: childrenRect.height
+                    border.width: 1
+                    border.color: Color.ddd
+                    radius: 4
+
+                    Row {
+                        spacing: 20
+                        padding: 20
+                        anchors.horizontalCenter: parent.horizontalCenter
+
+                        Column {
+                            spacing: 20
+
+                            MSelect {
+                                size: "small"
+                                placeholder: "Age"
+                                model: ['Ten', 'Twenty', 'Thirty']
+                                minWidth: 120
+                            }
+
+                            MSelect {
+                                size: "small"
+                                variant: 'outlined'
+                                placeholder: "Age"
+                                model: ['Ten', 'Twenty', 'Thirty']
+                                minWidth: 120
+                            }
+
+                            MSelect {
+                                size: "small"
+                                variant: 'filled'
+                                placeholder: "Age"
+                                model: ['Ten', 'Twenty', 'Thirty']
+                                minWidth: 120
+                            }
+                        }
+
+                        Column {
+                            spacing: 20
+
+                            MSelect {
+                                placeholder: "Age"
+                                model: ['Ten', 'Twenty', 'Thirty']
+                                minWidth: 120
+                            }
+
+                            MSelect {
+                                variant: 'outlined'
+                                placeholder: "Age"
+                                model: ['Ten', 'Twenty', 'Thirty']
+                                minWidth: 120
+                            }
+
+                            MSelect {
+                                variant: 'filled'
+                                placeholder: "Age"
+                                model: ['Ten', 'Twenty', 'Thirty']
+                                minWidth: 120
+                            }
+                        }
+                    }
+                }
+
+                RowLayout {
+                    Layout.topMargin: 10
+                    Layout.bottomMargin: 10
+                    Layout.leftMargin: 20
+                    Layout.rightMargin: 20
+
+                    MButton {
+                        variant: "outlined"
+                        text: "< > Code"
+
+                        onClicked: {
+                            size_code.visible = !size_code.visible
+                        }
+                    }
+                }
+
+                Rectangle {
+                    id: size_code
+                    visible: false
+                    Layout.fillWidth: true
+                    Layout.leftMargin: 20
+                    Layout.rightMargin: 20
+                    color: "#272c34"
+                    height: 420
+                    radius: 4
+
+                    MOverflowYBox {
+                        anchors.fill: parent
+
+                        MCopyText {
+                            color: Color.white
+                            padding: 20
+                            bottomPadding: 20
+                            textFormat: TextEdit.RichText
+                            text: `
+<pre >
+Row {
+    spacing: 20
+    padding: 20
+
+    Column {
+        spacing: 20
+
+        MSelect {
+            size: "small"
+            placeholder: "Age"
+            model: ['Ten', 'Twenty', 'Thirty']
+            minWidth: 120
+        }
+
+        MSelect {
+            size: "small"
+            variant: 'outlined'
+            placeholder: "Age"
+            model: ['Ten', 'Twenty', 'Thirty']
+            minWidth: 120
+        }
+
+        MSelect {
+            size: "small"
+            variant: 'filled'
+            placeholder: "Age"
+            model: ['Ten', 'Twenty', 'Thirty']
+            minWidth: 120
+        }
+    }
+
+    Column {
+        spacing: 20
+
+        MSelect {
+            placeholder: "Age"
+            model: ['Ten', 'Twenty', 'Thirty']
+            minWidth: 120
+        }
+
+        MSelect {
+            variant: 'outlined'
+            placeholder: "Age"
+            model: ['Ten', 'Twenty', 'Thirty']
+            minWidth: 120
+        }
+
+        MSelect {
+            variant: 'filled'
+            placeholder: "Age"
+            model: ['Ten', 'Twenty', 'Thirty']
+            minWidth: 120
+        }
+    }
+}
+</pre>
+`
+                        }
+                    }
+                }
+
+
                 // **********Complex Select 复杂的选择器
 
                 Column {

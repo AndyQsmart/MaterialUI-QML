@@ -5,12 +5,17 @@ import QtQuick.Layouts 1.11
 import "./"
 import "./styles"
 
-Item {
+Row {
     id: time_picker
+    property string variant: 'standard' // 'filled' 'outlined' 'standard'
+    property string size: 'medium' // 'medium' | 'small'
+    property string color: 'primary'
     property date value: new Date()
     signal change(date date)
 
-    height: children[0].height
+    spacing: 10
+//    width: childrenRect.width
+//    height: childrenRect.height
 
     function setValue(date) {
         time_picker.value = date
@@ -19,131 +24,150 @@ Item {
         min_text.text = date.getMinutes()
     }
 
-    RowLayout {
-        height: children[0].height
+    MDatePicker {
+        id: date_picker
+        variant: time_picker.variant
+        size: time_picker.size
+        color: time_picker.color
+        anchors.bottom: parent.bottom
 
-        DatePicker {
-            id: date_picker
-            onChange: {
-//                console.log(`datepicker: change ${date_picker.value}`)
-                let new_date = new Date(time_picker.value)
-                new_date.setFullYear(date.getFullYear())
-                new_date.setMonth(date.getMonth())
-                new_date.setDate(date.getDate())
-                time_picker.value = new_date
-                time_picker.change(new_date)
-            }
-
-            Component.onCompleted: {
-                date_picker.value = time_picker.value
-//                console.log(time_picker.value)
-            }
+        onChange: {
+            let new_date = new Date(time_picker.value)
+            new_date.setFullYear(date.getFullYear())
+            new_date.setMonth(date.getMonth())
+            new_date.setDate(date.getDate())
+            time_picker.value = new_date
+            time_picker.change(new_date)
         }
 
-        ComboBox {
-            property bool is_init: false
-            id: box_list
-            Layout.leftMargin: 10
-            font.pointSize: TypographyStyle.fontStyleList.body2.size
-            popup.height: 400
-            model: {
-                let hour_list = []
-                for (let i = 0; i < 24; i++) {
-                    hour_list.push((i < 10 ? '0'+i : ''+i) + ' 时')
-                }
-                return hour_list
-            }
+        Component.onCompleted: {
+            date_picker.value = time_picker.value
+        }
+    }
 
-            onCurrentIndexChanged: {
-                if (!is_init) {
-                    return
-                }
+    MSelectBase {
+        id: hour_select
+        property bool is_init: false
+        variant: time_picker.variant
+        size: time_picker.size
+        selectColor: time_picker.color
+        anchors.bottom: parent.bottom
 
-                let new_date = new Date(time_picker.value)
-                new_date.setHours(box_list.currentIndex)
-                time_picker.value = new_date
-                change(new_date)
-            }
-
-            Component.onCompleted: {
-                box_list.currentIndex = time_picker.value.getHours()
-                is_init = true
-            }
-
-            contentItem: MTypography {
-                leftPadding: 10
-                topPadding: 12
-                bottomPadding: 12
-                text: box_list.displayText
-                font: box_list.font
-                verticalAlignment: Text.AlignVCenter
-            }
-
-            background: Rectangle {
-//                implicitWidth: 120
-//                implicitHeight: 40
-            }
-
-            Rectangle {
-                anchors.fill: parent
-                enabled: false
-                radius: 5
-                border.width: 1
-                border.color: '#3B000000'
-            }
+        displayItem: MTypography {
+            id: text_item
+            variant: "body1"
+            text: hour_select.value < 10 ? `0${hour_select.value} 时` : `${hour_select.value} 时`
+            height: 18 //16*1.1876 - 1 防止文字导致高度变化，此外和TextField相差1
+            noWrap: true
+            lineHeight: TypographyStyle.convertLineHeight(1.1876)
         }
 
-        Rectangle {
-            RowLayout.fillHeight: true
-            Layout.leftMargin: 10
-            width: 110
+//            Binding {
+//                target: text_item
+//                property: 'color'
+//                when: disabled
+//                value: Palette.lightTextDisabled
+//            }
 
-            TextField {
-                property bool is_init: false
-                id: min_text
-                anchors.fill: parent
-                variant: 'outlined'
-                onTextChanged: {
-                    if (!is_init) {
-                        return
-                    }
-
-                    let the_min = parseInt(min_text.text)
-                    if (!the_min) {
-                        the_min = ''
-                    }
-                    else if (the_min >= 60) {
-                        the_min = 59
-                    }
-                    min_text.text = the_min
-                    let new_date = new Date(time_picker.value)
-                    new_date.setMinutes(the_min ? the_min : 0)
-                    time_picker.value = new_date
-                    change(new_date)
-                }
-
-                Component.onCompleted: {
-                    min_text.text = time_picker.value.getMinutes()
-                    is_init = true
-//                    console.log(time_picker.value.getMinutes())
-//                    console.log(min_text.text)
-                }
-
-                MTypography {
-                    id: min_unit
-                    x: parent.width-min_unit.width-10
-                    height: parent.height
-                    text: qsTr("分")
-                    verticalAlignment: Text.AlignVCenter
-                }
-            }
+        onSelectOpen: {
+            menu_dialog.open()
         }
 
+        onChange: {
+            if (!is_init) {
+                return
+            }
+
+            let new_date = new Date(time_picker.value)
+            new_date.setHours(hour_select.value)
+            time_picker.value = new_date
+            time_picker.change(new_date)
+            console.log(new_date)
+        }
+
+        Component.onCompleted: {
+            hour_select.value = time_picker.value.getHours()
+            is_init = true
+        }
+
+        MPopover {
+            id: menu_dialog
+            anchorEl: hour_select
+            height: 400
+            anchorOrigin: Item.Right
+            transformOrigin: Item.Left
+
+            MOverflowYBox {
+                height: 400
+
+                MMenuList {
+                    Repeater {
+                        model: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+
+                        delegate: MMenuItem {
+                            text: modelData < 10 ? `0${modelData} 时` : `${modelData} 时`
+
+                            onClicked: {
+                                hour_select.value = modelData
+                                hour_select.index = index
+                                hour_select.change(hour_select.value, hour_select.index)
+                                menu_dialog.close()
+                            }
+                        }
+                    }
+                }
+            }
+
+            onAboutToShow: {
+                hour_select.menuOpened = true
+            }
+
+            onClosed: {
+                hour_select.menuOpened = false
+            }
+        }
+    }
+
+    MTextField {
+        property bool is_init: false
+        id: min_text
+        width: 110
+        variant: time_picker.variant
+        size: time_picker.size
+        color: time_picker.color
+        anchors.bottom: parent.bottom
+
+        onTextChanged: {
+            if (!is_init) {
+                return
+            }
+
+            let the_min = parseInt(min_text.text)
+            if (!the_min) {
+                the_min = ''
+            }
+            else if (the_min >= 60) {
+                the_min = 59
+            }
+            min_text.text = the_min
+            let new_date = new Date(time_picker.value)
+            new_date.setMinutes(the_min ? the_min : 0)
+            time_picker.value = new_date
+            change(new_date)
+        }
+
+        Component.onCompleted: {
+            min_text.text = time_picker.value.getMinutes()
+            is_init = true
+        }
+
+        MTypography {
+            id: min_unit
+            x: parent.width-min_unit.width-10
+            height: parent.height
+            text: qsTr("分")
+            verticalAlignment: Text.AlignVCenter
+        }
     }
 }
 
-/*##^##
-Designer {
-    D{i:0;autoSize:true;height:480;width:640}
-}
-##^##*/

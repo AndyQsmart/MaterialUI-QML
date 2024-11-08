@@ -16,7 +16,7 @@ MSelectBase {
         variant: "body1"
         text: control.value
         noWrap: true
-        lineHeight: TypographyStyle.convertLineHeight(1.2)
+        lineHeight: TypographyStyle.convertLineHeight(1.1876)
     }
 
     Binding {
@@ -33,6 +33,8 @@ MSelectBase {
     MMenu {
         id: menu_dialog
         anchorEl: control
+        anchorOrigin: Item.Bottom
+        transformOrigin: Item.Top
 
         Repeater {
             id: menu_repeater

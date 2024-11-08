@@ -4,7 +4,7 @@ import "./styles"
 // 原版
 Text {
     property string variant: 'body2'
-    property string textColor: 'initial' // 'initial' | 'primary' | 'secondary' | 'textPrimary' | 'textSecondary' | 'error'
+    property string textColor: 'default' // 'default' | 'primary' | 'secondary' | 'textPrimary' | 'textSecondary' | 'error'
     property bool gutterBottom: false
     property bool noWrap: false
     property string align: 'inherit' // 'inherit' 'left' 'center' 'right' 'justify'
@@ -66,18 +66,7 @@ Text {
         }
     }
 
-    color: {
-        switch (textColor) {
-            case 'primary':
-            case 'secondary':
-            case 'textPrimary':
-            case 'textSecondary':
-            case 'error':
-                return Palette.string2Color(textColor)
-            default:
-                return Colors.commonBlack
-        }
-    }
+    color: Palette.string2Color(textColor, Colors.commonBlack)
 
     font.pointSize: {
         if (fontSize > 0) {

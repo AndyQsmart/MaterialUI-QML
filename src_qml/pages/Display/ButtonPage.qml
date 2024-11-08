@@ -110,10 +110,7 @@ Pane {
 
                     Row {
                         spacing: 20
-                        leftPadding: 20
-                        rightPadding: 20
-                        topPadding: 20
-                        bottomPadding: 20
+                        padding: 20
                         anchors.horizontalCenter: parent.horizontalCenter
 
                         MButton {

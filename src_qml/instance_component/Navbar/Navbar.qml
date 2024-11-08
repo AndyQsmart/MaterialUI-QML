@@ -12,7 +12,7 @@ Pane {
     x: 0
     y: 0
     padding: 0
-    width: 230
+    width: 260
 
     property var buttonList: [
         {
@@ -34,6 +34,14 @@ Pane {
                             url: "/checkboxpage"
                         },
                         {
+                            name: "Date/Time 日期/时间选择器",
+                            url: "/datetimepickerpage"
+                        },
+                        {
+                            name: "Color 颜色选择器",
+                            url: "/colorpickerpage"
+                        },
+                        {
                             name: "Radio 单选框",
                             url: "/radiopage"
                         },
@@ -48,6 +56,10 @@ Pane {
                         {
                             name: "Switch 开关",
                             url: '/switchpage'
+                        },
+                        {
+                            name: "Text Field 文本框",
+                            url: '/textfieldpage'
                         },
                     ]
                 },
@@ -92,8 +104,16 @@ Pane {
                     url: "/api/checkbox"
                 },
                 {
+                    name: "Color Picker",
+                    url: "/api/colorpicker"
+                },
+                {
                     name: "Complex Select",
                     url: "/api/complexselect"
+                },
+                {
+                    name: "Date Picker",
+                    url: "/api/datepicker"
                 },
                 {
                     name: "Form Control Label",
@@ -126,6 +146,14 @@ Pane {
                 {
                     name: "Switch",
                     url: "/api/switch"
+                },
+                {
+                    name: "Text Field",
+                    url: "/api/textfield"
+                },
+                {
+                    name: "Time Picker",
+                    url: "/api/timepicker"
                 },
             ]
         }
