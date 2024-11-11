@@ -73,6 +73,23 @@ Pane {
                     ]
                 },
                 {
+                    name: "Data Display 数据展示",
+                    subList: [
+                        {
+                            name: "Icons 图标",
+                            url: "/iconpage"
+                        },
+                        {
+                            name: "FontAwesome Icons 图标",
+                            url: "/fontawesomeiconpage"
+                        },
+                        {
+                            name: "Svg Icons 图标",
+                            url: "/svgiconpage"
+                        }
+                    ]
+                },
+                {
                     name: "Utils 工具包",
                     subList: [
                         {

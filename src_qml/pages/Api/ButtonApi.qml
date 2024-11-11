@@ -85,7 +85,7 @@ BaseApi {
     demos_list: [
         {
             name: "Button Group",
-             url: "/buttongrouppage",
+            url: "/buttongrouppage",
         },
         {
             name: "Buttons",

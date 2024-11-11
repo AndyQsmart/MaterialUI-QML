@@ -126,5 +126,15 @@
         <file>src_qml/pages/Api/TimePicker.qml</file>
         <file>src_qml/pages/Display/ColoPickerPage.qml</file>
         <file>src_qml/pages/Api/ColorPickerApi.qml</file>
+        <file>src_qml/pages/Display/IconPage.qml</file>
+        <file>src_qml/common_component/MaterialUI/MSvgIcon.qml</file>
+        <file>src_qml/common_component/MaterialUI/SvgIcon/FilledMap.js</file>
+        <file>src_qml/common_component/MaterialUI/SvgIcon/OutlinedMap.js</file>
+        <file>src_qml/common_component/MaterialUI/SvgIcon/RoundedMap.js</file>
+        <file>src_qml/common_component/MaterialUI/SvgIcon/SharpMap.js</file>
+        <file>src_qml/common_component/MaterialUI/SvgIcon/TwoToneMap.js</file>
+        <file>src_qml/pages/Api/SvgIconApi.qml</file>
+        <file>src_qml/pages/Display/FontAwesomeIconPage.qml</file>
+        <file>src_qml/pages/Display/SvgIconPage.qml</file>
     </qresource>
 </RCC>

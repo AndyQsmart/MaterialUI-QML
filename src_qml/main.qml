@@ -150,6 +150,21 @@ Window {
     }
 
     Component {
+        id: icon_page
+        IconPage { }
+    }
+
+    Component {
+        id: fontawesomeicon_page
+        FontAwesomeIconPage { }
+    }
+
+    Component {
+        id: svgicon_page
+        SvgIconPage { }
+    }
+
+    Component {
         id: transitions_page
         TransitionsPage { }
     }
@@ -225,6 +240,11 @@ Window {
     }
 
     Component {
+        id: svgicon_api
+        SvgIconApi { }
+    }
+
+    Component {
         id: switch_api
         SwitchApi { }
     }
@@ -252,6 +272,9 @@ Window {
         "/switchpage": switch_page,
         "/textfieldpage": textfield_page,
         "/paperpage": paper_page,
+        "/iconpage": icon_page,
+        "/fontawesomeiconpage": fontawesomeicon_page,
+        "/svgiconpage": svgicon_page,
         "/transitionspage": transitions_page,
         "/api/button": button_api,
         "/api/buttonbase": buttonbase_api,
@@ -267,6 +290,7 @@ Window {
         "/api/radiogroup": radiogroup_api,
         "/api/select": select_api,
         "/api/slider": slider_api,
+        "/api/svgicon": svgicon_api,
         "/api/switch": switch_api,
         "/api/textfield": textfield_api,
         "/api/timepicker": timepicker_api,

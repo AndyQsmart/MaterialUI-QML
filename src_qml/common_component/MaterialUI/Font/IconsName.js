@@ -1,3 +1,5 @@
+.pragma library
+
 var name = {
     '500px': '\uf26e',
     'accessible-icon': '\uf368',

@@ -13,7 +13,9 @@ Rectangle {
 
 
     width: childrenRect.width
+    implicitWidth: width
     height: childrenRect.height
+    implicitHeight: height
     color: "#00ffffff"
 
     signal change(string value)
@@ -78,6 +80,9 @@ Rectangle {
                 for (i = 0; i < the_child_list.length; i++) {
                     let the_child = the_child_list[i]
                     loader.item.children.push(the_child)
+                    if (the_child.value === value && !the_child.checked) {
+                        the_child.checked = true
+                    }
                 }
             }
         }

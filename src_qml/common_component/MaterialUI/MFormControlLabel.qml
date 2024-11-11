@@ -175,8 +175,13 @@ Rectangle {
 
             onClicked: {
                 let item = control_container.children[0]
-                if (item && item.checked !== undefined) {
-                    item.checked = !item.checked
+                if (item.clicked) {
+                    item.clicked()
+                }
+                else {
+                    if (item && item.checked !== undefined) {
+                        item.checked = !item.checked
+                    }
                 }
             }
         }

@@ -10,7 +10,7 @@ import "./SvgIcon/SharpMap.js" as SharpMap
 Item {
     id: root
     property string variant: "filled" // 'filled' | 'outliend' | 'rounded' | 'two tone' | 'sharp'
-    property string color: "default" //'inherit' | 'primary' | 'secondary' | 'action' | 'error' | 'disabled'
+    property string color: "default" //'default' | 'primary' | 'secondary' | 'textSecondary' | 'error' | color
     property string fontSize: "medium" // 'small' | 'medium' | 'large'
     property string name: ""
     property real size: {
@@ -33,7 +33,7 @@ Item {
         switch (variant) {
             case "filled":
                 return FilledMap.name
-            case "outliend":
+            case "outlined":
                 return OutlinedMap.name
             case "rounded":
                 return RoundedMap.name
@@ -48,7 +48,7 @@ Item {
         switch (variant) {
             case "filled":
                 return name
-            case "outliend":
+            case "outlined":
                 return `${name}Outlined`
             case "rounded":
                 return `${name}Rounded`
@@ -76,7 +76,11 @@ Item {
                 color_str = `rgb(${rgbaColor.r},${rgbaColor.g},${rgbaColor.b})`
             }
 
-            let svg_str = FilledMap.name[root.name].replace("<svg", `<svg fill="${color_str}"`)
+            if (!nameMap[svgName]) {
+                return ''
+            }
+
+            let svg_str = nameMap[svgName].replace("<svg", `<svg fill="${color_str}"`)
             return `data:image/svg+xml;utf8,${svg_str}`;
         }
     }
