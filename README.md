@@ -57,6 +57,7 @@ MSelect.qml
 MSelectBase.qml
 MSlide.qml
 MSlider.qml
+MSvgIcon.qml
 MSwitch.qml
 MTextField.qml
 MTimePicker.qml
