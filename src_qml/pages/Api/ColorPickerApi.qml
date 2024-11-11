@@ -31,7 +31,7 @@ BaseApi {
     demos_list: [
         {
             name: "Color Picker",
-             url: "/colorpickerpage",
+            url: "/colorpickerpage",
         },
     ]
 }

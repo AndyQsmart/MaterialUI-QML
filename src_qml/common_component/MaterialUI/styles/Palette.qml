@@ -63,6 +63,71 @@ QtObject {
     readonly property int unit: 8
     readonly property int borderRadius: 4
 
+
+    function colorStrToRgb(color_str) {
+        if (!color_str) {
+            return null
+        }
+        color_str = color_str.toLowerCase()
+        if (color_str[0] === '#' && color_str.length === 9 && /^[a-zA-Z0-9]+$/.test(color_str.substring(1, 9))) {
+            let a_str = color_str.substring(1, 3)
+            let r_str = color_str.substring(3, 5)
+            let g_str = color_str.substring(5, 7)
+            let b_str = color_str.substring(7, 9)
+            return {
+                r: parseInt(r_str, 16),
+                g: parseInt(g_str, 16),
+                b: parseInt(b_str, 16),
+                a: parseInt(parseInt(a_str, 16)/255*100),
+            }
+        }
+        if (color_str[0] === '#' && color_str.length === 7 && /^[a-zA-Z0-9]+$/.test(color_str.substring(1, 7))) {
+            let r_str = color_str.substring(1, 3)
+            let g_str = color_str.substring(3, 5)
+            let b_str = color_str.substring(5, 7)
+            return {
+                r: parseInt(r_str, 16),
+                g: parseInt(g_str, 16),
+                b: parseInt(b_str, 16),
+            }
+        }
+        if (color_str[0] === '#' && color_str.length === 4 && /^[a-zA-Z0-9]+$/.test(color_str.substring(1, 4))) {
+            let r_str = color_str.substring(1, 2)
+            let g_str = color_str.substring(2, 3)
+            let b_str = color_str.substring(3, 4)
+            return {
+                r: parseInt(r_str+r_str, 16),
+                g: parseInt(g_str+g_str, 16),
+                b: parseInt(b_str+b_str, 16),
+            }
+        }
+        var ans = null
+        if (/rgb\(.*\)/g.test(color_str)) {
+            ans = /rgb\((.*)\)/g.exec(color_str)
+            if (ans[1]) {
+                let rgb_list = ans[1].split(',')
+                return ({
+                    r: parseInt(rgb_list[0].replace(' ', '')),
+                    g: parseInt(rgb_list[1].replace(' ', '')),
+                    b: parseInt(rgb_list[2].replace(' ', '')),
+                })
+            }
+        }
+        if (/rgba\(.*\)/g.test(color_str)) {
+            ans = /rgba\((.*)\)/g.exec(color_str)
+            if (ans[1]) {
+                let rgb_list = ans[1].split(',')
+                return ({
+                    r: parseInt(rgb_list[0].replace(' ', '')),
+                    g: parseInt(rgb_list[1].replace(' ', '')),
+                    b: parseInt(rgb_list[2].replace(' ', '')),
+                    a: parseInt(rgb_list[3].replace(' ', '')*100),
+                })
+            }
+        }
+        return null
+    }
+
     function string2Color(color_name, default_color) {
         switch (color_name) {
             case 'primary':
