@@ -8,10 +8,20 @@ Canvas {
     id: canvas
     property string color: 'primary' // 'inherit' 'primary' 'secondary'
     property string variant: 'indeterminate' // 'determinate' 'indeterminate' 'static'
-    property bool disableShrink: false
+    property bool disableShrink: false // 暂时未实现
     property int size: 40
     property real thickness: 3.6
-    property real value: 0 // 0~1
+    property real value: 0 // 0~100
+
+
+
+
+
+    onValueChanged: {
+        if (variant !== 'indeterminate') {
+            canvas.requestPaint()
+        }
+    }
 
     width: canvas.size
     height: canvas.size
@@ -30,7 +40,7 @@ Canvas {
         ctx.strokeStyle = canvas.color == 'secondary' ? Palette.secondaryMain : Palette.primaryMain
         ctx.lineWidth = canvas.thickness
         var start_angle = 0
-        var end_angle = value*Math.PI*2
+        var end_angle = value*Math.PI*2/100
         if (variant == 'indeterminate') {
             if (canvas.animationangle < Math.PI) {
                 start_angle = canvas.animationangle

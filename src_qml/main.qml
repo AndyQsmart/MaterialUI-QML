@@ -150,6 +150,11 @@ Window {
     }
 
     Component {
+        id: progress_page
+        ProgressPage { }
+    }
+
+    Component {
         id: icon_page
         IconPage { }
     }
@@ -195,6 +200,11 @@ Window {
     }
 
     Component {
+        id: circularprogress_api
+        CircularProgressApi { }
+    }
+
+    Component {
         id: colorpicker_api
         ColorPickerApi { }
     }
@@ -212,6 +222,11 @@ Window {
     Component {
         id: icon_api
         IconApi { }
+    }
+
+    Component {
+        id: linearprogress_api
+        LinearProgressApi { }
     }
 
     Component {
@@ -272,6 +287,7 @@ Window {
         "/switchpage": switch_page,
         "/textfieldpage": textfield_page,
         "/paperpage": paper_page,
+        "/progresspage": progress_page,
         "/iconpage": icon_page,
         "/fontawesomeiconpage": fontawesomeicon_page,
         "/svgiconpage": svgicon_page,
@@ -280,11 +296,13 @@ Window {
         "/api/buttonbase": buttonbase_api,
         "/api/buttongroup": buttongroup_api,
         "/api/checkbox": checkbox_api,
+        "/api/circularprogress": circularprogress_api,
         "/api/colorpicker": colorpicker_api,
         "/api/complexselect": complexselect_api,
         "/api/datepicker": datepicker_api,
         "/api/formcontrollabel": formcontrollabel_api,
         "/api/icon": icon_api,
+        "/api/linearprogress": linearprogress_api,
         "/api/paper": paper_api,
         "/api/radio": radio_api,
         "/api/radiogroup": radiogroup_api,

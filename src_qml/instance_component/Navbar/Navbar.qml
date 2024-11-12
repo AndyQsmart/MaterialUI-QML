@@ -73,6 +73,15 @@ Pane {
                     ]
                 },
                 {
+                    name: "Feedback 用户反馈",
+                    subList: [
+                        {
+                            name: "Progress 进度条",
+                            url: "/progresspage"
+                        }
+                    ]
+                },
+                {
                     name: "Data Display 数据展示",
                     subList: [
                         {
@@ -121,6 +130,10 @@ Pane {
                     url: "/api/checkbox"
                 },
                 {
+                    name: "Circular Progress",
+                    url: "/api/circularprogress"
+                },
+                {
                     name: "Color Picker",
                     url: "/api/colorpicker"
                 },
@@ -139,6 +152,10 @@ Pane {
                 {
                     name: "Icon",
                     url: "/api/icon"
+                },
+                {
+                    name: "Linear Progress",
+                    url: "/api/linearprogress"
                 },
                 {
                     name: "Paper",

@@ -136,5 +136,8 @@
         <file>src_qml/pages/Api/SvgIconApi.qml</file>
         <file>src_qml/pages/Display/FontAwesomeIconPage.qml</file>
         <file>src_qml/pages/Display/SvgIconPage.qml</file>
+        <file>src_qml/pages/Display/ProgressPage.qml</file>
+        <file>src_qml/pages/Api/CircularProgressApi.qml</file>
+        <file>src_qml/pages/Api/LinearProgressApi.qml</file>
     </qresource>
 </RCC>
