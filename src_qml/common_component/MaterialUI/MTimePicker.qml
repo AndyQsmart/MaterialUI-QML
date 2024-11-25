@@ -164,6 +164,7 @@ Row {
         MTypography {
             id: min_unit
             x: parent.width-min_unit.width-10
+            z: 1
             height: parent.height
             text: qsTr("分")
             verticalAlignment: Text.AlignVCenter

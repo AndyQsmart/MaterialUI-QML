@@ -54,6 +54,15 @@ Pane {
                         textFormat: MTypography.RichText
                         text: `<p>用户可以通过<span style="color: ${Palette.secondaryMain}" >文本框</span>在界面中输入文本。 通常，我们会在表单域和对话框中使用它们。</p>`
                         wrapMode: MTypography.WordWrap
+                        gutterBottom: true
+                    }
+
+                    MTypography {
+                        width: parent.width-40
+                        variant: "body1"
+                        textFormat: MTypography.RichText
+                        text: `<p>受限于QML的语法，更推荐直接使用 <span style="color: ${Palette.secondaryMain}" >MInput</span>、<span style="color: ${Palette.secondaryMain}" >MOutlinedInput</span> 和 <span style="color: ${Palette.secondaryMain}" >MFilledInput</span> 组件。</p>`
+                        wrapMode: MTypography.WordWrap
                     }
                 }
 

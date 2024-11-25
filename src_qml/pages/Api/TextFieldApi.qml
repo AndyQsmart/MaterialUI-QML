@@ -11,61 +11,31 @@ import "../../common_js/Color.js" as Color
 import "../../common_js/Tools.js" as Tools
 
 BaseApi {
-    name: "Select"
+    name: "TextField"
     props_list: [
+        {
+            name: "color",
+            type: "'primary'\n| 'secondary'",
+            default_value: "'primary'",
+            description: "The color of the component. It supports those theme colors that make sense for this component.",
+        },
         {
             name: "disabled",
             type: "bool",
             default_value: "false",
-            description: "If true, the select will be disabled.",
-        },
-        {
-            name: "index",
-            type: "int",
-            default_value: "",
-            description: "The select index.",
-        },
-        {
-            name: "maxWidth",
-            type: "double",
-            default_value: "",
-            description: "[new] Max width of the select",
-        },
-        {
-            name: "minWidth",
-            type: "double",
-            default_value: "0",
-            description: "[new] Min width of the select",
-        },
-        {
-            name: "model",
-            type: "list<string>",
-            default_value: "",
-            description: "The elements of the select.",
-        },
-        {
-            name: "padding",
-            type: "list<int>",
-            default_value: "",
-            description: "[new] Padding ofr the select",
+            description: "If true, the input will be disabled.",
         },
         {
             name: "placeholder",
             type: "string",
             default_value: "",
-            description: "The short hint displayed in the select before the user selects a value.",
+            description: "The short hint displayed in the input before the user enters a value.",
         },
         {
-            name: "selectColor",
-            type: "'primary'\n| 'secondary'\n|  color",
-            default_value: "'primary'",
-            description: "[new] The select color of the component.",
-        },
-        {
-            name: "value",
-            type: "string",
-            default_value: "",
-            description: "The select value. Providing an empty string will select no options. Set to an empty string '' if you don't want any of the available options to be selected. The string representation must match with the string representation of the model in order to be selected.",
+            name: "size",
+            type: "'medium'\n| 'small'",
+            default_value: "'medium'",
+            description: "The size of the text field.",
         },
         {
             name: "variant",
@@ -76,8 +46,8 @@ BaseApi {
     ]
     demos_list: [
         {
-            name: "Selects",
-             url: "/selectpage",
+            name: "Text Fields",
+             url: "/textfieldpage",
         },
     ]
 }

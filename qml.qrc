@@ -139,5 +139,9 @@
         <file>src_qml/pages/Display/ProgressPage.qml</file>
         <file>src_qml/pages/Api/CircularProgressApi.qml</file>
         <file>src_qml/pages/Api/LinearProgressApi.qml</file>
+        <file>src_qml/common_component/MaterialUI/MInput.qml</file>
+        <file>src_qml/common_component/MaterialUI/MFilledInput.qml</file>
+        <file>src_qml/common_component/MaterialUI/MOutlinedInput.qml</file>
+        <file>src_qml/common_component/MaterialUI/MInputBase.qml</file>
     </qresource>
 </RCC>

@@ -134,7 +134,6 @@ Item {
 //                console.log(datePicker.value)
             textInput.text = datePicker._last_text
         }
-
     }
 
 

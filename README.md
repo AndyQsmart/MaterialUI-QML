@@ -15,6 +15,14 @@ In this case,I place "Material UI" in folder "common_component".You can move the
 # Example
 You can run the example project.It is an example that show some usage of components.
 
+1. run in C++
+   - Qt 5.15.2
+
+2. run in Python
+   - Python 3.9
+   - pip install PySide2==5.15.2.1
+   - `python main.py`
+
 ![image](https://github.com/AndyQsmart/MaterialUI-QML/blob/main/readme_image/image1.jpg)
 ![image](https://github.com/AndyQsmart/MaterialUI-QML/blob/main/readme_image/image2.jpg)
 

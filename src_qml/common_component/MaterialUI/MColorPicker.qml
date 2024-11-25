@@ -479,7 +479,7 @@ MPopover {
 
             Column {
                 id: column
-                MTextField {
+                MOutlinedInput {
                     id: hex_input
                     width: 60
                     height: 20
@@ -488,7 +488,6 @@ MPopover {
                     bottomPadding: 0
                     leftPadding: 5
                     font.pointSize: TypographyStyle.convertFontSize(12)
-                    variant: 'outlined'
 
                     onTextEdited: {
                         let hex_text = hex_input.text
@@ -511,7 +510,7 @@ MPopover {
                 id: rgba_input
                 model: ['R', 'G', 'B', 'A']
                 delegate:  Column {
-                    MTextField {
+                    MOutlinedInput {
                         width: 30
                         height: 20
                         topPadding: 0
@@ -519,7 +518,6 @@ MPopover {
                         bottomPadding: 0
                         leftPadding: 5
                         font.pointSize: TypographyStyle.convertFontSize(12)
-                        variant: 'outlined'
 
                         onTextEdited: {
                             let key_text = text

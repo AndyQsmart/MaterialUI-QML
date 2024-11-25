@@ -34,6 +34,8 @@ $RECYCLE.BIN/
 .AppleDouble
 .LSOverride
 
+*.pyc
+
 # Thumbnails
 ._*
 

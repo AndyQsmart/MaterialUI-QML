@@ -34,7 +34,7 @@ Window {
 
     function onAppEvent(type, data) {
         if (type === "MAC_ApplicationActive") {
-            mainWindow.show()
+            mainWindow.visible = true
         }
         else if (type === "MAC_Quit") {
             quitApp()
@@ -339,7 +339,7 @@ Window {
 
     SystemTray {
         onShowWindow: {
-            mainWindow.show()
+            mainWindow.visible = true
             mainWindow.requestActivate()
         }
 
