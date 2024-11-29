@@ -9,32 +9,33 @@ MAnimation {
     timeout: 225
     property string direction: 'down' // 'down' 'left' 'right' 'up'
 
-    property real enterPosX: offsetX
-    property real enterPosY: offsetY
+
+    property real enterPosX: originX
+    property real enterPosY: originY
 
     property real exitPosX: {
         switch (direction) {
             case 'left':
-                return offsetX+500
+                return originX+500
             case 'right':
-                return offsetX+-500-control.target.width
+                return originX+-500-control.target.width
             case 'up':
-                return offsetX
+                return originX
             default:
-                return offsetX
+                return originX
         }
     }
 
     property real exitPosY: {
         switch (direction) {
             case 'left':
-                return offsetY
+                return originY
             case 'right':
-                return offsetY
+                return originY
             case 'up':
-                return offsetY+250
+                return originY+250
             default:
-                return offsetY-250-control.target.height
+                return originY-250-control.target.height
         }
     }
 

@@ -602,7 +602,7 @@ Row {
                         width: parent.width-40
                         variant: "body1"                       
                         textFormat: MTypography.RichText
-                        text: `<p>动画会对元素的 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >x</span> 和 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >y</span> 属性进行修改，若要保证原始位置的正确，请传入 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >offsetX</span> 和 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >offsetY</span>来保证元素中 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >x</span> 和 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >y</span> 的原始位置。</p>`
+                        text: `<p>动画会对元素的 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >x</span> 和 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >y</span> 属性进行修改，若要保证原始位置的正确，请传入 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >originX</span> 和 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >originY</span>来保证元素中 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >x</span> 和 <span style="font-size: 14px; background-color: rgba(255, 229, 100, 0.2)" >y</span> 的原始位置。</p>`
                         wrapMode: MTypography.WordWrap
                     }
                 }

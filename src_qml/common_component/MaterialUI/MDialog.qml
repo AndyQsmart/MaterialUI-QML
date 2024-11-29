@@ -16,13 +16,13 @@ Popup {
 
     Binding {
         target: transitionComponent
-        property: "offsetX"
+        property: "originX"
         value: ((parent ? parent.width : 0) - dialog.width)/2
     }
 
     Binding {
         target: transitionComponent
-        property: "offsetY"
+        property: "originY"
         value: ((parent ? parent.height : 0) - dialog.height)/2
     }
 

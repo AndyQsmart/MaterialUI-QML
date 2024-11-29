@@ -11,8 +11,8 @@ Item {
     property Transition exit: null
     property State enterState: null
     property State exitState: null
-    property real offsetX: 0 // 和x相关的动画，设置起始值
-    property real offsetY: 0 // 和y相关的动画，设置起始值
+    property real originX: 0 // 和x相关的动画，设置起始值
+    property real originY: 0 // 和y相关的动画，设置起始值
 
     signal aboutToEnter()
     signal aboutToExit()
