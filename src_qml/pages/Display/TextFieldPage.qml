@@ -56,14 +56,6 @@ Pane {
                         wrapMode: MTypography.WordWrap
                         gutterBottom: true
                     }
-
-                    MTypography {
-                        width: parent.width-40
-                        variant: "body1"
-                        textFormat: MTypography.RichText
-                        text: `<p>受限于QML的语法，更推荐直接使用 <span style="color: ${Palette.secondaryMain}" >MInput</span>、<span style="color: ${Palette.secondaryMain}" >MOutlinedInput</span> 和 <span style="color: ${Palette.secondaryMain}" >MFilledInput</span> 组件。</p>`
-                        wrapMode: MTypography.WordWrap
-                    }
                 }
 
 
