@@ -1110,6 +1110,8 @@ var name = {
     'sort-alpha-down-alt': '\uf881',
     'sort-alpha-up': '\uf15e',
     'sort-alpha-up-alt': '\uf882',
+    'sort-amount-asc': '\uf160',
+    'sort-amount-desc': '\uf161',
     'sort-amount-down': '\uf160',
     'sort-amount-down-alt': '\uf884',
     'sort-amount-up': '\uf161',

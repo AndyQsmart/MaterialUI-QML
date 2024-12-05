@@ -26,7 +26,7 @@ TextInput {
 
     // placeholder
     MTypography {
-        visible: textInput.text ? false : true
+        visible: textInput.text || textInput.inputMethodComposing ? false : true
         anchors.fill: parent
         noWrap: true
         verticalAlignment: Text.AlignVCenter
