@@ -7,6 +7,7 @@ TextInput {
     property string placeholder: ''
     property string size: 'medium' // 'medium' | 'small'
     property bool disabled: false
+    property bool hover: false
 
 
 
@@ -38,8 +39,17 @@ TextInput {
     }
 
     MouseArea {
-        cursorShape: Qt.IBeamCursor
         anchors.fill: parent
-        enabled: false
+        cursorShape: Qt.IBeamCursor
+        acceptedButtons: Qt.NoButton
+        hoverEnabled: true
+
+        onEntered: {
+            textInput.hover = true
+        }
+
+        onExited: {
+            textInput.hover = false
+        }
     }
 }

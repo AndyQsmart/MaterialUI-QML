@@ -27,11 +27,25 @@ Item {
     }
 
     Component.onCompleted: {
+        if (enter) {
+            enter.enabled = false
+        }
+        if (exit) {
+            exit.enabled = false
+        }
+
         if (open) {
             control.state = "enter"
         }
         else {
             control.state = "exit"
+        }
+
+        if (enter) {
+            enter.enabled = true
+        }
+        if (exit) {
+            exit.enabled = true
         }
     }
 

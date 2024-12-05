@@ -11,7 +11,6 @@ MInputBase {
 
     MFilledInputStyle {
         id: styles
-        target: textInput
         size: textInput.size
         disabled: textInput.disabled
         active: textInput.activeFocus

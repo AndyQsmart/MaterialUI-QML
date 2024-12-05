@@ -18,9 +18,9 @@ MInputBase {
     Component {
         id: standard_style
         MInputStyle {
-            target: root
             size: root.size
             disabled: root.disabled
+            hover: root.hover
             active: root.activeFocus
             color: root.color
         }
@@ -29,9 +29,9 @@ MInputBase {
     Component {
         id: outlined_style
         MOutlinedInputStyle {
-            target: root
             size: root.size
             disabled: root.disabled
+            hover: root.hover
             active: root.activeFocus
             color: root.color
         }
@@ -40,9 +40,9 @@ MInputBase {
     Component {
         id: filled_style
         MFilledInputStyle {
-            target: root
             size: root.size
             disabled: root.disabled
+            hover: root.hover
             active: root.activeFocus
             color: root.color
         }

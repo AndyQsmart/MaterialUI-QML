@@ -13,6 +13,7 @@ Rectangle {
     property string selectColor: "primary"
     property string size: 'medium' // 'medium' | 'small'
     property bool disabled: false
+    property bool hover: false
     property string placeholder: ""
     property real minWidth: 0
     property real maxWidth: -1
@@ -51,9 +52,9 @@ Rectangle {
     Component {
         id: standard_style
         MInputStyle {
-            target: control
             size: control.size
             disabled: control.disabled
+            hover: control.hover
             active: control.menuOpened
             color: control.selectColor
         }
@@ -62,9 +63,9 @@ Rectangle {
     Component {
         id: outlined_style
         MOutlinedInputStyle {
-            target: control
             size: control.size
             disabled: control.disabled
+            hover: control.hover
             active: control.menuOpened
             color: control.selectColor
         }
@@ -73,9 +74,9 @@ Rectangle {
     Component {
         id: filled_style
         MFilledInputStyle {
-            target: control
             size: control.size
             disabled: control.disabled
+            hover: control.hover
             active: control.menuOpened
             color: control.selectColor
         }
@@ -134,6 +135,15 @@ Rectangle {
         visible: !control.disabled
         anchors.fill: parent
         cursorShape: Qt.PointingHandCursor
+        hoverEnabled: true
+
+        onEntered: {
+            control.hover = true
+        }
+
+        onExited: {
+            control.hover = false
+        }
 
         onClicked: {
             selectOpen()

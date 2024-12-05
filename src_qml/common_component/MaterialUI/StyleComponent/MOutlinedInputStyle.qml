@@ -3,11 +3,11 @@ import "../styles"
 
 Item {
     id: root
-    property var target: null
     property string color: 'primary'
     property string size: 'medium' // 'medium' | 'small'
     property var padding: size === 'small' ? [10.5, 14, 10.5, 14] : [18.5, 14, 18.5, 14]
     property bool disabled: false
+    property bool hover: false
     property bool active: false
     property string _main_color: Palette.string2Color(root.color, Palette.primaryMain)
 
@@ -19,7 +19,7 @@ Item {
         enabled: false
         color: Colors.commonTransparent
         border.width: active ? 2 : 1
-        border.color: active ? root._main_color : '#3B000000'
+        border.color: active ? root._main_color : (hover ? Palette.lightTextPrimary : '#3B000000')
         anchors.fill: parent
         radius: Palette.borderRadius
     }

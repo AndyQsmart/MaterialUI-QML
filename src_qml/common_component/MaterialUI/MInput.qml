@@ -11,7 +11,6 @@ MInputBase {
 
     MInputStyle {
         id: styles
-        target: textInput
         size: textInput.size
         disabled: textInput.disabled
         active: textInput.activeFocus

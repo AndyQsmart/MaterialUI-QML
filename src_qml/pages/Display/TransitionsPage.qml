@@ -869,6 +869,322 @@ Row {
                     }
                 }
 
+                // ScaleX 放大
+
+                Column {
+                    Layout.fillWidth: true
+                    leftPadding: 20
+                    rightPadding: 20
+                    topPadding: 20
+
+                    MTypography {
+                        width: parent.width-40
+                        variant: "h5"
+                        text: "ScaleX 放大"
+                        gutterBottom: true
+                    }
+
+                    MTypography {
+                        width: parent.width-40
+                        variant: "body1"
+                        text: "从横向向外扩展。"
+                    }
+
+                    MTypography {
+                        width: parent.width-40
+                        variant: "body1"
+                        text: "此示例还演示了如何用 transformOrigin 属性来改变元素进入的位置。"
+                    }
+                }
+
+                Rectangle {
+                    Layout.fillWidth: true
+                    Layout.leftMargin: 20
+                    Layout.rightMargin: 20
+                    Layout.topMargin: 10
+                    height: scalex_display.height
+                    color: "#f5f5f5"
+
+                    Column {
+                        id: scalex_display
+                        spacing: 20
+                        leftPadding: 20
+                        rightPadding: 20
+                        topPadding: 20
+                        bottomPadding: 20
+                        anchors.horizontalCenter: parent.horizontalCenter
+
+                        Row {
+                            MSwitch {
+                                id: scalex_check
+                                anchors.verticalCenter: parent.verticalCenter
+                            }
+                            MTypography {
+                                anchors.verticalCenter: parent.verticalCenter
+                                text: "Show"
+                            }
+                        }
+
+                        Row {
+                            spacing: 20
+
+                            MPaper {
+                                width: 128
+                                height: 128
+
+                                MScaleX {
+                                    target: parent
+                                    open: scalex_check.checked
+                                }
+                            }
+
+                            MPaper {
+                                width: 128
+                                height: 128
+
+                                MScaleX {
+                                    target: parent
+                                    transformOrigin: Item.Right
+                                    timeout: 1000
+                                    open: scalex_check.checked
+                                }
+                            }
+                        }
+                    }
+                }
+
+                RowLayout {
+                    Layout.topMargin: 10
+                    Layout.bottomMargin: 10
+                    Layout.leftMargin: 20
+                    Layout.rightMargin: 20
+
+                    MButton {
+                        variant: "outlined"
+                        text: "< > Code"
+
+                        onClicked: {
+                            scalex_code.visible = !scalex_code.visible
+                        }
+                    }
+                }
+
+                Rectangle {
+                    id: scalex_code
+                    Layout.fillWidth: true
+                    Layout.leftMargin: 20
+                    Layout.rightMargin: 20
+                    visible: false
+                    color: "#272c34"
+                    height: childrenRect.height
+                    radius: 4
+
+                    MCopyText {
+                        padding: 20
+                        bottomPadding: 20
+                        color: Color.white
+                        textFormat: TextEdit.RichText
+                        text: `
+<pre>
+Row {
+    MSwitch {
+        id: scalex_check
+        anchors.verticalCenter: parent.verticalCenter
+    }
+    MTypography {
+        anchors.verticalCenter: parent.verticalCenter
+        text: "Show"
+    }
+}
+
+Row {
+    spacing: 20
+
+    MPaper {
+        width: 128
+        height: 128
+
+        MScaleX {
+            target: parent
+            open: scalex_check.checked
+        }
+    }
+
+    MPaper {
+        width: 128
+        height: 128
+
+        MScaleX {
+            target: parent
+            transformOrigin: Item.Right
+            timeout: 1000
+            open: scalex_check.checked
+        }
+    }
+}
+</pre>
+                        `
+                    }
+                }
+
+                // ScaleY 放大
+
+                Column {
+                    Layout.fillWidth: true
+                    leftPadding: 20
+                    rightPadding: 20
+                    topPadding: 20
+
+                    MTypography {
+                        width: parent.width-40
+                        variant: "h5"
+                        text: "ScaleY 放大"
+                        gutterBottom: true
+                    }
+
+                    MTypography {
+                        width: parent.width-40
+                        variant: "body1"
+                        text: "从纵向向外扩展。"
+                    }
+
+                    MTypography {
+                        width: parent.width-40
+                        variant: "body1"
+                        text: "此示例还演示了如何用 transformOrigin 属性来改变元素进入的位置。"
+                    }
+                }
+
+                Rectangle {
+                    Layout.fillWidth: true
+                    Layout.leftMargin: 20
+                    Layout.rightMargin: 20
+                    Layout.topMargin: 10
+                    height: scaley_display.height
+                    color: "#f5f5f5"
+
+                    Column {
+                        id: scaley_display
+                        spacing: 20
+                        leftPadding: 20
+                        rightPadding: 20
+                        topPadding: 20
+                        bottomPadding: 20
+                        anchors.horizontalCenter: parent.horizontalCenter
+
+                        Row {
+                            MSwitch {
+                                id: scaley_check
+                                anchors.verticalCenter: parent.verticalCenter
+                            }
+                            MTypography {
+                                anchors.verticalCenter: parent.verticalCenter
+                                text: "Show"
+                            }
+                        }
+
+                        Row {
+                            spacing: 20
+
+                            MPaper {
+                                width: 128
+                                height: 128
+
+                                MScaleY {
+                                    target: parent
+                                    open: scaley_check.checked
+                                }
+                            }
+
+                            MPaper {
+                                width: 128
+                                height: 128
+
+                                MScaleY {
+                                    target: parent
+                                    transformOrigin: Item.Bottom
+                                    timeout: 1000
+                                    open: scaley_check.checked
+                                }
+                            }
+                        }
+                    }
+                }
+
+                RowLayout {
+                    Layout.topMargin: 10
+                    Layout.bottomMargin: 10
+                    Layout.leftMargin: 20
+                    Layout.rightMargin: 20
+
+                    MButton {
+                        variant: "outlined"
+                        text: "< > Code"
+
+                        onClicked: {
+                            scaley_code.visible = !scaley_code.visible
+                        }
+                    }
+                }
+
+                Rectangle {
+                    id: scaley_code
+                    Layout.fillWidth: true
+                    Layout.leftMargin: 20
+                    Layout.rightMargin: 20
+                    visible: false
+                    color: "#272c34"
+                    height: childrenRect.height
+                    radius: 4
+
+                    MCopyText {
+                        padding: 20
+                        bottomPadding: 20
+                        color: Color.white
+                        textFormat: TextEdit.RichText
+                        text: `
+<pre>
+Row {
+    MSwitch {
+        id: scaley_check
+        anchors.verticalCenter: parent.verticalCenter
+    }
+    MTypography {
+        anchors.verticalCenter: parent.verticalCenter
+        text: "Show"
+    }
+}
+
+Row {
+    spacing: 20
+
+    MPaper {
+        width: 128
+        height: 128
+
+        MScaleY {
+            target: parent
+            open: scaley_check.checked
+        }
+    }
+
+    MPaper {
+        width: 128
+        height: 128
+
+        MScaleY {
+            target: parent
+            transformOrigin: Item.Bottom
+            timeout: 1000
+            open: scaley_check.checked
+        }
+    }
+}
+</pre>
+                        `
+                    }
+                }
+
                 // transitionComponent 属性
 
                 Column {

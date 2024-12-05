@@ -1,14 +1,15 @@
 import QtQuick 2.15
-import QtQuick.Shapes 1.15;
+import QtQuick.Shapes 1.15
 import "../styles"
+import "../"
 
 Item {
     id: root
-    property var target: null
     property string color: 'primary'
     property string size: 'medium' // 'medium' | 'small'
     property var padding: size === 'small' ? [14, 12, 15, 12] : [18, 12, 19, 12]
     property bool disabled: false
+    property bool hover: false
     property bool active: false
     property string _main_color: Palette.string2Color(root.color, Palette.primaryMain)
 
@@ -69,8 +70,8 @@ Item {
     }
 
     property int strokeStyle: disabled ? ShapePath.DashLine : ShapePath.SolidLine
-    property int strokeWidth: active ? 2 : 1
-    property string strokeColor: active ? root._main_color : '#3B000000'
+    property int strokeWidth: 1
+    property string strokeColor: hover ? Palette.lightTextPrimary : '#3B000000'
 
     // 下划线
     Shape {
@@ -94,5 +95,18 @@ Item {
                y: -root.strokeWidth/2
            }
        }
+    }
+
+    MScaleX {
+        target: underline
+        open: active
+    }
+
+    Rectangle {
+        id: underline
+        width: parent.width
+        anchors.bottom: parent.bottom
+        height: 2
+        color: root._main_color
     }
 }
