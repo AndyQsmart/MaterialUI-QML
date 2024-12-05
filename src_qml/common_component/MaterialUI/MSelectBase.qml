@@ -1,10 +1,6 @@
 import QtQuick 2.13
-import QtQuick.Controls 2.15
-import QtQuick.Controls.Styles 1.4
-import QtQuick.Controls.Material 2.12
-import QtQuick.Controls.Material.impl 2.12
-import QtGraphicalEffects 1.15
 import QtQuick.Shapes 1.15;
+import "./StyleComponent"
 import "./styles"
 import "./colors"
 
@@ -41,155 +37,48 @@ Rectangle {
 
     width: text_container.width
     height: text_container.height
+
     color: menuOpened ? Colors.alpha('#000000', 0.05) : "#00ffffff"
-    radius: variant === 'outlined' ? Palette.borderRadius : 0
-    border.width: variant === 'outlined' ? (menuOpened ? 2 : 1) : 0
-    border.color: menuOpened ? Palette.string2Color(selectColor, Palette.primaryMain) : Colors.alpha('#000000', 0.23)
     property bool menuOpened: false
-    property var underlineComponent: null // 下划线组件
-    property var filledComponent: null // filled类型背景
 
-    function initVariant() {
-        if (variant === 'filled') {
-            if (!filledComponent) {
-                filledComponent = Qt.createQmlObject(
-                    `import QtQuick 2.15;
-                        import QtQuick.Shapes 1.15;
-                        Shape {
-                            id: container
-                            anchors.fill: parent
-                            property real shapeWidth: parent.width
-                            property real shapeHeight: parent.height
-                            property real shapeRadius: ${Palette.borderRadius}
-                            z: -1
+    Loader {
+        id: loader
+        sourceComponent: variant === 'outlined' ? outlined_style : (variant === 'filled' ? filled_style : standard_style)
+        anchors.fill: parent
+        z: -1
+    }
 
-                            ShapePath {
-                                strokeWidth: 0.1
-                                strokeColor: "#e8e8e8"
-                                fillColor: "#e8e8e8"
-
-                                startX: 0
-                                startY: container.shapeRadius
-
-                                PathLine {
-                                    x: 0
-                                    y: container.shapeHeight
-                                }
-
-                                PathLine {
-                                    x: container.shapeWidth
-                                    y: container.shapeHeight
-                                }
-
-                                PathLine {
-                                    x: container.shapeWidth
-                                    y: container.shapeRadius
-                                }
-
-                                PathArc {
-                                    x: container.shapeWidth-container.shapeRadius
-                                    y: 0
-                                    radiusX: container.shapeRadius
-                                    radiusY: container.shapeRadius
-                                    direction: PathArc.Counterclockwise
-                                }
-
-                                PathLine {
-                                    x: container.shapeRadius
-                                    y: 0
-                                }
-
-                                PathArc {
-                                    x: 0
-                                    y: container.shapeRadius
-                                    radiusX: container.shapeRadius
-                                    radiusY: container.shapeRadius
-                                    direction: PathArc.Counterclockwise
-                                }
-                            }
-                        }
-                    `,
-                    control, "filledComponent"
-                )
-            }
-            else {
-                filledComponent.visible = true
-            }
-        }
-        else {
-            if (filledComponent) {
-                filledComponent.visible = false
-            }
-        }
-
-        if (variant !== 'outlined') {
-            if (!underlineComponent) {
-                underlineComponent = Qt.createQmlObject(
-                    `import QtQuick 2.15;
-                        import QtQuick.Shapes 1.15;
-                        Shape {
-                            id: container
-                            property int strokeStyle: ShapePath.DashLine
-                            property int strokeWidth: 1
-                            property string strokeColor: "${Colors.alpha('#000000', 0.42)}"
-                            anchors.left: parent.left
-                            anchors.right: parent.right
-                            anchors.bottom: parent.bottom
-
-                           ShapePath {
-                               strokeWidth: container.strokeWidth
-                               strokeColor: container.strokeColor
-                               strokeStyle: container.strokeStyle
-                               dashPattern: [2, 2]
-
-                               startX: container.strokeWidth/2
-                               startY: 0
-
-                               PathLine {
-                                   x: container.width-container.strokeWidth/2;
-                                   y: 0
-                               }
-                           }
-                        }
-                    `,
-                    control, "outlineComponent"
-                )
-            }
-            else {
-                underlineComponent.visible = true
-            }
-        }
-        else {
-            if (underlineComponent) {
-                underlineComponent.visible = false
-            }
+    Component {
+        id: standard_style
+        MInputStyle {
+            target: control
+            size: control.size
+            disabled: control.disabled
+            active: control.menuOpened
+            color: control.selectColor
         }
     }
 
-    Binding {
-        target: underlineComponent
-        property: "strokeStyle"
-        value: disabled ? ShapePath.DashLine : ShapePath.SolidLine
+    Component {
+        id: outlined_style
+        MOutlinedInputStyle {
+            target: control
+            size: control.size
+            disabled: control.disabled
+            active: control.menuOpened
+            color: control.selectColor
+        }
     }
 
-    Binding {
-        target: underlineComponent
-        property: "strokeWidth"
-        value: menuOpened ? 2 : 1
-    }
-
-    Binding {
-        target: underlineComponent
-        property: "strokeColor"
-        value: menuOpened ? Palette.string2Color(selectColor, Palette.primaryMain) : Colors.alpha('#000000', 0.42)
-    }
-
-    Component.onCompleted: {
-        initVariant()
-    }
-
-    onVariantChanged: {
-        initVariant()
+    Component {
+        id: filled_style
+        MFilledInputStyle {
+            target: control
+            size: control.size
+            disabled: control.disabled
+            active: control.menuOpened
+            color: control.selectColor
+        }
     }
 
     Row {

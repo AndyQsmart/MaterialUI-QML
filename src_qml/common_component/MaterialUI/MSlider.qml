@@ -1,7 +1,6 @@
 import QtQuick 2.13
 import QtQuick.Controls 2.15
-import QtQuick.Controls.Styles 1.4
-import QtQuick.Shapes 1.15;
+import QtQuick.Shapes 1.15
 import "./styles"
 import "./colors"
 

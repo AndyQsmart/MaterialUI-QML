@@ -4,18 +4,22 @@ import "../styles"
 Item {
     id: root
     property var target: null
+    property string color: 'primary'
     property string size: 'medium' // 'medium' | 'small'
     property var padding: size === 'small' ? [10.5, 14, 10.5, 14] : [18.5, 14, 18.5, 14]
-    z: -1
+    property bool disabled: false
+    property bool active: false
+    property string _main_color: Palette.string2Color(root.color, Palette.primaryMain)
 
+    z: -1
     anchors.fill: parent
 
     // outlined外边框
     Rectangle {
         enabled: false
         color: Colors.commonTransparent
-        border.width: target ? (target.activeFocus ? 2 : 1) :0
-        border.color: target ? (target.activeFocus ? target._main_color : '#3B000000') : ''
+        border.width: active ? 2 : 1
+        border.color: active ? root._main_color : '#3B000000'
         anchors.fill: parent
         radius: Palette.borderRadius
     }

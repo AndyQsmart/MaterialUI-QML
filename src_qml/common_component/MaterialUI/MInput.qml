@@ -13,5 +13,8 @@ MInputBase {
         id: styles
         target: textInput
         size: textInput.size
+        disabled: textInput.disabled
+        active: textInput.activeFocus
+        color: textInput.color
     }
 }

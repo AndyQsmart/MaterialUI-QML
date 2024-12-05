@@ -5,10 +5,14 @@ import "../styles"
 Item {
     id: root
     property var target: null
+    property string color: 'primary'
     property string size: 'medium' // 'medium' | 'small'
     property var padding: size === 'small' ? [14, 12, 15, 12] : [18, 12, 19, 12]
-    z: -1
+    property bool disabled: false
+    property bool active: false
+    property string _main_color: Palette.string2Color(root.color, Palette.primaryMain)
 
+    z: -1
     anchors.fill: parent
 
 
@@ -64,12 +68,31 @@ Item {
         }
     }
 
+    property int strokeStyle: disabled ? ShapePath.DashLine : ShapePath.SolidLine
+    property int strokeWidth: active ? 2 : 1
+    property string strokeColor: active ? root._main_color : '#3B000000'
+
     // 下划线
-    Rectangle {
-        enabled: false
-        color: target ? (target.activeFocus ? target._main_color : '#3B000000') : ""
-        width: target ? target.width : 0
-        height: target ? (target.activeFocus ? 2 : 1) : 0
+    Shape {
+        anchors.left: parent.left
+        anchors.right: parent.right
         anchors.bottom: parent.bottom
+
+        ShapePath {
+           strokeWidth: {
+               return root.strokeWidth
+           }
+           strokeColor: root.strokeColor
+           strokeStyle: root.strokeStyle
+           dashPattern: [2, 2]
+
+           startX: root.strokeWidth/2
+           startY: -root.strokeWidth/2
+
+           PathLine {
+               x: root.width-root.strokeWidth/2;
+               y: -root.strokeWidth/2
+           }
+       }
     }
 }

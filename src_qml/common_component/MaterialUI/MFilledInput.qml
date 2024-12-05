@@ -1,5 +1,4 @@
 import QtQuick 2.13
-import QtQuick.Shapes 1.15;
 import "./StyleComponent"
 import "./styles"
 
@@ -14,5 +13,8 @@ MInputBase {
         id: styles
         target: textInput
         size: textInput.size
+        disabled: textInput.disabled
+        active: textInput.activeFocus
+        color: textInput.color
     }
 }

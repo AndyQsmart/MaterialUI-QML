@@ -20,6 +20,9 @@ MInputBase {
         MInputStyle {
             target: root
             size: root.size
+            disabled: root.disabled
+            active: root.activeFocus
+            color: root.color
         }
     }
 
@@ -28,6 +31,9 @@ MInputBase {
         MOutlinedInputStyle {
             target: root
             size: root.size
+            disabled: root.disabled
+            active: root.activeFocus
+            color: root.color
         }
     }
 
@@ -36,6 +42,9 @@ MInputBase {
         MFilledInputStyle {
             target: root
             size: root.size
+            disabled: root.disabled
+            active: root.activeFocus
+            color: root.color
         }
     }
 }
