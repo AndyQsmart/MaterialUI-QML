@@ -36,6 +36,7 @@ TextInput {
         text: placeholder
         color: textInput.disabled ? Palette.lightTextDisabled : Palette.lightTextSecondary
         font.pointSize: TypographyStyle.fontStyleList.body1.size
+        lineHeight: 1
     }
 
     MouseArea {
