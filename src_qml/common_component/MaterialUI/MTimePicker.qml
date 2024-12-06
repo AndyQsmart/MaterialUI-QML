@@ -78,7 +78,7 @@ Row {
             new_date.setHours(hour_select.value)
             time_picker.value = new_date
             time_picker.change(new_date)
-            console.log(new_date)
+            // console.log(new_date)
         }
 
         Component.onCompleted: {

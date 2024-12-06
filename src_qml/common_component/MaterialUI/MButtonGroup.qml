@@ -18,12 +18,7 @@ Rectangle {
     width: childrenRect.width
     height: childrenRect.height
     radius: Palette.borderRadius
-    border.width: {
-        if (variant == 'outlined') {
-            return 1
-        }
-        return 0
-    }
+    border.width: variant == 'outlined' ? 1 : 0
     border.color: {
         let ans_color = Palette.string2Color(buttonColor, null)
         if (ans_color) {
@@ -52,88 +47,93 @@ Rectangle {
             }
         }
 
-        Item {
-            visible: false
+        GridLayout {
             id: childrenContainer
+            x: -1
+            y: -1
+            rowSpacing: 0
+            columnSpacing: 0
+            flow: orientation === 'vertical' ? GridLayout.TopToBottom : GridLayout.LeftToRight
         }
 
-        Loader {
-            id: loader
-            sourceComponent: orientation === 'vertical' ? column_container : row_container
-
-            Component.onCompleted: {
-                if (loader.item) {
-                    // 将外部传入的子元素添加到加载的组件的子元素列表中
-                    let the_child_list = []
-                    let i = 0
-                    for (i = 0; i < childrenContainer.children.length; i++) {
-                        the_child_list.push(childrenContainer.children[i])
-                    }
-                    for (i = 0; i < the_child_list.length; i++) {
-                        let the_child = the_child_list[i]
-                        if (the_child instanceof MButton) {
-                            the_child.variant = variant
-                            the_child.size = size
-                            the_child.background.radius = 0
-                            the_child.disableElevation = true
-                            if (disabled !== null) {
-                                the_child.disabled = disabled
+        Repeater {
+            model: childrenContainer.children.length
+            delegate: Item {
+                Binding {
+                    target: childrenContainer.children[index]
+                    property: "variant"
+                    value: container.variant
+                }
+                Binding {
+                    target: childrenContainer.children[index]
+                    property: "size"
+                    value: container.size
+                }
+                Binding {
+                    target: childrenContainer.children[index]
+                    property: "background.radius"
+                    value: 0
+                }
+                Binding {
+                    target: childrenContainer.children[index]
+                    property: "disableElevation"
+                    value: true
+                }
+                Binding {
+                    when: disabled !== null
+                    target: childrenContainer.children[index]
+                    property: "disabled"
+                    value: disabled
+                }
+                Binding {
+                    when: disableRipple !== null
+                    target: childrenContainer.children[index]
+                    property: "disableRipple"
+                    value: disableRipple
+                }
+                Binding {
+                    target: childrenContainer.children[index]
+                    property: "color"
+                    value: buttonColor
+                }
+                Binding {
+                    target: childrenContainer.children[index]
+                    property: "background.border.width"
+                    value: index%2 ? 0 : 1
+                }
+                Binding {
+                    when: variant === 'contained'
+                    target: childrenContainer.children[index]
+                    property: "background.border.color"
+                    value: {
+                        if (childrenContainer.children[index].disabled) {
+                            return Palette.lightActionDisabled
+                        }
+                        else {
+                            if (buttonColor === 'primary') {
+                                return Palette.primaryDark
                             }
-                            if (disableRipple != null) {
-                                the_child.disableRipple = disableRipple
-                            }
-                            the_child.color = buttonColor
-                            if (i%2) {
-                                the_child.background.border.width = 0
+                            else if (buttonColor === 'secondary') {
+                                return Palette.secondaryDark
                             }
                             else {
-                                the_child.background.border.width = 1
-                            }
-                            if (variant === 'contained') {
-                                if (the_child.disabled) {
-                                    the_child.background.border.color = Palette.lightActionDisabled
-                                }
-                                else {
-                                    if (buttonColor === 'primary') {
-                                        the_child.background.border.color = Palette.primaryDark
-                                    }
-                                    else if (buttonColor === 'secondary') {
-                                        the_child.background.border.color = Palette.secondaryDark
-                                    }
-                                    else {
-                                        the_child.background.border.color = Grey._400
-                                    }
-                                }
-                            }
-
-                            if (orientation === 'vertical') {
-                                the_child.Layout.fillWidth = true
-                            }
-                            else {
-                                the_child.Layout.fillHeight = true
+                                return Grey._400
                             }
                         }
-                        loader.item.children.push(the_child)
                     }
                 }
-            }
-        }
-
-        Component {
-            id: row_container
-            RowLayout {
-                x: -1
-                y: -1
-                spacing: 0
-            }
-        }
-
-        Component {
-            id: column_container
-            ColumnLayout {
-                x: -1
-                y: -1
-                spacing: 0
+                Binding {
+                    when: orientation === 'vertical'
+                    target: childrenContainer.children[index]
+                    property: "Layout.fillWidth"
+                    value: true
+                }
+                Binding {
+                    when: orientation !== 'vertical'
+                    target: childrenContainer.children[index]
+                    property: "Layout.fillHeight"
+                    value: true
+                }
             }
         }
     }

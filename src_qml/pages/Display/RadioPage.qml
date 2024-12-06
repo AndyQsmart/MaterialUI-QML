@@ -367,7 +367,7 @@ Row {
                                 label: 'Top'
                                 control: MRadio {
                                 }
-                                anchors.verticalCenter: parent.verticalCenter
+                                Layout.alignment: Qt.AlignVCenter
                             }
 
                             MFormControlLabel {
@@ -376,7 +376,7 @@ Row {
                                 label: 'Start'
                                 control: MRadio {
                                 }
-                                anchors.verticalCenter: parent.verticalCenter
+                                Layout.alignment: Qt.AlignVCenter
                             }
 
                             MFormControlLabel {
@@ -385,7 +385,7 @@ Row {
                                 label: 'Bottom'
                                 control: MRadio {
                                 }
-                                anchors.verticalCenter: parent.verticalCenter
+                                Layout.alignment: Qt.AlignVCenter
                             }
 
                             MFormControlLabel {
@@ -394,7 +394,7 @@ Row {
                                 label: 'End'
                                 control: MRadio {
                                 }
-                                anchors.verticalCenter: parent.verticalCenter
+                                Layout.alignment: Qt.AlignVCenter
                             }
                         }
                     }

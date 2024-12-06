@@ -30,25 +30,25 @@ ToolTip {
     }
 
     enter: Transition {
-            // toast_enter
-            NumberAnimation { property: "opacity"; from: 0.0; to: 1.0; easing.type: Easing.OutQuad; duration: 500 }
-        }
+        // toast_enter
+        NumberAnimation { property: "opacity"; from: 0.0; to: 1.0; easing.type: Easing.OutQuad; duration: 500 }
+    }
 
-        exit: Transition {
-            // toast_exit
-            NumberAnimation { property: "opacity"; from: 1.0; to: 0.0; easing.type: Easing.InQuad; duration: 500 }
-        }
+    exit: Transition {
+        // toast_exit
+        NumberAnimation { property: "opacity"; from: 1.0; to: 0.0; easing.type: Easing.InQuad; duration: 500 }
+    }
 
-        contentItem: Text {
-            text: control.text
-            font: control.font
-            wrapMode: Text.Wrap
-            color: Colors.commonWhite
-        }
+    contentItem: Text {
+        text: control.text
+        font: control.font
+        wrapMode: Text.Wrap
+        color: Colors.commonWhite
+    }
 
-        background: Rectangle {
-            color: control.color
-            opacity: 0.9
-            radius: 2
-        }
+    background: Rectangle {
+        color: control.color
+        opacity: 0.9
+        radius: 2
+    }
 }
