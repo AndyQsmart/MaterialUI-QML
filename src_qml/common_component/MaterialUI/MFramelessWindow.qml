@@ -36,10 +36,12 @@ Window {
     // }
 
     onVisibilityChanged: {
-        // 重置窗口背景色
-        if (root.visibility !== Window.FullScreen) {
-            root.flags = 0
-            root.flags = Qt.WindowMinimizeButtonHint | Qt.WA_TranslucentBackground | Qt.FramelessWindowHint | (enableBorderShadow ? 0 : Qt.NoDropShadowWindowHint)
+        // mac全平后，退出全屏背景色有问题，重置窗口背景色
+        if (Qt.platform.os === 'osx') {
+            if (root.visibility !== Window.FullScreen) {
+                root.flags = 0
+                root.flags = Qt.WindowMinimizeButtonHint | Qt.WA_TranslucentBackground | Qt.FramelessWindowHint | (enableBorderShadow ? 0 : Qt.NoDropShadowWindowHint)
+            }
         }
     }
 
@@ -48,7 +50,7 @@ Window {
         id: bg_container
         anchors.fill: parent
         z: -1
-        radius: systemType == "mac" ? (root.visibility !== Window.FullScreen ? 10 : 0) : 6
+        radius: systemType == "mac" ? (root.visibility !== Window.FullScreen ? 10 : 0) : (root.visibility !== Window.Maximized ? 6 : 0)
         elevation: 0
 
         layer.enabled: true
