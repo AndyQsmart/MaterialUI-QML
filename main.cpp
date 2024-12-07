@@ -1,5 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQuickWindow>
 #include <QQmlContext>
 #include <QQuickStyle>
 #include <QFont>
@@ -20,6 +21,9 @@ int main(int argc, char *argv[]) {
     app.setOrganizationDomain("https://github.com/AndyQsmart/MaterialUI-QML");
 
     QQmlApplicationEngine engine;
+
+    // 启用默认 Alpha 缓冲区
+    QQuickWindow::setDefaultAlphaBuffer(true);
 
     // 全局特殊事件处理
     ApplicationEventFilter *app_event_filter = new ApplicationEventFilter();

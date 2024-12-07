@@ -17,10 +17,12 @@ You can run the example project.It is an example that show some usage of compone
 
 1. run in C++
    - Qt 5.15.2
+   - Set `QQuickWindow::setDefaultAlphaBuffer(true);` if user `MFramelessWindow`
 
 2. run in Python
    - Python 3.9
    - pip install PySide2==5.15.2.1
+   - Set `QQuickWindow.setDefaultAlphaBuffer(True)` if user `MFramelessWindow`
    - `python main.py`
 
 ![image](https://github.com/AndyQsmart/MaterialUI-QML/blob/main/readme_image/image1.jpg)

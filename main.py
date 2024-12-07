@@ -4,6 +4,7 @@ import os
 
 from PySide2.QtCore import QCoreApplication, Qt
 from PySide2.QtGui import QGuiApplication, QFont
+from PySide2.QtQuick import QQuickWindow
 from PySide2.QtQml import QQmlApplicationEngine
 
 from src.utils.application_event_filter import ApplicationEventFilter
@@ -22,6 +23,9 @@ if __name__ == "__main__":
     app.setOrganizationDomain('https://github.com/AndyQsmart/MaterialUI-QML')
 
     engine = QQmlApplicationEngine()
+
+    # 启用默认的 Alpha 缓冲区
+    QQuickWindow.setDefaultAlphaBuffer(True)
 
     # 全局特殊事件处理
     app_event_filter = ApplicationEventFilter()

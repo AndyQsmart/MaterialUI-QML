@@ -19,6 +19,15 @@ Pane {
             name: "Components 组件",
             subList: [
                 {
+                    name: "Window 窗口",
+                    subList: [
+                        {
+                            name: "Frameless 无边框窗口",
+                            url: "/framelesswindowpage"
+                        },
+                    ]
+                },
+                {
                     name: "Inputs 输入框",
                     subList: [
                         {

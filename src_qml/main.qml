@@ -120,6 +120,11 @@ Window {
     }
 
     Component {
+        id: framelesswindow_page
+        FramelessWindowPage { }
+    }
+
+    Component {
         id: radio_page
         RadioPage { }
     }
@@ -281,6 +286,7 @@ Window {
         "/checkboxpage": checkbox_page,
         "/datetimepickerpage": datetimepicker_page,
         "/colorpickerpage": colorpicker_page,
+        "/framelesswindowpage": framelesswindow_page,
         "/radiopage": radio_page,
         "/selectpage": select_page,
         "/sliderpage": slider_page,
