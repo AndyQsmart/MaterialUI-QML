@@ -63,27 +63,16 @@ Window {
 
         color: root.backgroundColor
 
-        Rectangle {
-            id: move_bar
+        // 窗口拖动区域
+        MouseArea {
             anchors.top: parent.top
             anchors.left: parent.left
             anchors.right: parent.right
             height: 40
-            color: 'red'
 
-            // 拖动需要排除按钮区域
-            DragHandler {
-                onActiveChanged: {
-                    if (active) {
-                        startSystemMove()
-                    }
-                }
+            onPressed: {
+                startSystemMove()
             }
-        }
-
-        MWindowResizeHandler {
-            anchors.fill: parent
-            target: root
         }
 
         // win下的系统按钮
@@ -97,6 +86,12 @@ Window {
         MFramelessWindowButtonsMac {
             visible: systemType === "mac" && root.visibility !== Window.FullScreen
             darkMode: root.darkMode
+            target: root
+        }
+
+        // 窗口调整大小区域
+        MWindowResizeHandler {
+            anchors.fill: parent
             target: root
         }
     }
