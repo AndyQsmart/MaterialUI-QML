@@ -6,6 +6,9 @@ Item {
     id: win_system_button
     property Window target: null
     property bool darkMode: false
+    property bool disableMinimizeButton: false
+    property bool disableMaximizeButton: false
+    property bool disableCloseButton: false
 
 
     anchors.right: parent.right
@@ -21,6 +24,7 @@ Item {
 
         // win最小化按钮
         Rectangle {
+            visible: !disableMinimizeButton
             width: 48
             height: 28
 
@@ -58,6 +62,7 @@ Item {
 
         // win最大化按钮
         Rectangle {
+            visible: !disableMaximizeButton
             width: 48
             height: 28
 
@@ -100,6 +105,7 @@ Item {
 
         // win关闭按钮
         Rectangle {
+            visible: !disableCloseButton
             width: 50
             height: 28
 

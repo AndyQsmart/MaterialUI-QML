@@ -6,10 +6,15 @@ Item {
     id: mac_system_button
     property Window target: null
     property bool darkMode: false
+    property bool disableMinimizeButton: false
+    property bool disableMaximizeButton: false
+    property bool disableCloseButton: false
 
 
-    x: 8
-    y: 8
+    anchors.top: parent.top
+    anchors.left: parent.left
+    anchors.topMargin: 8
+    anchors.leftMargin: 8
     width: childrenRect.width
     height: childrenRect.height
     property bool activeSystemButton: mac_system_button_area.containsMouse || root.activeFocusItem
@@ -21,6 +26,7 @@ Item {
 
         // mac关闭按钮
         Rectangle {
+            visible: !disableCloseButton
             width: 12
             height: 12
             radius: 6
@@ -52,6 +58,7 @@ Item {
 
         // mac最小化按钮
         Rectangle {
+            visible: !disableMinimizeButton
             width: 12
             height: 12
             radius: 6
@@ -88,6 +95,7 @@ Item {
 
         // mac全屏按钮
         Rectangle {
+            visible: !disableMaximizeButton
             width: 12
             height: 12
             radius: 6

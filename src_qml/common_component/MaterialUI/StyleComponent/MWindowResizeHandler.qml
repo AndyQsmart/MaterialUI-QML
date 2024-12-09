@@ -6,7 +6,6 @@ Item {
     property real edgeOffset: 5
 
 
-
     // startSystemResize 参数：
     // startSystemResize 需要一个参数，指示在哪个位置启动调整大小操作。常见的枚举值有：
     // Qt.LeftEdge：窗口左边缘

@@ -195,11 +195,6 @@ Window {
     }
 
     Component {
-        id: formcontrollabel_api
-        FormControlLabelApi { }
-    }
-
-    Component {
         id: checkbox_api
         CheckboxApi { }
     }
@@ -222,6 +217,16 @@ Window {
     Component {
         id: datepicker_api
         DatePickerApi { }
+    }
+
+    Component {
+        id: formcontrollabel_api
+        FormControlLabelApi { }
+    }
+
+    Component {
+        id: framelesswindow_api
+        FramelessWindowApi { }
     }
 
     Component {
@@ -307,6 +312,7 @@ Window {
         "/api/complexselect": complexselect_api,
         "/api/datepicker": datepicker_api,
         "/api/formcontrollabel": formcontrollabel_api,
+        "/api/framelesswindow": framelesswindow_api,
         "/api/icon": icon_api,
         "/api/linearprogress": linearprogress_api,
         "/api/paper": paper_api,

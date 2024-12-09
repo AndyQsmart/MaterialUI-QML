@@ -9,24 +9,28 @@ Window {
     id: root
     property bool enableBorderShadow: true
     property bool darkMode: false // system_palette.window.hslLightness < 0.5
-    property int safeAreaOrigin: Item.TopLeft // Item.TopLeft | Item.TopRight
-    property Item safeAreaRect: Item {
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-    }
     property string backgroundColor: "#ffffff"
-    // property Item toolBarButton: mac_system_button
-
-    // Qt.platform.os === 'windows' || Qt.platform.os==="winrt"
-    // 除了mac，其他都按照win的方式渲染
+    property alias dragBar: drag_bar
+    property alias winSystemButtonBar: win_system_button_bar
+    property alias macSystemButtonBar: mac_system_button_bar
+    // 除了mac，其他都按照win的方式渲染 // Qt.platform.os === 'windows' || Qt.platform.os==="winrt"
     property string systemType: Qt.platform.os === 'osx' ? "mac" : "win"
+    property bool disableMinimizeButton: false
+    property bool disableMaximizeButton: false
+    property bool disableCloseButton: false
 
-   default property alias children: bg_container.children
+    // property int safeAreaOrigin: Item.TopLeft // Item.TopLeft | Item.TopRight
+    // property Item safeAreaRect: Item {
+    //     x: 0
+    //     y: 0
+    //     width: 0
+    //     height: 0
+    // }
 
 
 
+
+    default property alias children: bg_container.children
     flags: Qt.WindowMinimizeButtonHint | Qt.WA_TranslucentBackground | Qt.FramelessWindowHint | (enableBorderShadow ? 0 : Qt.NoDropShadowWindowHint)
     color: "transparent"
 
@@ -65,10 +69,11 @@ Window {
 
         // 窗口拖动区域
         MouseArea {
+            id: drag_bar
             anchors.top: parent.top
             anchors.left: parent.left
             anchors.right: parent.right
-            height: 40
+            height: systemType == "mac" ? 28 : 28
 
             onPressed: {
                 startSystemMove()
@@ -77,22 +82,33 @@ Window {
 
         // win下的系统按钮
         MFramelessWindowButtonsWin {
+            id: win_system_button_bar
             visible: systemType !== "mac"
+            disableMinimizeButton: root.disableMinimizeButton
+            disableMaximizeButton: root.disableMaximizeButton
+            disableCloseButton: root.disableCloseButton
             darkMode: root.darkMode
             target: root
+            z: 900
         }
 
         // mac下的系统按钮
         MFramelessWindowButtonsMac {
+            id: mac_system_button_bar
             visible: systemType === "mac" && root.visibility !== Window.FullScreen
+            disableMinimizeButton: root.disableMinimizeButton
+            disableMaximizeButton: root.disableMaximizeButton
+            disableCloseButton: root.disableCloseButton
             darkMode: root.darkMode
             target: root
+            z: 900
         }
 
         // 窗口调整大小区域
         MWindowResizeHandler {
             anchors.fill: parent
             target: root
+            z: 1000
         }
     }
 }

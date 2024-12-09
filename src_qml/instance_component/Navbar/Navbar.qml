@@ -159,6 +159,10 @@ Pane {
                     url: "/api/formcontrollabel"
                 },
                 {
+                    name: "Frameless Window",
+                    url: "/api/framelesswindow"
+                },
+                {
                     name: "Icon",
                     url: "/api/icon"
                 },
