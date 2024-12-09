@@ -77,8 +77,11 @@ Item {
                 onClicked: {
                     if (Qt.platform.os === 'osx') {
                         target.flags = 0 // mac无边框导致不能最小化，先重置成有边框，再最小化
+                        target.showMinimized()
                     }
-                    target.showMinimized()
+                    else {
+                        target.hide()
+                    }
                 }
             }
         }
@@ -109,7 +112,12 @@ Item {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    target.showFullScreen()
+                    if (Qt.platform.os === 'osx') {
+                        target.showFullScreen()
+                    }
+                    else {
+                        target.showMaximized()
+                    }
                 }
             }
         }

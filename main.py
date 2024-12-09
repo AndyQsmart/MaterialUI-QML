@@ -1,6 +1,7 @@
 # This Python file uses the following encoding: utf-8
 import sys
 import os
+import platform
 
 from PySide2.QtCore import QCoreApplication, Qt
 from PySide2.QtGui import QGuiApplication, QFont
@@ -24,8 +25,9 @@ if __name__ == "__main__":
 
     engine = QQmlApplicationEngine()
 
-    # 启用默认的 Alpha 缓冲区
-    QQuickWindow.setDefaultAlphaBuffer(True)
+    # mac端无边框窗口，需要启用默认的 Alpha 缓冲区
+    if platform.system() == 'Darwin':
+        QQuickWindow.setDefaultAlphaBuffer(True)
 
     # 全局特殊事件处理
     app_event_filter = ApplicationEventFilter()

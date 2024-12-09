@@ -22,8 +22,10 @@ int main(int argc, char *argv[]) {
 
     QQmlApplicationEngine engine;
 
-    // 启用默认 Alpha 缓冲区
+    // mac端无边框窗口，需要启用默认 Alpha 缓冲区
+    #ifdef Q_OS_MAC
     QQuickWindow::setDefaultAlphaBuffer(true);
+    #endif
 
     // 全局特殊事件处理
     ApplicationEventFilter *app_event_filter = new ApplicationEventFilter();
