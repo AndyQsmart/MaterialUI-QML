@@ -9,7 +9,7 @@ Item {
     // Qt.RightEdge：窗口右边缘
     // Qt.TopEdge：窗口上边缘
     // Qt.BottomEdge：窗口下边缘
-    // Qt.TopLeftCorner：窗口左上角
+    // Qt.TopEdge | Qt.LeftEdge：窗口左上角
     // Qt.TopRightCorner：窗口右上角
     // Qt.BottomLeftCorner：窗口左下角
     // Qt.BottomRightCorner：窗口右下角
@@ -94,6 +94,90 @@ Item {
             }
             else {
                 target.startSystemResize(Qt.RightEdge)
+            }
+        }
+    }
+
+    // 左上调整
+    MouseArea {
+        anchors.top: parent.top
+        anchors.left: parent.left
+        width: 5
+        height: 5
+
+        hoverEnabled: true
+        acceptedButtons: Qt.LeftButton
+        cursorShape: Qt.SizeFDiagCursor
+
+        onPressed: {
+            if (Qt.platform.os === 'osx') {
+                target.startSystemResize(Qt.TopEdge | Qt.LeftEdge)
+            }
+            else {
+                target.startSystemResize(Qt.TopEdge | Qt.LeftEdge)
+            }
+        }
+    }
+
+    // 右上调整
+    MouseArea {
+        anchors.top: parent.top
+        anchors.right: parent.right
+        width: 5
+        height: 5
+
+        hoverEnabled: true
+        acceptedButtons: Qt.LeftButton
+        cursorShape: Qt.SizeBDiagCursor
+
+        onPressed: {
+            if (Qt.platform.os === 'osx') {
+                target.startSystemResize(Qt.TopEdge | Qt.RightEdge)
+            }
+            else {
+                target.startSystemResize(Qt.TopEdge | Qt.RightEdge)
+            }
+        }
+    }
+
+    // 左下调整
+    MouseArea {
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+        width: 5
+        height: 5
+
+        hoverEnabled: true
+        acceptedButtons: Qt.LeftButton
+        cursorShape: Qt.SizeBDiagCursor
+
+        onPressed: {
+            if (Qt.platform.os === 'osx') {
+                target.startSystemResize(Qt.BottomEdge | Qt.LeftEdge)
+            }
+            else {
+                target.startSystemResize(Qt.BottomEdge | Qt.LeftEdge)
+            }
+        }
+    }
+
+    // 右下调整
+    MouseArea {
+        anchors.bottom: parent.bottom
+        anchors.right: parent.right
+        width: 5
+        height: 5
+
+        hoverEnabled: true
+        acceptedButtons: Qt.LeftButton
+        cursorShape: Qt.SizeFDiagCursor
+
+        onPressed: {
+            if (Qt.platform.os === 'osx') {
+                target.startSystemResize(Qt.BottomEdge | Qt.RightEdge)
+            }
+            else {
+                target.startSystemResize(Qt.BottomEdge | Qt.RightEdge)
             }
         }
     }
