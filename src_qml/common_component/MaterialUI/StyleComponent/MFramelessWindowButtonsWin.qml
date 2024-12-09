@@ -54,7 +54,9 @@ Item {
                         target.showMinimized()
                     }
                     else {
-                        target.hide()
+                        // target.hide()
+                        target.showMinimized()
+
                     }
                 }
             }

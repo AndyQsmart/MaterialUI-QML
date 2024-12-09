@@ -30,10 +30,12 @@ Window {
 
 
 
-    default property alias children: bg_container.children
-    flags: Qt.WindowMinimizeButtonHint | Qt.WA_TranslucentBackground | Qt.FramelessWindowHint | (enableBorderShadow ? 0 : Qt.NoDropShadowWindowHint)
+    default property alias data: bg_container.data
+    property int winFlags: Qt.Window | Qt.WindowSystemMenuHint | Qt.WindowMinimizeButtonHint | Qt.FramelessWindowHint | (enableBorderShadow ? 0 : Qt.NoDropShadowWindowHint)
+    property int macFlags: Qt.WindowMinimizeButtonHint | Qt.FramelessWindowHint | (enableBorderShadow ? 0 : Qt.NoDropShadowWindowHint)
+    flags: Qt.platform.os === 'osx' ? macFlags : winFlags
     color: "transparent"
-
+    title: "窗口"
 
     // SystemPalette {
     //     id: system_palette
@@ -44,11 +46,10 @@ Window {
         if (Qt.platform.os === 'osx') {
             if (root.visibility !== Window.FullScreen) {
                 root.flags = 0
-                root.flags = Qt.WindowMinimizeButtonHint | Qt.WA_TranslucentBackground | Qt.FramelessWindowHint | (enableBorderShadow ? 0 : Qt.NoDropShadowWindowHint)
+                root.flags = macFlags
             }
         }
     }
-
 
     MPaper {
         id: bg_container
