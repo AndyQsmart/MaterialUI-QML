@@ -152,5 +152,6 @@
         <file>src_qml/pages/Display/FramelessWindowPage.qml</file>
         <file>src_qml/common_component/MaterialUI/StyleComponent/MFramelessWindowButtonsWin.qml</file>
         <file>src_qml/common_component/MaterialUI/StyleComponent/MFramelessWindowButtonsMac.qml</file>
+        <file>src_qml/common_component/MaterialUI/StyleComponent/MWindowResizeHandler.qml</file>
     </qresource>
 </RCC>

@@ -23,7 +23,7 @@ Window {
     // 除了mac，其他都按照win的方式渲染
     property string systemType: Qt.platform.os === 'osx' ? "mac" : "win"
 
-//    default property alias children: bg_container.children
+   default property alias children: bg_container.children
 
 
 
@@ -49,7 +49,6 @@ Window {
     MPaper {
         id: bg_container
         anchors.fill: parent
-        z: -1
         radius: systemType == "mac" ? (root.visibility !== Window.FullScreen ? 10 : 0) : (root.visibility !== Window.Maximized ? 6 : 0)
         elevation: 0
 
@@ -64,6 +63,29 @@ Window {
 
         color: root.backgroundColor
 
+        Rectangle {
+            id: move_bar
+            anchors.top: parent.top
+            anchors.left: parent.left
+            anchors.right: parent.right
+            height: 40
+            color: 'red'
+
+            // 拖动需要排除按钮区域
+            DragHandler {
+                onActiveChanged: {
+                    if (active) {
+                        startSystemMove()
+                    }
+                }
+            }
+        }
+
+        MWindowResizeHandler {
+            anchors.fill: parent
+            target: root
+        }
+
         // win下的系统按钮
         MFramelessWindowButtonsWin {
             visible: systemType !== "mac"
@@ -71,67 +93,12 @@ Window {
             target: root
         }
 
+        // mac下的系统按钮
         MFramelessWindowButtonsMac {
             visible: systemType === "mac" && root.visibility !== Window.FullScreen
             darkMode: root.darkMode
             target: root
         }
-
     }
-
-    // 拖动需要排除按钮区域
-    DragHandler {
-        onActiveChanged: {
-            if(active) startSystemMove()
-        }
-    }
-
-    // startSystemResize 参数：
-    // startSystemResize 需要一个参数，指示在哪个位置启动调整大小操作。常见的枚举值有：
-    // Qt.LeftEdge：窗口左边缘
-    // Qt.RightEdge：窗口右边缘
-    // Qt.TopEdge：窗口上边缘
-    // Qt.BottomEdge：窗口下边缘
-    // Qt.TopLeftCorner：窗口左上角
-    // Qt.TopRightCorner：窗口右上角
-    // Qt.BottomLeftCorner：窗口左下角
-    // Qt.BottomRightCorner：窗口右下角
-
-    // MouseArea {
-    //     id: mouseArea
-    //     anchors.fill: parent
-    //     hoverEnabled: true
-    //     acceptedButtons: Qt.LeftButton
-    //     z: 100
-
-    //     property int edges: 0;
-    //     property int edgeOffest: 5;
-
-    //     function setEdges(x, y) {
-    //         edges = 0;
-    //         if(x < edgeOffest) edges |= Qt.LeftEdge;
-    //         if(x > (width - edgeOffest))  edges |= Qt.RightEdge;
-    //         if(y < edgeOffest) edges |= Qt.TopEdge;
-    //         if(y > (height - edgeOffest)) edges |= Qt.BottomEdge;
-    //     }
-
-    //     cursorShape: {
-    //         return !containsMouse ? Qt.ArrowCursor:
-    //                 edges == 3 || edges == 12 ? Qt.SizeFDiagCursor :
-    //                 edges == 5 || edges == 10 ? Qt.SizeBDiagCursor :
-    //                 edges & 9 ? Qt.SizeVerCursor :
-    //                 edges & 6 ? Qt.SizeHorCursor : Qt.ArrowCursor;
-    //     }
-
-    //     onPositionChanged: {
-    //         setEdges(mouseX, mouseY);
-    //     }
-    //     onPressed: {
-    //         setEdges(mouseX, mouseY);
-    //         if(edges && containsMouse) {
-    //             startSystemResize(edges);
-    //         }
-    //     }
-    // }
 }
 
