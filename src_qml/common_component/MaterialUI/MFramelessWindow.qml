@@ -18,6 +18,7 @@ Window {
     property bool disableMinimizeButton: false
     property bool disableMaximizeButton: false
     property bool disableCloseButton: false
+    property int windowFlags: 0
 
     // property int safeAreaOrigin: Item.TopLeft // Item.TopLeft | Item.TopRight
     // property Item safeAreaRect: Item {
@@ -31,8 +32,8 @@ Window {
 
 
     default property alias data: bg_container.data
-    property int winFlags: Qt.Window | Qt.WindowSystemMenuHint | Qt.WindowMinimizeButtonHint | Qt.FramelessWindowHint | (enableBorderShadow ? 0 : Qt.NoDropShadowWindowHint)
-    property int macFlags: Qt.WindowMinimizeButtonHint | Qt.FramelessWindowHint | (enableBorderShadow ? 0 : Qt.NoDropShadowWindowHint)
+    property int winFlags: windowFlags | Qt.Window | Qt.WindowSystemMenuHint | Qt.WindowMinimizeButtonHint | Qt.FramelessWindowHint | (enableBorderShadow ? 0 : Qt.NoDropShadowWindowHint)
+    property int macFlags: windowFlags | Qt.WindowMinimizeButtonHint | Qt.FramelessWindowHint | (enableBorderShadow ? 0 : Qt.NoDropShadowWindowHint)
     flags: Qt.platform.os === 'osx' ? macFlags : winFlags
     color: "transparent"
     title: "窗口"
