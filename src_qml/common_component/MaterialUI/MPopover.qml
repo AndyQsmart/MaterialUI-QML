@@ -152,6 +152,7 @@ Popup {
     }
 
     function setPos() {
+        let anchorRect = {}
         if (anchorEl) {
             let maxX = parent.width-width
             let maxY = parent.height-height
@@ -159,25 +160,26 @@ Popup {
             let to_x = anchorElPos.x
             let to_y = anchorElPos.y
 
-            let anchorRect = {
+            anchorRect = {
                 x: anchorElPos.x,
                 y: anchorElPos.y,
                 width: anchorEl.width,
                 height: anchorEl.height,
             }
-            let elemRect = {
-                width: width,
-                height: height
-            }
-            let windowRect = {
-                width: parent.width,
-                height: parent.height,
-            }
-            let to_rect = getPositioningStyle(anchorRect, elemRect, windowRect)
-
-            x = to_rect.x
-            y = to_rect.y
         }
+
+        let elemRect = {
+            width: width,
+            height: height
+        }
+        let windowRect = {
+            width: parent.width,
+            height: parent.height,
+        }
+        let to_rect = getPositioningStyle(anchorRect, elemRect, windowRect)
+
+        x = to_rect.x
+        y = to_rect.y
     }
 
     onAboutToShow: {
