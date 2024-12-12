@@ -36,19 +36,28 @@ Window {
     property int macFlags: windowFlags | Qt.WindowMinimizeButtonHint | Qt.FramelessWindowHint | (enableBorderShadow ? 0 : Qt.NoDropShadowWindowHint)
     flags: Qt.platform.os === 'osx' ? macFlags : winFlags
     color: "transparent"
-    title: "窗口"
+    // title: "窗口"
 
     // SystemPalette {
     //     id: system_palette
     // }
 
+    property int lastVisibility: -1
+
     onVisibilityChanged: {
-        // mac全平后，退出全屏背景色有问题，重置窗口背景色
         if (Qt.platform.os === 'osx') {
-            if (root.visibility !== Window.FullScreen) {
+            // mac全屏后，退出全屏背景色有问题，重置窗口背景色
+            if (root.lastVisibility === Window.FullScreen && root.visibility !== Window.FullScreen) {
                 root.flags = 0
                 root.flags = macFlags
             }
+
+            // mac最小化需要flags取消无边框，退出最小化后，重置flags
+            if (root.lastVisibility === Window.Minimized && root.visibility !== Window.Minimized) {
+                root.flags = macFlags
+            }
+
+            lastVisibility = root.visibility
         }
     }
 

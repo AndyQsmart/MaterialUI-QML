@@ -49,6 +49,6 @@ ToolTip {
     background: Rectangle {
         color: control.color
         opacity: 0.9
-        radius: 2
+        radius: Palette.borderRadius
     }
 }

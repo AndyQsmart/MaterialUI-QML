@@ -48,33 +48,34 @@ Item {
         // 调整高度
         if (flag & Qt.RightEdge) {
             toWidth = macStartWidth+(mouseX-macStartX)
-            if (target.minimumWidth <= toWidth && toWidth <= target.maximumWidth) {
-                target.width = toWidth
-            }
+            toWidth = Math.max(target.minimumWidth, toWidth)
+            toWidth = Math.min(target.maximumWidth, toWidth)
+            target.width = toWidth
         }
 
         // 调整宽度
         if (flag & Qt.BottomEdge) {
             toHeight = macStartHeight+(mouseY-macStartY)
-            if (target.minimumHeight <= toHeight && toHeight <= target.maximumHeight) {
-                target.height = toHeight
-            }
+            toHeight = Math.max(target.minimumHeight, toHeight)
+            toHeight = Math.min(target.maximumHeight, toHeight)
+            target.height = toHeight
         }
 
         if (flag & Qt.LeftEdge) {
             toWidth = macStartWidth+(macStartX-mouseX)
-            if (target.minimumWidth <= toWidth && toWidth <= target.maximumWidth) {
-                target.x = macStartWindowX+macStartWidth-toWidth
-                target.width = toWidth
-            }
+            toWidth = Math.max(target.minimumWidth, toWidth)
+            toWidth = Math.min(target.maximumWidth, toWidth)
+            target.width = toWidth
+            target.x = macStartWindowX+macStartWidth-toWidth
+            target.width = toWidth
         }
 
         if (flag & Qt.TopEdge) {
             toHeight = macStartHeight+(macStartY-mouseY)
-            if (target.minimumHeight <= toHeight && toHeight <= target.maximumHeight) {
-                target.y = macStartWindowY+macStartHeight-toHeight
-                target.height = toHeight
-            }
+            toHeight = Math.max(target.minimumHeight, toHeight)
+            toHeight = Math.min(target.maximumHeight, toHeight)
+            target.y = macStartWindowY+macStartHeight-toHeight
+            target.height = toHeight
         }
     }
 
