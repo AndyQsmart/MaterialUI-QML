@@ -1,6 +1,6 @@
 pragma Singleton
 
-import QtQuick 2.0
+import QtQuick 2.15
 import "../QSQL"
 import "../../../common_js/Tools.js" as Tools
 

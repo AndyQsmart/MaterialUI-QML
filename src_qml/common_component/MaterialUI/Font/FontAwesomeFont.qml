@@ -2,7 +2,7 @@
 //加载fontawesome5 otf
 pragma Singleton
 
-import QtQuick 2.0
+import QtQuick 2.15
 
 Item {
     id: fonts

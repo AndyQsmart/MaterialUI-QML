@@ -1,4 +1,4 @@
-import QtQuick 2.13
+import QtQuick 2.15
 import "../../../common_js/Tools.js" as Tools
 
 Timer {

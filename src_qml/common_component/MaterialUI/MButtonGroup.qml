@@ -1,5 +1,5 @@
-import QtQuick 2.13
-import QtQuick.Layouts 1.11
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
 import QtGraphicalEffects 1.15
 import "./styles"
 import "./colors"

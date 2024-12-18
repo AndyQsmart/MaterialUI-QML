@@ -1,5 +1,5 @@
 import QtQuick 2.15
-import QtQuick.Window 2.13
+import QtQuick.Window 2.15
 
 // mac下的系统按钮
 Item {

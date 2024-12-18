@@ -1,8 +1,8 @@
-import QtQuick 2.13
-import QtQuick.Controls.Material 2.0
+import QtQuick 2.15
+import QtQuick.Controls.Material 2.15
 import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.11
-import QtQuick.Window 2.14
+import QtQuick.Layouts 1.15
+import QtQuick.Window 2.15
 import "../../common_component/MaterialUI"
 import "../../common_js/StringUtil.js" as Strings
 import "../../common_js/Color.js" as Color

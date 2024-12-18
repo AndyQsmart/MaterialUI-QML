@@ -1,6 +1,6 @@
 // FontAwesomeToolButton.qml
 
-import QtQuick 2.9
+import QtQuick 2.15
 import "./styles"
 import "./Font"
 import "./Font/IconsName.js" as IconsName
