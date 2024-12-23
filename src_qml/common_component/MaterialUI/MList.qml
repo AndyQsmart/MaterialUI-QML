@@ -1,5 +1,5 @@
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
+import QtQuick
+import QtQuick.Layouts
 import "./styles"
 
 Item {
@@ -12,9 +12,9 @@ Item {
         if (disablePadding) {
             return 0
         }
-        let ans = Palette.unit
+        let ans = MPalette.unit
         if (dense) {
-            ans = Palette.unit
+            ans = MPalette.unit
         }
         return ans
     }

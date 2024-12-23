@@ -1,4 +1,4 @@
-import QtQuick 2.15
+import QtQuick
 import "./styles"
 
 // 原版
@@ -56,17 +56,19 @@ Text {
     // gutterBottom和paragraph下面的边距效果
     bottomPadding: {
         if (gutterBottom) {
-            return Palette.unit
+            return MPalette.unit
         }
         else if (paragraph) {
-            return 2*Palette.unit
+            return 2*MPalette.unit
         }
         else {
             return 0
         }
     }
 
-    color: Palette.string2Color(textColor, Colors.commonBlack)
+    color: {
+        return MPalette.string2Color(textColor, Colors.commonBlack)
+    }
 
     font.pointSize: {
         if (fontSize > 0) {

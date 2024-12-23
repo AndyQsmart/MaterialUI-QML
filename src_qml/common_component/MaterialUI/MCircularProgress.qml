@@ -35,7 +35,7 @@ Canvas {
         var ctx = getContext("2d")
         ctx.reset()
         ctx.clearRect(0, 0, canvas.width, canvas.height)
-        ctx.strokeStyle = canvas.color == 'secondary' ? Palette.secondaryMain : Palette.primaryMain
+        ctx.strokeStyle = canvas.color == 'secondary' ? MPalette.secondaryMain : MPalette.primaryMain
         ctx.lineWidth = canvas.thickness
         var start_angle = 0
         var end_angle = value*Math.PI*2/100

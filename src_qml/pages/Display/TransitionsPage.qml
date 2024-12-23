@@ -58,7 +58,7 @@ Pane {
                         width: parent.width-40
                         variant: "body1"
                         textFormat: MTypography.RichText
-                        text: `<p>Material-QML 提供了一系列的过渡效果，你可以将一些基本的<span style="color: ${Palette.secondaryMain}" >动作</span>添加到你的应用的组件中。</p>`
+                        text: `<p>Material-QML 提供了一系列的过渡效果，你可以将一些基本的<span style="color: ${MPalette.secondaryMain}" >动作</span>添加到你的应用的组件中。</p>`
                         wrapMode: MTypography.WordWrap
                     }
                 }

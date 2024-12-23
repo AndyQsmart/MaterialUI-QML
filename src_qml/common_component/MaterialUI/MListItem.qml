@@ -1,11 +1,11 @@
-import QtQuick 2.15
+import QtQuick
 import "./styles"
 
 // 原版
 MButton {
     id: list_item
     // button模式下，传给button
-//    property string color: Palette.lightTextPrimary
+//    property string color: MPalette.lightTextPrimary
 
     property string alignItems: 'center' // 'flex-start' 'center'
     property bool dense: false
@@ -18,13 +18,13 @@ MButton {
     disableRipple: !button
 
     property var m_padding: {
-        let ans = [Palette.unit, 0, Palette.unit, 0]
+        let ans = [MPalette.unit, 0, MPalette.unit, 0]
 
         if (dense) {
-            ans = [Palette.unit/2, 0, Palette.unit/2, 0]
+            ans = [MPalette.unit/2, 0, MPalette.unit/2, 0]
         }
         if (!disableGutters) {
-            ans[1] = ans[3] = Palette.unit*2
+            ans[1] = ans[3] = MPalette.unit*2
         }
         return ans
     }
@@ -34,9 +34,11 @@ MButton {
     leftPadding: m_padding[3]
 
     background: Rectangle {
+        anchors.fill: parent
+
         color: {
             if (list_item.selected) {
-                return Palette.lightActionSelected
+                return MPalette.lightActionSelected
             }
 
             if (button && list_item.hovered) {
@@ -52,7 +54,7 @@ MButton {
             anchors.left: parent.left
             anchors.right: parent.right
             height: 1
-            color: Palette.lightTextDivider
+            color: MPalette.lightTextDivider
         }
     }
 }

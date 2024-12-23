@@ -1,10 +1,9 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.15
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
 import "../../common_component/MaterialUI"
 import "../../common_component/MaterialUI/styles"
 import "../../common_component/Route"
-import "../../common_qml"
 import "../../common_js/Color.js" as Color
 import "../../common_js/Tools.js" as Tools
 
@@ -13,6 +12,7 @@ Pane {
     x: 0
     y: 0
     padding: 0
+    background: null
 
     RowLayout {
         id: main_area
@@ -20,8 +20,9 @@ Pane {
         spacing: 0
 
         MOverflowYBox {
-            RowLayout.fillHeight: true
-            RowLayout.fillWidth: true
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+            contentWidth: main_area.width
 
             ColumnLayout {
                 width: main_area.width
@@ -50,7 +51,7 @@ Pane {
                         width: parent.width-40
                         variant: "body1"
                         textFormat: MTypography.RichText
-                        text: `<p><span style="color: ${Palette.secondaryMain}" >按钮</span>传达了一系列用户可以执行的操作命令。他们通常直接放置在您的用户界面中，例如：</p>`
+                        text: `<p><span style="color: ${MPalette.secondaryMain}" >按钮</span>传达了一系列用户可以执行的操作命令。他们通常直接放置在您的用户界面中，例如：</p>`
                         wrapMode: MTypography.WordWrap
                     }
 
@@ -93,7 +94,7 @@ Pane {
                         width: parent.width-40
                         variant: "body1"
                         textFormat: MTypography.RichText
-                        text: `<p><span style="color: ${Palette.secondaryMain}" >实心按钮</span>表示高度的强调，你根据它们的立体效果和填充颜色来区分彼此。它们用于触发应用程序所具有的主要功能。</p>`
+                        text: `<p><span style="color: ${MPalette.secondaryMain}" >实心按钮</span>表示高度的强调，你根据它们的立体效果和填充颜色来区分彼此。它们用于触发应用程序所具有的主要功能。</p>`
                         wrapMode: MTypography.WordWrap
                     }
                 }
@@ -395,7 +396,7 @@ MButton {
                         width: parent.width-40
                         variant: "body1"
                         textFormat: MTypography.RichText
-                        text: `<p><span style="color: ${Palette.secondaryMain}" >描边按钮</span>表示中等程度的强调。 它们包含了一些重要的操作，但不是一个 app 中的主要操作。</p>`
+                        text: `<p><span style="color: ${MPalette.secondaryMain}" >描边按钮</span>表示中等程度的强调。 它们包含了一些重要的操作，但不是一个 app 中的主要操作。</p>`
                         wrapMode: MTypography.WordWrap
                     }
 
@@ -621,7 +622,7 @@ MButton {
                             text: "视频选择"
                             accept: "video"
                             acceptAll: false
-                            onChange: {
+                            onChange: function(fileUrls) {
                                 toast.success(JSON.stringify(fileUrls))
                             }
                         }
@@ -635,7 +636,7 @@ MButton {
                             acceptName: "xlsx选择"
                             acceptExt: "*.xlsx"
                             acceptAll: false
-                            onChange: {
+                            onChange: function(fileUrls) {
                                 toast.success(JSON.stringify(fileUrls))
                             }
                         }
@@ -645,7 +646,7 @@ MButton {
                             variant: "contained"
                             color: "primary"
                             text: "文件夹选择"
-                            onChange: {
+                            onChange: function(url) {
                                 toast.success(JSON.stringify(url))
                             }
                         }
@@ -1022,12 +1023,12 @@ Column {
                                 contentItem: RowLayout {
                                     MIcon {
                                         name: "microphone"
-                                        color: Palette.lightActionDisabled
+                                        color: MPalette.lightActionDisabled
                                         size: 14
                                     }
                                     MTypography {
                                         variant: "button"
-                                        color: Palette.lightActionDisabled
+                                        color: MPalette.lightActionDisabled
                                         text: " Talk"
                                     }
                                 }
@@ -1125,12 +1126,12 @@ MButton {
     contentItem: RowLayout {
         MIcon {
             name: "microphone"
-            color: Palette.lightActionDisabled
+            color: MPalette.lightActionDisabled
             size: 14
         }
         MTypography {
             variant: "button"
-            color: Palette.lightActionDisabled
+            color: MPalette.lightActionDisabled
             text: " Talk"
         }
     }

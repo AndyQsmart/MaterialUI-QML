@@ -89,7 +89,7 @@ ColumnLayout {
 
                     MTypography {
                         width: parent.width
-                        color: Palette.secondaryDark
+                        color: MPalette.secondaryDark
                         text: modelData.type
                     }
                 }

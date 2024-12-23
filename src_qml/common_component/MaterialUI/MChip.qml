@@ -18,24 +18,24 @@ Control {
         color: {
             if (control.variant == 'outlined') {
                 if (control.color == 'primary') {
-                    return Colors.alpha(Palette.primaryMain, parent.hovered ? 1 : 0.7)
+                    return Colors.alpha(MPalette.primaryMain, parent.hovered ? 1 : 0.7)
                 }
                 else if (control.color == 'secondary') {
-                    return Colors.alpha(Palette.secondaryMain, parent.hovered ? 1 : 0.7)
+                    return Colors.alpha(MPalette.secondaryMain, parent.hovered ? 1 : 0.7)
                 }
                 else {
-                    return Colors.alpha(Palette.lightTextPrimary, parent.hovered ? 0.4 : 0.26)
+                    return Colors.alpha(MPalette.lightTextPrimary, parent.hovered ? 0.4 : 0.26)
                 }
             }
             else {
                 if (control.color == 'primary') {
-                    return Colors.alpha(Palette.darkTextPrimary, parent.hovered ? 1 : 0.7)
+                    return Colors.alpha(MPalette.darkTextPrimary, parent.hovered ? 1 : 0.7)
                 }
                 else if (control.color == 'secondary') {
-                    return Colors.alpha(Palette.darkTextSecondary, parent.hovered ? 1 : 0.7)
+                    return Colors.alpha(MPalette.darkTextSecondary, parent.hovered ? 1 : 0.7)
                 }
                 else {
-                    return Colors.alpha(Palette.lightTextPrimary, parent.hovered ? 0.4 : 0.26)
+                    return Colors.alpha(MPalette.lightTextPrimary, parent.hovered ? 0.4 : 0.26)
                 }
             }
         }
@@ -55,13 +55,13 @@ Control {
 
     property string _color: {
         if (color == 'primary') {
-            return Palette.primaryMain
+            return MPalette.primaryMain
         }
         else if (color == 'secondary') {
-            return Palette.secondaryMain
+            return MPalette.secondaryMain
         }
         else {
-            return Palette.lightActionSelected
+            return MPalette.lightActionSelected
         }
     }
     property real _opacity: disabled ? 0.5 : 1
@@ -130,24 +130,24 @@ Control {
             leftPadding: control.size == 'small' ? 8 : 12
             rightPadding: control.size == 'small' ? 8 : 12
             color: {
-                let the_color = Palette.lightTextPrimary
+                let the_color = MPalette.lightTextPrimary
                 if (control.variant == 'outlined') {
                     if (control.color != 'default') {
                         the_color = control._color
                     }
                     else {
-                        the_color = Palette.lightTextPrimary
+                        the_color = MPalette.lightTextPrimary
                     }
                 }
                 else {
                     if (control.color == 'primary') {
-                        the_color = Palette.darkTextPrimary
+                        the_color = MPalette.darkTextPrimary
                     }
                     else if (control.color == 'secondary') {
-                        the_color = Palette.darkTextSecondary
+                        the_color = MPalette.darkTextSecondary
                     }
                     else {
-                        the_color = Palette.lightTextPrimary
+                        the_color = MPalette.lightTextPrimary
                     }
                 }
                 return Colors.alpha(the_color, control._opacity)
@@ -202,24 +202,24 @@ Control {
         pressed: touch_area.pressed
         anchor: control
         color: {
-            let the_color = Palette.lightTextPrimary
+            let the_color = MPalette.lightTextPrimary
             if (control.variant == 'outlined') {
                 if (control.color != 'default') {
                     the_color = control._color
                 }
                 else {
-                    the_color = Palette.lightTextPrimary
+                    the_color = MPalette.lightTextPrimary
                 }
             }
             else {
                 if (control.color == 'primary') {
-                    the_color = Palette.darkTextPrimary
+                    the_color = MPalette.darkTextPrimary
                 }
                 else if (control.color == 'secondary') {
-                    the_color = Palette.darkTextSecondary
+                    the_color = MPalette.darkTextSecondary
                 }
                 else {
-                    the_color = Palette.lightTextPrimary
+                    the_color = MPalette.lightTextPrimary
                 }
             }
             return Colors.alpha(the_color, 0.3)

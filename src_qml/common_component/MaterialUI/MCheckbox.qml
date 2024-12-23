@@ -32,7 +32,7 @@ CheckBox {
         radius: width/2
         color: {
             if (checkbox.checked) {
-                return Colors.alpha(Palette.string2Color(checkbox.color, Grey._600), 0.04)
+                return Colors.alpha(MPalette.string2Color(checkbox.color, Grey._600), 0.04)
             }
             else {
                 return Colors.alpha(Grey._600, 0.04)
@@ -54,7 +54,7 @@ CheckBox {
             }
 
             if (checkbox.checked) {
-                return Palette.string2Color(checkbox.color, Grey._600)
+                return MPalette.string2Color(checkbox.color, Grey._600)
             }
             else {
                 return Grey._600
@@ -97,7 +97,7 @@ CheckBox {
 
             color: {
                 if (checkbox.checked) {
-                    return Colors.alpha(Palette.string2Color(checkbox.color, Grey._600), 0.3)
+                    return Colors.alpha(MPalette.string2Color(checkbox.color, Grey._600), 0.3)
                 }
                 else {
                     return Colors.alpha(Grey._600, 0.3)

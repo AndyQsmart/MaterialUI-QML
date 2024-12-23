@@ -3,7 +3,6 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import "../../common_component/MaterialUI"
 import "../../common_component/Route"
-import "../../common_qml"
 import "../../common_js/Color.js" as Color
 import "../../common_js/Tools.js" as Tools
 
@@ -20,15 +19,15 @@ Pane {
 
         Rectangle {
             id: right_area
-            RowLayout.fillHeight: true
-            RowLayout.fillWidth: true
+            Layout.fillHeight: true
+            Layout.fillWidth: true
 
             ColumnLayout {
                 anchors.fill: parent
                 spacing: 0
 
                 Rectangle {
-                    RowLayout.fillHeight: true
+                    Layout.fillHeight: true
                 }
 
                 MTypography {
@@ -46,7 +45,7 @@ Pane {
                 }
 
                 Rectangle {
-                    RowLayout.fillHeight: true
+                    Layout.fillHeight: true
                 }
             }
         }

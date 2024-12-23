@@ -1,8 +1,6 @@
-import QtQuick 2.15
-import QtQuick.Controls.Material 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.15
-import QtQuick.Window 2.15
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
 import "../../common_component/MaterialUI"
 import "../../common_js/StringUtil.js" as Strings
 import "../../common_js/Color.js" as Color
@@ -19,14 +17,14 @@ MDialog {
         spacing: 0
 
         RowLayout {
-            ColumnLayout.fillWidth: true
+            Layout.fillWidth: true
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
             spacing: 0
 
             MTypography {
                 variant: 'h6'
                 text: qsTr("关于")
-                RowLayout.fillWidth: true
+                Layout.fillWidth: true
             }
 
             MouseArea {
@@ -49,8 +47,8 @@ MDialog {
 
         RowLayout {
             Layout.topMargin: 20
-            ColumnLayout.fillWidth: true
-            ColumnLayout.fillHeight: true
+            Layout.fillWidth: true
+            Layout.fillHeight: true
 
             MTypography {
                 wrapMode: Text.WrapAnywhere
@@ -60,7 +58,7 @@ MDialog {
 
         MTypography {
             topPadding: 10
-            ColumnLayout.fillWidth: true
+            Layout.fillWidth: true
             horizontalAlignment: Text.AlignRight
             text: qsTr('版本号：ver'+Strings.VERSION)
             textColor: 'textSecondary'
@@ -69,7 +67,7 @@ MDialog {
 
         MTypography {
             topPadding: 10
-            ColumnLayout.fillWidth: true
+            Layout.fillWidth: true
             horizontalAlignment: Text.AlignRight
             text: qsTr('Copyright © 2023')
             textColor: 'textSecondary'

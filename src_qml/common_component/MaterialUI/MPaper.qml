@@ -1,4 +1,4 @@
-import QtQuick 2.15
+import QtQuick
 import "./styles"
 import "./colors"
 
@@ -10,7 +10,7 @@ Rectangle {
 
 
 
-    radius: paper.square ? 0 : Palette.borderRadius
+    radius: paper.square ? 0 : MPalette.borderRadius
     color: Colors.commonWhite
 
     border.width: paper.variant === 'outlined' ? 1 : 0

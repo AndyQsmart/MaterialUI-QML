@@ -1,4 +1,4 @@
-import QtQuick 2.15
+import QtQuick
 import "./styles"
 
 MButton {
@@ -9,7 +9,7 @@ MButton {
     property bool selected: false
 
     property var m_padding: {
-        let ans = [6, Palette.unit*2, 6, Palette.unit*2]
+        let ans = [6, MPalette.unit*2, 6, MPalette.unit*2]
 
         if (dense) {
             ans[0] = ans[2] = 4
@@ -33,11 +33,11 @@ MButton {
     background: Rectangle {
         color: {
             if (list_item.selected) {
-                return Palette.lightActionSelected
+                return MPalette.lightActionSelected
             }
 
             if (list_item.hovered) {
-                return Palette.lightActionHover
+                return MPalette.lightActionHover
             }
 
             return Colors.commonTransparent
@@ -49,7 +49,7 @@ MButton {
             anchors.left: parent.left
             anchors.right: parent.right
             height: 1
-            color: Palette.lightTextDivider
+            color: MPalette.lightTextDivider
         }
     }
 }

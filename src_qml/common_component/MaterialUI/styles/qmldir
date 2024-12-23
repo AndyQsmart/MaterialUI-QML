@@ -1,3 +1,3 @@
 singleton Colors 1.0 Colors.qml
-singleton Palette 1.0 Palette.qml
 singleton TypographyStyle 1.0 TypographyStyle.qml
+singleton MPalette 1.0 MPalette.qml

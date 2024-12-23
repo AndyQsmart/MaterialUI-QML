@@ -9,7 +9,7 @@ Item {
     property bool disabled: false
     property bool hover: false
     property bool active: false
-    property string _main_color: Palette.string2Color(root.color, Palette.primaryMain)
+    property string _main_color: MPalette.string2Color(root.color, MPalette.primaryMain)
 
     z: -1
     anchors.fill: parent
@@ -19,8 +19,8 @@ Item {
         enabled: false
         color: Colors.commonTransparent
         border.width: active ? 2 : 1
-        border.color: active ? root._main_color : (hover ? Palette.lightTextPrimary : '#3B000000')
+        border.color: active ? root._main_color : (hover ? MPalette.lightTextPrimary : '#3B000000')
         anchors.fill: parent
-        radius: Palette.borderRadius
+        radius: MPalette.borderRadius
     }
 }

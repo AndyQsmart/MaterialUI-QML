@@ -1,6 +1,6 @@
 pragma Singleton
 
-import QtQuick 2.15
+import QtQuick
 
 QtObject {
     readonly property string _50: '#e8eaf6'

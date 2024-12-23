@@ -1,8 +1,8 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
+import QtQuick
+import QtQuick.Controls
 import QtQuick.Controls.Material 2.15
 import QtQuick.Controls.Material.impl 2.15
-import QtGraphicalEffects 1.15
+import Qt5Compat.GraphicalEffects
 import "./styles"
 import "./colors"
 
@@ -32,7 +32,7 @@ RadioButton {
         radius: width/2
         color: {
             if (checkbox.checked) {
-                return Colors.alpha(Palette.string2Color(checkbox.color, Grey._600), 0.04)
+                return Colors.alpha(MPalette.string2Color(checkbox.color, Grey._600), 0.04)
             }
             else {
                 return Colors.alpha(Grey._600, 0.04)
@@ -61,7 +61,7 @@ RadioButton {
             }
 
             if (checkbox.checked) {
-                return Palette.string2Color(checkbox.color, Grey._600)
+                return MPalette.string2Color(checkbox.color, Grey._600)
             }
             else {
                 return Grey._600
@@ -115,7 +115,7 @@ RadioButton {
             anchor: ripple
             color: {
                 if (checkbox.checked) {
-                    return Colors.alpha(Palette.string2Color(checkbox.color, Grey._600), 0.3)
+                    return Colors.alpha(MPalette.string2Color(checkbox.color, Grey._600), 0.3)
                 }
                 else {
                     return Colors.alpha(Grey._600, 0.3)

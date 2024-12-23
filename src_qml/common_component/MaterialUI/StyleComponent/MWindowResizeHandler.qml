@@ -1,5 +1,5 @@
-import QtQuick 2.15
-import QtQuick.Window 2.15
+import QtQuick
+import QtQuick.Window
 
 Item {
     property Window target: null
@@ -94,7 +94,7 @@ Item {
         acceptedButtons: Qt.LeftButton
         cursorShape: Qt.SizeVerCursor
 
-        onPressed: {
+        onPressed: function(mouse) {
             if (Qt.platform.os === 'osx') {
                 macWindowResizeStart(mouse.x+x, mouse.y+y)
             }
@@ -103,13 +103,13 @@ Item {
             }
         }
 
-        onPositionChanged: {
+        onPositionChanged: function(mouse) {
             if (Qt.platform.os === 'osx') {
                 macWindowResize(Qt.TopEdge, mouse.x+x, mouse.y+y)
             }
         }
 
-        onReleased: {
+        onReleased: function(mouse) {
             if (Qt.platform.os === 'osx') {
                 macWindowResizeEnd()
             }
@@ -127,7 +127,7 @@ Item {
         acceptedButtons: Qt.LeftButton
         cursorShape: Qt.SizeVerCursor
 
-        onPressed: {
+        onPressed: function(mouse) {
             if (Qt.platform.os === 'osx') {
                 macWindowResizeStart(mouse.x+x, mouse.y+y)
             }
@@ -137,13 +137,13 @@ Item {
         }
 
 
-        onPositionChanged: {
+        onPositionChanged: function(mouse) {
             if (Qt.platform.os === 'osx') {
                 macWindowResize(Qt.BottomEdge, mouse.x+x, mouse.y+y)
             }
         }
 
-        onReleased: {
+        onReleased: function(mouse) {
             if (Qt.platform.os === 'osx') {
                 macWindowResizeEnd()
             }
@@ -161,7 +161,7 @@ Item {
         acceptedButtons: Qt.LeftButton
         cursorShape: Qt.SizeHorCursor
 
-        onPressed: {
+        onPressed: function(mouse) {
             if (Qt.platform.os === 'osx') {
                 macWindowResizeStart(mouse.x+x, mouse.y+y)
             }
@@ -171,13 +171,13 @@ Item {
         }
 
 
-        onPositionChanged: {
+        onPositionChanged: function(mouse) {
             if (Qt.platform.os === 'osx') {
                 macWindowResize(Qt.LeftEdge, mouse.x+x, mouse.y+y)
             }
         }
 
-        onReleased: {
+        onReleased: function(mouse) {
             if (Qt.platform.os === 'osx') {
                 macWindowResizeEnd()
             }
@@ -195,7 +195,7 @@ Item {
         acceptedButtons: Qt.LeftButton
         cursorShape: Qt.SizeHorCursor
 
-        onPressed: {
+        onPressed: function(mouse) {
             if (Qt.platform.os === 'osx') {
                 macWindowResizeStart(mouse.x+x, mouse.y+y)
             }
@@ -205,13 +205,13 @@ Item {
         }
 
 
-        onPositionChanged: {
+        onPositionChanged: function(mouse) {
             if (Qt.platform.os === 'osx') {
                 macWindowResize(Qt.RightEdge, mouse.x+x, mouse.y+y)
             }
         }
 
-        onReleased: {
+        onReleased: function(mouse) {
             if (Qt.platform.os === 'osx') {
                 macWindowResizeEnd()
             }
@@ -229,7 +229,7 @@ Item {
         acceptedButtons: Qt.LeftButton
         cursorShape: Qt.SizeFDiagCursor
 
-        onPressed: {
+        onPressed: function(mouse) {
             if (Qt.platform.os === 'osx') {
                 macWindowResizeStart(mouse.x+x, mouse.y+y)
             }
@@ -239,13 +239,13 @@ Item {
         }
 
 
-        onPositionChanged: {
+        onPositionChanged: function(mouse) {
             if (Qt.platform.os === 'osx') {
                 macWindowResize(Qt.TopEdge | Qt.LeftEdge, mouse.x+x, mouse.y+y)
             }
         }
 
-        onReleased: {
+        onReleased: function(mouse) {
             if (Qt.platform.os === 'osx') {
                 macWindowResizeEnd()
             }
@@ -263,7 +263,7 @@ Item {
         acceptedButtons: Qt.LeftButton
         cursorShape: Qt.SizeBDiagCursor
 
-        onPressed: {
+        onPressed: function(mouse) {
             if (Qt.platform.os === 'osx') {
                 macWindowResizeStart(mouse.x+x, mouse.y+y)
             }
@@ -273,13 +273,13 @@ Item {
         }
 
 
-        onPositionChanged: {
+        onPositionChanged: function(mouse) {
             if (Qt.platform.os === 'osx') {
                 macWindowResize(Qt.TopEdge | Qt.RightEdge, mouse.x+x, mouse.y+y)
             }
         }
 
-        onReleased: {
+        onReleased: function(mouse) {
             if (Qt.platform.os === 'osx') {
                 macWindowResizeEnd()
             }
@@ -297,7 +297,7 @@ Item {
         acceptedButtons: Qt.LeftButton
         cursorShape: Qt.SizeBDiagCursor
 
-        onPressed: {
+        onPressed: function(mouse) {
             if (Qt.platform.os === 'osx') {
                 macWindowResizeStart(mouse.x+x, mouse.y+y)
             }
@@ -307,13 +307,13 @@ Item {
         }
 
 
-        onPositionChanged: {
+        onPositionChanged: function(mouse) {
             if (Qt.platform.os === 'osx') {
                 macWindowResize(Qt.BottomEdge | Qt.LeftEdge, mouse.x+x, mouse.y+y)
             }
         }
 
-        onReleased: {
+        onReleased: function(mouse) {
             if (Qt.platform.os === 'osx') {
                 macWindowResizeEnd()
             }
@@ -332,25 +332,7 @@ Item {
         cursorShape: Qt.SizeFDiagCursor
 
         onPressed: {
-            if (Qt.platform.os === 'osx') {
-                macWindowResizeStart(mouse.x+x, mouse.y+y)
-            }
-            else {
-                target.startSystemResize(Qt.BottomEdge | Qt.RightEdge)
-            }
-        }
-
-
-        onPositionChanged: {
-            if (Qt.platform.os === 'osx') {
-                macWindowResize(Qt.BottomEdge | Qt.RightEdge, mouse.x+x, mouse.y+y)
-            }
-        }
-
-        onReleased: {
-            if (Qt.platform.os === 'osx') {
-                macWindowResizeEnd()
-            }
+            target.startSystemResize(Qt.BottomEdge | Qt.RightEdge)
         }
     }
 }

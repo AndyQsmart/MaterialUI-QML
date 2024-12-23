@@ -1,4 +1,4 @@
-import QtQuick 2.15
+import QtQuick
 import "./styles"
 import "./colors"
 
@@ -13,13 +13,13 @@ MButtonBase {
     property bool disableElevation: false
     property string variant: 'text' // contained、outlined、text、default: text
 
-//    implicitWidth: 64
+    // implicitWidth: 64
 
     fontSize: {
-        if (size == 'small') {
+        if (size === 'small') {
             return 13
         }
-        else if (size == 'large') {
+        else if (size === 'large') {
             return 15
         }
         else {
@@ -28,7 +28,7 @@ MButtonBase {
     }
 
     property var m_padding: {
-        let ans = [Palette.unit, Palette.unit*2, Palette.unit, Palette.unit*2]
+        let ans = [MPalette.unit, MPalette.unit*2, MPalette.unit, MPalette.unit*2]
 
         switch (variant) {
             case 'contained': {
@@ -83,35 +83,37 @@ MButtonBase {
 
     textColor: {
         if (disabled) {
-            return Palette.lightActionDisabled
+            return MPalette.lightActionDisabled
         }
 
         switch (variant) {
             case 'contained': {
-                return color === 'primary' || color === 'secondary' ? Colors.commonWhite : Colors.commonBlack
+                return button.color === 'primary' || button.color === 'secondary' ? Colors.commonWhite : Colors.commonBlack
             }
             case 'outlined': {
-                return Palette.string2Color(color, Colors.commonBlack)
+                return MPalette.string2Color(button.color, Colors.commonBlack)
             }
             default: {
-                return Palette.string2Color(color, Colors.commonBlack)
+                return MPalette.string2Color(button.color, Colors.commonBlack)
             }
         }
     }
 
     background: Rectangle {
+        anchors.fill: parent
+
         border.width: {
-            if (variant == 'outlined') {
+            if (variant === 'outlined') {
                 return 1
             }
             return 0
         }
         border.color: {
             if (disabled) {
-                return Palette.lightActionDisabled
+                return MPalette.lightActionDisabled
             }
 
-            let ans_color = Palette.string2Color(button.color, null)
+            let ans_color = MPalette.string2Color(button.color, null)
             if (ans_color) {
                 return Colors.alpha(ans_color, 0.5)
             }
@@ -119,13 +121,13 @@ MButtonBase {
                 return Colors.alpha('#000000', 0.23)
             }
         }
-        radius: Palette.borderRadius
+        radius: MPalette.borderRadius
         color: {
             let ans = ''
 
             if (disabled) {
-                if (variant == 'contained') {
-                    return Palette.lightActionDisabledBackground
+                if (variant === 'contained') {
+                    return MPalette.lightActionDisabledBackground
                 }
             }
 
@@ -133,22 +135,22 @@ MButtonBase {
                 ans = Colors.alpha('#000000', 0.04)
                 switch (variant) {
                     case 'contained': {
-                        ans = Palette.string2ColorDark(button.color, Grey.a100)
+                        ans = MPalette.string2ColorDark(button.color, Grey.a100)
                         break
                     }
                     case 'outlined': {
-                        ans = Colors.alpha(Palette.string2Color(button.color, '#000000'), 0.04)
+                        ans = Colors.alpha(MPalette.string2Color(button.color, '#000000'), 0.04)
                         break
                     }
                     default: {
-                        ans = Colors.alpha(Palette.string2Color(button.color, '#000000'), 0.04)
+                        ans = Colors.alpha(MPalette.string2Color(button.color, '#000000'), 0.04)
                     }
                 }
             }
             else {
                 switch (variant) {
                     case 'contained': {
-                        ans = button.color ? Palette.string2Color(button.color, Grey._300) : Grey._300
+                        ans = button.color ? MPalette.string2Color(button.color, Grey._300) : Grey._300
                         break
                     }
                     case 'outlined': {

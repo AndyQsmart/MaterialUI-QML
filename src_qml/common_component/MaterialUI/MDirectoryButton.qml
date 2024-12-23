@@ -1,5 +1,5 @@
-import QtQuick 2.15
-import QtQuick.Dialogs 1.3
+import QtQuick
+import QtQuick.Dialogs
 
 MButton {
     id: button
@@ -10,12 +10,11 @@ MButton {
         file_dialog.open()
     }
 
-    FileDialog {
+    FolderDialog {
         id: file_dialog
         title: button.title
-        selectFolder: true
         onAccepted: {
-            let path_text = folder.toString()
+            let path_text = selectedFolder.toString()
             if (path_text.indexOf('file:///') === 0) {
                 console.log(Qt.platform.os)
                 if (Qt.platform.os === 'windows' || Qt.platform.os==="winrt") {

@@ -37,7 +37,7 @@ Item {
             Rectangle {
                 width: root.variant == 'buffer' ? parent.width*control.valueBuffer : parent.width
                 height: parent.height
-                color: Colors.alpha(root.color == 'secondary' ? Palette.secondaryMain : Palette.primaryMain, 0.38)
+                color: Colors.alpha(root.color == 'secondary' ? MPalette.secondaryMain : MPalette.primaryMain, 0.38)
             }
 
             Shape {
@@ -49,7 +49,7 @@ Item {
 
                 ShapePath {
                     strokeWidth: buffer_line.height
-                    strokeColor: Colors.alpha(root.color == 'secondary' ? Palette.secondaryMain : Palette.primaryMain, 0.18)
+                    strokeColor: Colors.alpha(root.color == 'secondary' ? MPalette.secondaryMain : MPalette.primaryMain, 0.18)
                     strokeStyle: ShapePath.DashLine
                     dashPattern: [1, 3]
 
@@ -101,7 +101,7 @@ Item {
                     }
                 }
                 height: parent.height
-                color: root.color == 'secondary' ? Palette.secondaryMain : Palette.primaryMain
+                color: root.color == 'secondary' ? MPalette.secondaryMain : MPalette.primaryMain
 
                 NumberAnimation {
                     target: progress

@@ -58,7 +58,7 @@ Item {
         }
         return name
     }
-    property var rgbaColor: Palette.colorStrToRgb(Palette.string2Color(root.color, "#000000"))
+    property var rgbaColor: MPalette.colorStrToRgb(MPalette.string2Color(root.color, "#000000"))
 
     width: size
     height: size

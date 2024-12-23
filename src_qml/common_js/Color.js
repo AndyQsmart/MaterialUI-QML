@@ -10,14 +10,14 @@ var text_secondary = '#8590a5' // 原：rgba(0, 0, 0, 0.54)
 var gray = 'gray'
 var dark_gray = '#646464'
 // light_gray: '#f7f7f7',
-var white = 'white'
+var white = '#ffffff'
 // transparent_white: 'rgba(255, 255, 255, 0.5)',
 // transparent95_white: 'rgba(255, 255, 255, 0.95)',
 var ddd = '#dddddd'
 var green = 'green'
 var greenyellow = 'greenyellow'
 // dark_green: 'rgb(1, 140, 117)',
-var black = 'black'
+var black = '#000000'
 // transparent_black: 'rgba(0, 0, 0, 0.5)',
 // transparent2_black: 'rgba(0, 0, 0, 0.2)',
 // blue: 'rgb(0, 123, 255)',

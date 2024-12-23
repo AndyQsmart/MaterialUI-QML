@@ -49,7 +49,7 @@ Pane {
                         width: parent.width-40
                         variant: "body1"
                         textFormat: MTypography.RichText
-                        text: `<p>当用户想要看到所有的选项时，可以使用 <span style="color: ${Palette.secondaryMain}" >单选按钮</span>。如果可用选项可以折叠，请您考虑使用占用空间更少的下拉菜单。</p>`
+                        text: `<p>当用户想要看到所有的选项时，可以使用 <span style="color: ${MPalette.secondaryMain}" >单选按钮</span>。如果可用选项可以折叠，请您考虑使用占用空间更少的下拉菜单。</p>`
                         wrapMode: MTypography.WordWrap
                     }
 

@@ -62,7 +62,7 @@ Row {
 //                target: text_item
 //                property: 'color'
 //                when: disabled
-//                value: Palette.lightTextDisabled
+//                value: MPalette.lightTextDisabled
 //            }
 
         onSelectOpen: {

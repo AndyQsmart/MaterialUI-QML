@@ -17,10 +17,10 @@ Rectangle {
 
     width: childrenRect.width
     height: childrenRect.height
-    radius: Palette.borderRadius
+    radius: MPalette.borderRadius
     border.width: variant == 'outlined' ? 1 : 0
     border.color: {
-        let ans_color = Palette.string2Color(buttonColor, null)
+        let ans_color = MPalette.string2Color(buttonColor, null)
         if (ans_color) {
             return Colors.alpha(ans_color, 0.5)
         }
@@ -107,14 +107,14 @@ Rectangle {
                     property: "background.border.color"
                     value: {
                         if (childrenContainer.children[index].disabled) {
-                            return Palette.lightActionDisabled
+                            return MPalette.lightActionDisabled
                         }
                         else {
                             if (buttonColor === 'primary') {
-                                return Palette.primaryDark
+                                return MPalette.primaryDark
                             }
                             else if (buttonColor === 'secondary') {
-                                return Palette.secondaryDark
+                                return MPalette.secondaryDark
                             }
                             else {
                                 return Grey._400

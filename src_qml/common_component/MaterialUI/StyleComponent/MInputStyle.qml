@@ -11,14 +11,14 @@ Item {
     property bool disabled: false
     property bool hover: false
     property bool active: false
-    property string _main_color: Palette.string2Color(root.color, Palette.primaryMain)
+    property string _main_color: MPalette.string2Color(root.color, MPalette.primaryMain)
 
     z: -1
     anchors.fill: parent
 
     property int strokeStyle: disabled ? ShapePath.DashLine : ShapePath.SolidLine
     property int strokeWidth: hover ? 2 : 1
-    property string strokeColor: hover ? Palette.lightTextPrimary : '#3B000000'
+    property string strokeColor: hover ? MPalette.lightTextPrimary : '#3B000000'
 
     // 下划线
     Shape {

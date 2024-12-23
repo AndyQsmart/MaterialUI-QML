@@ -50,7 +50,7 @@ Pane {
                         width: parent.width-40
                         variant: "body1"
                         textFormat: MTypography.RichText
-                        text: `<p><span style="color: ${Palette.secondaryMain}" >进度指示器</span>能够将当前处理过程的状态通知用户，例如加载一个应用，提交一个表单或保存一些更新。 它们与应用程序状态进行通信并指示可用的操作，例如用户是否可从当前页面离开。</p>`
+                        text: `<p><span style="color: ${MPalette.secondaryMain}" >进度指示器</span>能够将当前处理过程的状态通知用户，例如加载一个应用，提交一个表单或保存一些更新。 它们与应用程序状态进行通信并指示可用的操作，例如用户是否可从当前页面离开。</p>`
                         wrapMode: MTypography.WordWrap
                         gutterBottom: true
                     }

@@ -1,5 +1,5 @@
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
+import QtQuick
+import QtQuick.Layouts
 import "./styles"
 import "./colors"
 
@@ -47,10 +47,10 @@ TextEdit {
     // gutterBottom和paragraph下面的边距效果
     bottomPadding: {
         if (gutterBottom) {
-            return Palette.unit
+            return MPalette.unit
         }
         else if (paragraph) {
-            return 2*Palette.unit
+            return 2*MPalette.unit
         }
         else {
             return 0
@@ -64,7 +64,7 @@ TextEdit {
             case 'textPrimary':
             case 'textSecondary':
             case 'error':
-                return Palette.string2Color(textColor)
+                return MPalette.string2Color(textColor)
             default:
                 return Colors.commonBlack
         }
@@ -165,7 +165,7 @@ TextEdit {
                 }
 
                 MTypography {
-                    RowLayout.fillWidth: true
+                    Layout.fillWidth: true
                     leftPadding: 10
                     text: "复制"
                     anchors.verticalCenter: parent.verticalCenter

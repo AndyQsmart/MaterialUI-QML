@@ -1,5 +1,5 @@
-import QtQuick 2.15
-import QtQuick.Window 2.15
+import QtQuick
+import QtQuick.Window
 
 // win下的系统按钮
 Item {
@@ -49,15 +49,7 @@ Item {
                 hoverEnabled: true
 
                 onClicked: {
-                    if (Qt.platform.os === 'osx') {
-                        target.flags = 0 // mac无边框导致不能最小化，先重置成有边框，再最小化
-                        target.showMinimized()
-                    }
-                    else {
-                        // target.hide()
-                        target.showMinimized()
-
-                    }
+                    target.showMinimized()
                 }
             }
         }

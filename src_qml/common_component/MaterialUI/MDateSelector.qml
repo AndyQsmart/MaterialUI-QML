@@ -25,7 +25,7 @@ Calendar {
                 anchors.horizontalCenter: parent.horizontalCenter
                 width: parent.width+20
                 height: parent.height+10
-                radius: Palette.borderRadius
+                radius: MPalette.borderRadius
                 color: Colors.commonWhite
 
                 layer.enabled: true
@@ -113,7 +113,7 @@ Calendar {
                 width: 36
                 height: 36
                 radius: width/2
-                color: styleData.selected ? Palette.primaryMain : (styleData.hovered ? Colors.alpha("#000000", 0.04) : "#00ffffff")
+                color: styleData.selected ? MPalette.primaryMain : (styleData.hovered ? Colors.alpha("#000000", 0.04) : "#00ffffff")
 
                 MTypography {
                     anchors.centerIn: parent
@@ -134,7 +134,7 @@ Calendar {
                     height: parent.height
                     pressed: styleData.pressed
                     anchor: parent
-                    color: Colors.alpha(styleData.selected ? Palette.primaryMain : Colors.commonBlack, 0.3)
+                    color: Colors.alpha(styleData.selected ? MPalette.primaryMain : Colors.commonBlack, 0.3)
                 }
 
                 layer.enabled: true

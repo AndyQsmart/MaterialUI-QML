@@ -1,7 +1,6 @@
-import QtQuick 2.15
-import QtQuick.Controls.Material 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.15
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
 import "../../common_js/Color.js" as Color
 import "../../common_component/MaterialUI"
 import "../../common_component/Route"
@@ -229,7 +228,7 @@ Pane {
                     anchors.rightMargin: parent.rightPadding
 
                     MTypography {
-                        RowLayout.fillWidth: true
+                        Layout.fillWidth: true
                         leftPadding: 0
                         text: qsTr("首页")
                         color: Color.white
@@ -259,7 +258,7 @@ Pane {
                             anchors.rightMargin: parent.rightPadding
 
                             MTypography {
-                                RowLayout.fillWidth: true
+                                Layout.fillWidth: true
                                 leftPadding: 0
                                 text: listData1.name
                                 variant: "body2"
@@ -311,7 +310,7 @@ Pane {
                                         anchors.rightMargin: parent.rightPadding
 
                                         MTypography {
-                                            RowLayout.fillWidth: true
+                                            Layout.fillWidth: true
                                             leftPadding: 20
                                             text: listData2.name
                                             variant: "body2"
@@ -341,7 +340,7 @@ Pane {
                                             anchors.rightMargin: parent.rightPadding
 
                                             MTypography {
-                                                RowLayout.fillWidth: true
+                                                Layout.fillWidth: true
                                                 leftPadding: 40
                                                 text: modelData.name
                                                 variant: "body2"
@@ -372,7 +371,7 @@ Pane {
                     anchors.rightMargin: parent.rightPadding
 
                     MTypography {
-                        RowLayout.fillWidth: true
+                        Layout.fillWidth: true
                         leftPadding: 0
                         text: qsTr("关于")
                         color: Color.white

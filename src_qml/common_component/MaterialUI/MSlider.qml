@@ -23,7 +23,7 @@ Slider {
     stepSize: step
     enabled: !disabled
     property int _handleSize: disabled ? 8 : 12
-    property string currentColor: Palette.string2Color(control.color, Palette.primaryMain)
+    property string currentColor: MPalette.string2Color(control.color, MPalette.primaryMain)
 
     background: Rectangle {
         x: control.isVertical ? control.topPadding + control.availableWidth / 2 - width / 2 : control.leftPadding
@@ -58,7 +58,7 @@ Slider {
                 width: 2
                 height: 2
                 radius: 1
-                color: index <= marks_list.currentStep ? Palette.lightBackgroundPaper : control.disabled ? Grey._400 : control.currentColor
+                color: index <= marks_list.currentStep ? MPalette.lightBackgroundPaper : control.disabled ? Grey._400 : control.currentColor
                 x: control.isVertical ? 0 : index*marks_list.stepWidth <= control.availableWidth ? index*marks_list.stepWidth : control.availableWidth
                 y: !control.isVertical ? 0 : control.availableHeight-(index*marks_list.stepWidth <= control.availableHeight ? index*marks_list.stepWidth : control.availableHeight)
             }

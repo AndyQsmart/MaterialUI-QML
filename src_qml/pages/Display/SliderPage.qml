@@ -50,7 +50,7 @@ Pane {
                         width: parent.width-40
                         variant: "body1"
                         textFormat: MTypography.RichText
-                        text: `<p><span style="color: ${Palette.secondaryMain}" >滑块控件</span> 反映了条形图上的一系列值，用户可以从中选择单个值。 它们通常适用于调节一些设置，譬如调节设备音量、调整屏幕亮度，或者改变图像的滤镜。</p>`
+                        text: `<p><span style="color: ${MPalette.secondaryMain}" >滑块控件</span> 反映了条形图上的一系列值，用户可以从中选择单个值。 它们通常适用于调节一些设置，譬如调节设备音量、调整屏幕亮度，或者改变图像的滤镜。</p>`
                         wrapMode: MTypography.WordWrap
                     }
                 }

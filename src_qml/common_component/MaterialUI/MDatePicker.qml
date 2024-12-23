@@ -16,7 +16,7 @@ Item {
     height: textInput.height
 //    radius: 5
 //    border.width: textInput.activeFocus ? 2 : 1
-//    border.color: textInput.activeFocus ? Palette.primaryMain : '#3B000000'
+//    border.color: textInput.activeFocus ? MPalette.primaryMain : '#3B000000'
 
     function prefixZero(num, length) {
         return ('' + num).length < length ? ((new Array(length + 1)).join('0') + num).slice(-length) : '' + num;
@@ -152,7 +152,7 @@ Item {
                 MIcon {
                     name: 'calendar'
                     size: 16
-                    color: Palette.lightTextSecondary
+                    color: MPalette.lightTextSecondary
                     anchors.centerIn: parent
                 }
             }

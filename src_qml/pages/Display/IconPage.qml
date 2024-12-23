@@ -57,14 +57,14 @@ Pane {
                         width: parent.width-40
                         variant: "body1"
                         textFormat: MTypography.RichText
-                        text: `<p>1. 通过 <span style="color: ${Palette.secondaryMain}" >MIcon</span> 来使用 <span style="color: ${Palette.secondaryMain}" >FontAwesome</span> 图标。`
+                        text: `<p>1. 通过 <span style="color: ${MPalette.secondaryMain}" >MIcon</span> 来使用 <span style="color: ${MPalette.secondaryMain}" >FontAwesome</span> 图标。`
                         wrapMode: MTypography.WordWrap
                     }
                     MTypography {
                         width: parent.width-40
                         variant: "body1"
                         textFormat: MTypography.RichText
-                        text: `<p>2. 通过 <span style="color: ${Palette.secondaryMain}" >MSvgIcon</span> 来使用 <span style="color: ${Palette.secondaryMain}" >Svg</span> 图标。`
+                        text: `<p>2. 通过 <span style="color: ${MPalette.secondaryMain}" >MSvgIcon</span> 来使用 <span style="color: ${MPalette.secondaryMain}" >Svg</span> 图标。`
                         wrapMode: MTypography.WordWrap
                     }
                 }
@@ -87,7 +87,7 @@ Pane {
                         width: parent.width-40
                         variant: "body1"
                         textFormat: MTypography.RichText
-                        text: `<p>使用 <span style="color: ${Palette.secondaryMain}" >MIcon</span> 可以渲染 <span style="color: ${Palette.secondaryMain}" >FontAwesome</span> 图标。</p>`
+                        text: `<p>使用 <span style="color: ${MPalette.secondaryMain}" >MIcon</span> 可以渲染 <span style="color: ${MPalette.secondaryMain}" >FontAwesome</span> 图标。</p>`
                         wrapMode: MTypography.WordWrap
                     }
                 }
@@ -369,7 +369,7 @@ MIcon {
                         width: parent.width-40
                         variant: "body1"
                         textFormat: MTypography.RichText
-                        text: `<p>使用 <span style="color: ${Palette.secondaryMain}" >MSvgIcon</span> 可以渲染我们提供的 <span style="color: ${Palette.secondaryMain}" >Svg</span> 图标。</p>`
+                        text: `<p>使用 <span style="color: ${MPalette.secondaryMain}" >MSvgIcon</span> 可以渲染我们提供的 <span style="color: ${MPalette.secondaryMain}" >Svg</span> 图标。</p>`
                         wrapMode: MTypography.WordWrap
                     }
                 }

@@ -1,5 +1,5 @@
-import QtQuick 2.13
-import QtQuick.Dialogs 1.3
+import QtQuick
+import QtQuick.Dialogs
 
 MButton {
     id: button
@@ -19,7 +19,7 @@ MButton {
     FileDialog {
         id: file_dialog
         title: button.title
-        selectMultiple: multiple
+        fileMode: multiple ? FileDialog.OpenFiles : FileDialog.OpenFile
         nameFilters: {
             let ans = []
             switch (button.accept) {
@@ -46,8 +46,8 @@ MButton {
         }
         onAccepted: {
             let ans = []
-            for (let i = 0; i < fileUrls.length; i++) {
-                let path_text = fileUrls[i]
+            for (let i = 0; i < selectedFiles.length; i++) {
+                let path_text = selectedFiles[i].toString()
                 if (path_text.indexOf('file:///') === 0) {
                     console.log(Qt.platform.os)
                     if (Qt.platform.os === 'windows' || Qt.platform.os==="winrt") {

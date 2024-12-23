@@ -7,5 +7,5 @@ Rectangle {
     property bool light: false
 
     height: 1
-    color: light ? Palette.lightTextDivider : Palette.lightTextDivider
+    color: light ? MPalette.lightTextDivider : MPalette.lightTextDivider
 }

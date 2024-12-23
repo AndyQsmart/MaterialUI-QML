@@ -1,5 +1,5 @@
-import QtQuick 2.15
-import QtQuick.Window 2.15
+import QtQuick
+import QtQuick.Window
 
 // mac下的系统按钮
 Item {
@@ -83,7 +83,6 @@ Item {
                 anchors.fill: parent
                 onClicked: {
                     if (Qt.platform.os === 'osx') {
-                        target.flags = 0 // mac无边框导致不能最小化，先重置成有边框，再最小化
                         target.showMinimized()
                     }
                     else {

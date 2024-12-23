@@ -1,5 +1,5 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
+import QtQuick
+import QtQuick.Controls
 import "./styles"
 import "./colors"
 
@@ -32,6 +32,9 @@ Popup {
     padding: 0
     visible: false
     modal: true
+    Overlay.modal: Rectangle {
+        color: "#80000000"
+    }
     focus: true
     closePolicy: disableBackdropClick ? Popup.CloseOnEscape : (Popup.CloseOnEscape | Popup.CloseOnPressOutside)
 

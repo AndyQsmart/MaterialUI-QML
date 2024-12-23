@@ -11,7 +11,7 @@ Item {
     property bool disabled: false
     property bool hover: false
     property bool active: false
-    property string _main_color: Palette.string2Color(root.color, Palette.primaryMain)
+    property string _main_color: MPalette.string2Color(root.color, MPalette.primaryMain)
 
     z: -1
     anchors.fill: parent
@@ -29,7 +29,7 @@ Item {
             fillColor: "#e8e8e8"
 
             startX: 0
-            startY: Palette.borderRadius
+            startY: MPalette.borderRadius
 
             PathLine {
                 x: 0
@@ -43,27 +43,27 @@ Item {
 
             PathLine {
                 x: filledComponent.shapeWidth
-                y: Palette.borderRadius
+                y: MPalette.borderRadius
             }
 
             PathArc {
-                x: filledComponent.shapeWidth-Palette.borderRadius
+                x: filledComponent.shapeWidth-MPalette.borderRadius
                 y: 0
-                radiusX: Palette.borderRadius
-                radiusY: Palette.borderRadius
+                radiusX: MPalette.borderRadius
+                radiusY: MPalette.borderRadius
                 direction: PathArc.Counterclockwise
             }
 
             PathLine {
-                x: Palette.borderRadius
+                x: MPalette.borderRadius
                 y: 0
             }
 
             PathArc {
                 x: 0
-                y: Palette.borderRadius
-                radiusX: Palette.borderRadius
-                radiusY: Palette.borderRadius
+                y: MPalette.borderRadius
+                radiusX: MPalette.borderRadius
+                radiusY: MPalette.borderRadius
                 direction: PathArc.Counterclockwise
             }
         }
@@ -71,7 +71,7 @@ Item {
 
     property int strokeStyle: disabled ? ShapePath.DashLine : ShapePath.SolidLine
     property int strokeWidth: 1
-    property string strokeColor: hover ? Palette.lightTextPrimary : '#3B000000'
+    property string strokeColor: hover ? MPalette.lightTextPrimary : '#3B000000'
 
     // 下划线
     Shape {

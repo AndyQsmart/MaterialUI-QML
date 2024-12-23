@@ -11,7 +11,7 @@ TextInput {
 
 
 
-    property string _main_color: Palette.string2Color(textInput.color, Palette.primaryMain)
+    property string _main_color: MPalette.string2Color(textInput.color, MPalette.primaryMain)
     property var _padding: [6, 0, 7, 0]
     enabled: !disabled
     verticalAlignment: Text.AlignVCenter
@@ -34,7 +34,7 @@ TextInput {
         leftPadding: textInput.leftPadding
         rightPadding: textInput.rightPadding
         text: placeholder
-        color: textInput.disabled ? Palette.lightTextDisabled : Palette.lightTextSecondary
+        color: textInput.disabled ? MPalette.lightTextDisabled : MPalette.lightTextSecondary
         font.pointSize: TypographyStyle.fontStyleList.body1.size
         lineHeight: 1
     }

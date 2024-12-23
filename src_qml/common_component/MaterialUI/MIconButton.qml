@@ -9,7 +9,7 @@ MButtonBase {
     default property alias children: childContainer.children
     property string size: 'medium' // 'small' 'medium'
     property string color: 'default' // 'default' 'primary' 'secondary' color
-    property string iconColor: disabled ? Palette.lightActionDisabled : Palette.string2Color(color, Palette.lightActionActive)
+    property string iconColor: disabled ? MPalette.lightActionDisabled : MPalette.string2Color(color, MPalette.lightActionActive)
     padding: size === "small" ? 3 : 12
     topPadding: padding
     bottomPadding: padding

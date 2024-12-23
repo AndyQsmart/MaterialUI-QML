@@ -50,7 +50,7 @@ Pane {
                         width: parent.width-40
                         variant: "body1"
                         textFormat: MTypography.RichText
-                        text: `<p>在移动设备上调整设置时，<span style="color: ${Palette.secondaryMain}" >Switches</span> 是一个首选方式。 开关控制的选项，以及它当前所处的状态，都应该在相应的描述标签中明确说明。</p>`
+                        text: `<p>在移动设备上调整设置时，<span style="color: ${MPalette.secondaryMain}" >Switches</span> 是一个首选方式。 开关控制的选项，以及它当前所处的状态，都应该在相应的描述标签中明确说明。</p>`
                         wrapMode: MTypography.WordWrap
                     }
                 }

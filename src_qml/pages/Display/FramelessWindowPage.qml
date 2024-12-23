@@ -1,10 +1,9 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.15
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
 import "../../common_component/MaterialUI"
 import "../../common_component/MaterialUI/styles"
 import "../../common_component/Route"
-import "../../common_qml"
 import "../../common_js/Color.js" as Color
 import "../../common_js/Tools.js" as Tools
 
@@ -13,6 +12,7 @@ Pane {
     x: 0
     y: 0
     padding: 0
+    background: null
 
     RowLayout {
         id: main_area
@@ -20,8 +20,8 @@ Pane {
         spacing: 0
 
         MOverflowYBox {
-            RowLayout.fillHeight: true
-            RowLayout.fillWidth: true
+            Layout.fillHeight: true
+            Layout.fillWidth: true
 
             ColumnLayout {
                 width: main_area.width
@@ -58,7 +58,7 @@ Pane {
                         width: parent.width-40
                         variant: "body1"
                         textFormat: MTypography.RichText
-                        text: `<p>可参考 <span style="color: ${Palette.secondaryMain}" >main.cpp</span> 和 <span style="color: ${Palette.secondaryMain}" >main.py</span>。</p>`
+                        text: `<p>可参考 <span style="color: ${MPalette.secondaryMain}" >main.cpp</span> 和 <span style="color: ${MPalette.secondaryMain}" >main.py</span>。</p>`
                         wrapMode: MTypography.WordWrap
                     }
                 }
@@ -80,7 +80,7 @@ Pane {
                         width: parent.width-40
                         variant: "body1"
                         textFormat: MTypography.RichText
-                        text: `<p><span style="color: ${Palette.secondaryMain}" >无边框窗口</span> 默认提供一个没有边框的系统窗口，包含模拟系统风格的最小化、最大化和关闭按钮。</p>`
+                        text: `<p><span style="color: ${MPalette.secondaryMain}" >无边框窗口</span> 默认提供一个没有边框的系统窗口，包含模拟系统风格的最小化、最大化和关闭按钮。</p>`
                         wrapMode: MTypography.WordWrap
                     }
 
@@ -232,7 +232,7 @@ MFramelessWindow {
                         width: parent.width-40
                         variant: "body1"
                         textFormat: MTypography.RichText
-                        text: `<p>通过<span style="color: ${Palette.secondaryMain}" >darkMode</span> 参数来实现暗黑主题风格的窗口。</p>`
+                        text: `<p>通过<span style="color: ${MPalette.secondaryMain}" >darkMode</span> 参数来实现暗黑主题风格的窗口。</p>`
                         wrapMode: MTypography.WordWrap
                     }
                 }
@@ -405,7 +405,7 @@ MFramelessWindow {
                         width: parent.width-40
                         variant: "body1"
                         textFormat: MTypography.RichText
-                        text: `<p>通过 <span style="color: ${Palette.secondaryMain}" >dragBar</span> 、 <span style="color: ${Palette.secondaryMain}" >winSystemButtonBar</span> 、 <span style="color: ${Palette.secondaryMain}" >macSystemButtonBar</span> 来调整拖拽、系统按钮相关的样式。</p>`
+                        text: `<p>通过 <span style="color: ${MPalette.secondaryMain}" >dragBar</span> 、 <span style="color: ${MPalette.secondaryMain}" >winSystemButtonBar</span> 、 <span style="color: ${MPalette.secondaryMain}" >macSystemButtonBar</span> 来调整拖拽、系统按钮相关的样式。</p>`
                         wrapMode: MTypography.WordWrap
                     }
                 }

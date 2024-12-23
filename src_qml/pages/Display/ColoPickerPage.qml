@@ -50,7 +50,7 @@ Pane {
                         width: parent.width-40
                         variant: "body1"
                         textFormat: MTypography.RichText
-                        text: `<p>用户可以通过 <span style="color: ${Palette.secondaryMain}" >颜色选择器</span>在界面中选择颜色。 通常，我们会在着色功能处使用它们。</p>`
+                        text: `<p>用户可以通过 <span style="color: ${MPalette.secondaryMain}" >颜色选择器</span>在界面中选择颜色。 通常，我们会在着色功能处使用它们。</p>`
                         wrapMode: MTypography.WordWrap
                     }
                 }

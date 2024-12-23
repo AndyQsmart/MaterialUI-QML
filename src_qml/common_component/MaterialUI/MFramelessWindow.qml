@@ -1,8 +1,8 @@
-import QtQuick 2.15
-import QtQuick.Window 2.15
-import QtQuick.Controls 2.15
-import QtGraphicalEffects 1.15
-import QtQuick.Shapes 1.15
+import QtQuick
+import QtQuick.Window
+import QtQuick.Controls
+import Qt5Compat.GraphicalEffects
+import QtQuick.Shapes
 import "./StyleComponent"
 
 Window {
@@ -27,8 +27,6 @@ Window {
     //     width: 0
     //     height: 0
     // }
-
-
 
 
     default property alias data: bg_container.data
@@ -115,12 +113,12 @@ Window {
             z: 900
         }
 
-        // 窗口调整大小区域
-        MWindowResizeHandler {
-            anchors.fill: parent
-            target: root
-            z: 1000
-        }
+        // // 窗口调整大小区域
+        // MWindowResizeHandler {
+        //     anchors.fill: parent
+        //     target: root
+        //     z: 1000
+        // }
     }
 }
 

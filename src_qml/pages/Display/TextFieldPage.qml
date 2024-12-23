@@ -51,7 +51,7 @@ Pane {
                         width: parent.width-40
                         variant: "body1"
                         textFormat: MTypography.RichText
-                        text: `<p>用户可以通过<span style="color: ${Palette.secondaryMain}" >文本框</span>在界面中输入文本。 通常，我们会在表单域和对话框中使用它们。</p>`
+                        text: `<p>用户可以通过<span style="color: ${MPalette.secondaryMain}" >文本框</span>在界面中输入文本。 通常，我们会在表单域和对话框中使用它们。</p>`
                         wrapMode: MTypography.WordWrap
                         gutterBottom: true
                     }

@@ -49,7 +49,7 @@ Pane {
                         width: parent.width-40
                         variant: "body1"
                         textFormat: MTypography.RichText
-                        text: `<p><span style="color: ${Palette.secondaryMain}" >多选框</span>可以在打开或者关闭一个选项中切换。</p>`
+                        text: `<p><span style="color: ${MPalette.secondaryMain}" >多选框</span>可以在打开或者关闭一个选项中切换。</p>`
                         wrapMode: MTypography.WordWrap
                     }
 

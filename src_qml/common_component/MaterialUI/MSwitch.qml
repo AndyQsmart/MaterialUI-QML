@@ -46,7 +46,7 @@ Switch {
             else {
                 if (checkbox.checked) {
                     opacity = 0.5
-                    the_color = Palette.string2Color(checkbox.color, Colors.commonBlack)
+                    the_color = MPalette.string2Color(checkbox.color, Colors.commonBlack)
                 }
             }
 
@@ -92,7 +92,7 @@ Switch {
                 }
 
                 if (checkbox.checked) {
-                    return Colors.alpha(Palette.string2Color(checkbox.color, Grey._600), 0.04)
+                    return Colors.alpha(MPalette.string2Color(checkbox.color, Grey._600), 0.04)
                 }
                 else {
                     return Colors.alpha(Grey._600, 0.04)
@@ -112,7 +112,7 @@ Switch {
                     }
                     else {
                         if (checkbox.checked) {
-                            return Palette.string2Color(checkbox.color, '#fafafa')
+                            return MPalette.string2Color(checkbox.color, '#fafafa')
                         }
                         else {
                             return Colors.commonWhite
@@ -137,7 +137,7 @@ Switch {
                 anchor: parent
                 color: {
                     if (checkbox.checked) {
-                        return Colors.alpha(Palette.string2Color(checkbox.color, Grey._600), 0.3)
+                        return Colors.alpha(MPalette.string2Color(checkbox.color, Grey._600), 0.3)
                     }
                     else {
                         return Colors.alpha(Grey._600, 0.3)
