@@ -1,8 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15
-import QtQuick.Controls.Material 2.15
-import QtQuick.Controls.Material.impl 2.15
+import QtGraphicalEffects 1.15
 import "./styles"
 import "./colors"
 
@@ -194,35 +193,48 @@ Control {
         }
     }
 
-    Ripple {
-        visible: clickable && !disabled
-        clipRadius: control.height/2
-        width: parent.width
-        height: parent.height
-        pressed: touch_area.pressed
-        anchor: control
-        color: {
-            let the_color = Palette.lightTextPrimary
-            if (control.variant == 'outlined') {
-                if (control.color != 'default') {
-                    the_color = control._color
+    Rectangle {
+        anchors.fill: parent
+        radius: control.height/2
+        color: "#00ffffff"
+
+        layer.enabled: true
+        layer.effect: OpacityMask {
+            maskSource: Rectangle {
+                width: control.width
+                height: control.height
+                radius: control.height/2
+            }
+        }
+
+        MTouchRipple {
+            id: ripple
+            visible: clickable && !disabled
+            width: parent.width
+            height: parent.height
+            currentColor: {
+                let the_color = Palette.lightTextPrimary
+                if (control.variant == 'outlined') {
+                    if (control.color != 'default') {
+                        the_color = control._color
+                    }
+                    else {
+                        the_color = Palette.lightTextPrimary
+                    }
                 }
                 else {
-                    the_color = Palette.lightTextPrimary
+                    if (control.color == 'primary') {
+                        the_color = Palette.darkTextPrimary
+                    }
+                    else if (control.color == 'secondary') {
+                        the_color = Palette.darkTextSecondary
+                    }
+                    else {
+                        the_color = Palette.lightTextPrimary
+                    }
                 }
+                return the_color
             }
-            else {
-                if (control.color == 'primary') {
-                    the_color = Palette.darkTextPrimary
-                }
-                else if (control.color == 'secondary') {
-                    the_color = Palette.darkTextSecondary
-                }
-                else {
-                    the_color = Palette.lightTextPrimary
-                }
-            }
-            return Colors.alpha(the_color, 0.3)
         }
     }
 
@@ -232,8 +244,17 @@ Control {
         cursorShape: clickable ? Qt.PointingHandCursor : Qt.ArrowCursor
         anchors.fill: parent
         enabled: clickable
+
         onClicked: {
             control.clicked()
+        }
+
+        onPressed: {
+            ripple.start(mouseX, mouseY)
+        }
+
+        onReleased: {
+            ripple.stop()
         }
     }
 }

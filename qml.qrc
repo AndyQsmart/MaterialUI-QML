@@ -154,5 +154,7 @@
         <file>src_qml/common_component/MaterialUI/StyleComponent/MFramelessWindowButtonsMac.qml</file>
         <file>src_qml/common_component/MaterialUI/StyleComponent/MWindowResizeHandler.qml</file>
         <file>src_qml/pages/Api/FramelessWindowApi.qml</file>
+        <file>src_qml/common_component/MaterialUI/MRipple.qml</file>
+        <file>src_qml/common_component/MaterialUI/MTouchRipple.qml</file>
     </qresource>
 </RCC>

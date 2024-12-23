@@ -1,7 +1,5 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-import QtQuick.Controls.Material 2.15
-import QtQuick.Controls.Material.impl 2.15
 import "./styles"
 import "./colors"
 
@@ -47,19 +45,39 @@ Button {
         radius: 4
     }
 
-    Ripple {
-        visible: !disableRipple
-        clipRadius: 4
-        width: parent.width
-        height: parent.height
-        pressed: button.pressed
-        anchor: button
-        color: Colors.alpha(button.textColor && button.textColor != '' ? button.textColor : Colors.commonBlack, 0.3)
+    onPressed: {
+        if (!button.disabled) {
+            ripple.start(mouse_area.mouseX, mouse_area.mouseY)
+        }
+    }
+
+    onReleased: {
+        if (!button.disabled) {
+            ripple.stop()
+        }
+    }
+
+    MTouchRipple {
+        id: ripple
+        anchors.fill: parent
+        currentColor: button.textColor && button.textColor != '' ? button.textColor : Colors.commonBlack
     }
 
     MouseArea {
+        id: mouse_area
         cursorShape: disableCursor ? Qt.ArrowCursor : Qt.PointingHandCursor
         anchors.fill: parent
-        enabled: false
+
+        onPressed: function(mouse) {
+            mouse.accepted = false
+        }
+
+        onReleased: function(mouse) {
+            mouse.accepted = false
+        }
+
+        onClicked: function(mouse) {
+            mouse.accepted = false
+        }
     }
 }

@@ -1,8 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Controls 1.4
 import QtQuick.Controls.Styles 1.4
-import QtQuick.Controls.Material 2.15
-import QtQuick.Controls.Material.impl 2.15
 import QtQuick.Layouts 1.15
 import QtGraphicalEffects 1.15
 import "./styles"
@@ -126,15 +124,6 @@ Calendar {
                     anchors.fill: parent
                     cursorShape: !styleData.valid ? Qt.ArrowCursor : Qt.PointingHandCursor
                     enabled: false
-                }
-
-                Ripple {
-                    clipRadius: 4
-                    width: parent.width
-                    height: parent.height
-                    pressed: styleData.pressed
-                    anchor: parent
-                    color: Colors.alpha(styleData.selected ? Palette.primaryMain : Colors.commonBlack, 0.3)
                 }
 
                 layer.enabled: true

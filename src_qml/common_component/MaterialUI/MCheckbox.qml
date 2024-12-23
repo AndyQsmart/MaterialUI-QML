@@ -1,7 +1,5 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-import QtQuick.Controls.Material 2.15
-import QtQuick.Controls.Material.impl 2.15
 import QtGraphicalEffects 1.15
 import "./styles"
 import "./colors"
@@ -69,6 +67,18 @@ CheckBox {
         }
     }
 
+    onPressed: {
+        if (!checkbox.disabled) {
+            touch_ripple.start()
+        }
+    }
+
+    onReleased: {
+        if (!checkbox.disabled) {
+            touch_ripple.stop()
+        }
+    }
+
     Rectangle {
         id: ripple
         clip: true
@@ -85,28 +95,25 @@ CheckBox {
             }
         }
 
-        Ripple {
+        MTouchRipple {
+            id: touch_ripple
             visible: !disableRipple && !checkbox.disabled
-            clipRadius: checkbox.width/2
-            x: parent.width/2 - width/2
-            y: parent.height/2 - height/2
             width: checkbox.width
             height: checkbox.height
-            pressed: checkbox.pressed
-            anchor: ripple
-
-            color: {
+            center: true
+            currentColor: {
                 if (checkbox.checked) {
-                    return Colors.alpha(Palette.string2Color(checkbox.color, Grey._600), 0.3)
+                    return Palette.string2Color(checkbox.color, Grey._600)
                 }
                 else {
-                    return Colors.alpha(Grey._600, 0.3)
+                    return Grey._600
                 }
             }
         }
     }
 
     MouseArea {
+        id: mouse_area
         cursorShape: checkbox.disabled ? Qt.ArrowCursor : Qt.PointingHandCursor
         anchors.fill: parent
         enabled: false

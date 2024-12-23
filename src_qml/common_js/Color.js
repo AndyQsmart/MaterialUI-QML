@@ -10,7 +10,7 @@ var text_secondary = '#8590a5' // 原：rgba(0, 0, 0, 0.54)
 var gray = 'gray'
 var dark_gray = '#646464'
 // light_gray: '#f7f7f7',
-var white = 'white'
+var white = '#ffffff'
 // transparent_white: 'rgba(255, 255, 255, 0.5)',
 // transparent95_white: 'rgba(255, 255, 255, 0.95)',
 var ddd = '#dddddd'
