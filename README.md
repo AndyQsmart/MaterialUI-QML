@@ -1,9 +1,12 @@
-# MaterialUI-QML
+# MaterialUI-QML-Qt6
 This is a material ui written by Qt QML
 
 [Material Design](https://m1.material.io/) is a specification for a unified system of visual, motion, and interaction design that adapts across different devices.
 
 I try to deliver a set of QML UI components that implement the material design specification for use in Qt QML applications.
+
+# Qt version
+This branch is written for Qt6(PySide6). You can use the branch for [Qt5(PySide2)](https://github.com/AndyQsmart/MaterialUI-QML/tree/Qt5).
 
 # Usage
 Import package in your project
@@ -16,8 +19,7 @@ In this case,I place "Material UI" in folder "common_component".You can move the
 You can run the example project.It is an example that show some usage of components.
 
 1. run in C++
-   - Qt 5.15.2
-   - Set `QQuickWindow::setDefaultAlphaBuffer(true);` if use `MFramelessWindow` in mac.
+   - Qt 6.7.3
 
 2. run in Python
    - Python 3.9
