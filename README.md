@@ -23,7 +23,7 @@ You can run the example project.It is an example that show some usage of compone
 
 2. run in Python
    - Python 3.9
-   - pip install PySide2==5.15.2.1
+   - pip install PySide2==6.5.2
    - Set `QQuickWindow.setDefaultAlphaBuffer(True)` if use `MFramelessWindow` in mac.
    - `python main.py`
 

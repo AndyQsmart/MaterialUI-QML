@@ -1,6 +1,6 @@
 import platform
-from PySide2.QtCore import Qt, QObject, Signal, QEvent
-from PySide2.QtWidgets import QApplication
+from PySide6.QtCore import Qt, QObject, Signal, QEvent
+from PySide6.QtWidgets import QApplication
 
 class ApplicationEventFilter(QObject):
     appEvent = Signal(str, 'QVariant')
