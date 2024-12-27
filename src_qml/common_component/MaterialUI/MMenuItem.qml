@@ -31,6 +31,8 @@ MButton {
     }
 
     background: Rectangle {
+        anchors.fill: parent
+
         color: {
             if (list_item.selected) {
                 return MPalette.lightActionSelected

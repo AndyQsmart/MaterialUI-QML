@@ -4,7 +4,6 @@ import QtQuick.Layouts 1.15
 import "../../common_component/MaterialUI"
 import "../../common_component/MaterialUI/styles"
 import "../../common_component/Route"
-import "../../common_qml"
 import "../../common_js/Color.js" as Color
 import "../../common_js/Tools.js" as Tools
 
@@ -13,6 +12,7 @@ Pane {
     x: 0
     y: 0
     padding: 0
+    background: null
 
     RowLayout {
         id: main_area
@@ -20,11 +20,12 @@ Pane {
         spacing: 0
 
         MOverflowYBox {
-            RowLayout.fillHeight: true
-            RowLayout.fillWidth: true
+            id: scroll_list
+            Layout.fillHeight: true
+            Layout.fillWidth: true
 
             ColumnLayout {
-                width: main_area.width
+                width: scroll_list.availableWidth
                 spacing: 0
 
                 Column {

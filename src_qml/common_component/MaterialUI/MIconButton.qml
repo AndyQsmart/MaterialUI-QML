@@ -1,6 +1,5 @@
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
-import QtGraphicalEffects 1.15
+import QtQuick
+import QtQuick.Layouts
 import "./styles"
 import "./colors"
 
@@ -18,8 +17,9 @@ MButtonBase {
 
     background: Rectangle {
         id: button_bg
-        width: childContainer.width+root.leftPadding+root.rightPadding
-        height: childContainer.height+root.topPadding+root.bottomPadding
+        anchors.fill: parent
+        // width: childContainer.width+root.leftPadding+root.rightPadding
+        // height: childContainer.height+root.topPadding+root.bottomPadding
         color: hovered ? Colors.alpha("#000000", 0.04) : "#00ffffff"
         radius: Math.max(width, height)/2
     }
@@ -31,7 +31,7 @@ MButtonBase {
     }
 
     layer.enabled: true
-    layer.effect: OpacityMask {
+    layer.effect: MOpacityMask {
         maskSource: Rectangle {
             width: button_bg.width
             height: button_bg.height

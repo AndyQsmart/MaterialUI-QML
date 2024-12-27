@@ -1,17 +1,14 @@
-import QtQuick 2.15
-import QtQuick.Window 2.15
-import QtQuick.Controls.Material 2.15
-import QtQuick.Controls 2.15
-import Qt.labs.platform 1.1
+import QtQuick
+import Qt.labs.platform
 
 SystemTrayIcon {
     signal showWindow()
     signal quitApp()
 
     visible: true
-    icon.source: "../../common_image/Icon/logo.png"
+    icon.source: "qrc:/src_qml/common_image/Icon/logo.png"
 
-    onActivated: {
+    onActivated: function(reason) {
         if (reason === SystemTrayIcon.Trigger) {
             showWindow()
         }

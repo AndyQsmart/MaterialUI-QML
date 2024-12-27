@@ -1,8 +1,6 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Controls.Material 2.15
-import QtQuick.Controls.Material.impl 2.15
-import QtGraphicalEffects 1.15
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Controls.Material
 import "./styles"
 import "./colors"
 
@@ -71,7 +69,7 @@ Switch {
             radius: width/2
 
             layer.enabled: true
-            layer.effect: OpacityMask {
+            layer.effect: MOpacityMask {
                 maskSource: Rectangle {
                     width: thumb_container.width
                     height: thumb_container.height
@@ -126,24 +124,33 @@ Switch {
                 }
             }
 
-            Ripple {
+            MTouchRipple {
+                id: touch_ripple
                 visible: !disableRipple && !checkbox.disabled
-                clipRadius: parent.width/2
-                x: parent.width/2 - width/2
-                y: parent.height/2 - height/2
                 width: parent.width
                 height: parent.height
-                pressed: checkbox.pressed
-                anchor: parent
-                color: {
+                center: true
+                currentColor: {
                     if (checkbox.checked) {
-                        return Colors.alpha(MPalette.string2Color(checkbox.color, Grey._600), 0.3)
+                        return MPalette.string2Color(checkbox.color, Grey._600)
                     }
                     else {
-                        return Colors.alpha(Grey._600, 0.3)
+                        return Grey._600
                     }
                 }
             }
+        }
+    }
+
+    onPressed: {
+        if (!checkbox.disabled) {
+            touch_ripple.start()
+        }
+    }
+
+    onReleased: {
+        if (!checkbox.disabled) {
+            touch_ripple.stop()
         }
     }
 

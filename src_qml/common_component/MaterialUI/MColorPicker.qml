@@ -1,5 +1,6 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Controls.Material
 import "./styles"
 import "./colors"
 
@@ -295,16 +296,16 @@ MPopover {
                     handleChangeColor(current_color, 'pos')
                 }
 
-                onPressed: {
+                onPressed: function(mouse) {
                     moveCursor(mouse.x, mouse.y)
                 }
 
-                onPositionChanged: {
+                onPositionChanged: function(mouse) {
                     moveCursor(mouse.x, mouse.y)
 
                 }
 
-                onReleased: {
+                onReleased: function(mouse) {
                     moveCursor(mouse.x, mouse.y)
                 }
             }

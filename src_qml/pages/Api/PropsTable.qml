@@ -1,8 +1,7 @@
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
+import QtQuick
+import QtQuick.Layouts
 import "../../common_component/MaterialUI"
 import "../../common_component/MaterialUI/styles"
-import "../../common_qml"
 
 ColumnLayout {
     property var propsList: []

@@ -1,6 +1,7 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Shapes 1.15
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Controls.Material
+import QtQuick.Shapes
 import "./styles"
 import "./colors"
 
@@ -22,6 +23,7 @@ Slider {
     to: max
     stepSize: step
     enabled: !disabled
+    snapMode: control.marks ? Slider.SnapAlways : Slider.NoSnap
     property int _handleSize: disabled ? 8 : 12
     property string currentColor: MPalette.string2Color(control.color, MPalette.primaryMain)
 

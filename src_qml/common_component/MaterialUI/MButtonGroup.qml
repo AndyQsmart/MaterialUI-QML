@@ -1,6 +1,5 @@
 import QtQuick 2.15
-import QtQuick.Layouts 1.15
-import QtGraphicalEffects 1.15
+import QtQuick.Layouts
 import "./styles"
 import "./colors"
 
@@ -39,7 +38,7 @@ Rectangle {
         height: childrenRect.height-2
         color: "#00ffffff"
         layer.enabled: true
-        layer.effect: OpacityMask {
+        layer.effect: MOpacityMask {
             maskSource: Rectangle {
                 width: container.width
                 height: container.height

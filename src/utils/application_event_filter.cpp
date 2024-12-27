@@ -5,6 +5,7 @@
 
 bool ApplicationEventFilter::eventFilter(QObject *obj, QEvent *event) {
     // qDebug() << event->type();
+
     auto event_type = event->type();
 
 #ifdef Q_OS_MAC

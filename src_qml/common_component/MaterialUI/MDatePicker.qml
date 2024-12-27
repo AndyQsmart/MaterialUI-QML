@@ -170,12 +170,14 @@ Item {
         transformOrigin: Item.Top
         marginThreshold: 26 // 16+10
         focus: true
+        width: dateSelector.width
+        height: dateSelector.height
 
         MDateSelector {
             id: dateSelector
 //            selectedDate: datePicker.value
 
-            onClicked: {
+            onClicked: function(date) {
                 datePicker.value = date
                 textInput.text = getTimeByDate(date, "%y/%MM/%dd")
                 change(date)

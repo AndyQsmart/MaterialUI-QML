@@ -1,7 +1,7 @@
 pragma Singleton
 
-import QtQuick 2.15
-import QtQuick.LocalStorage 2.15
+import QtQuick
+import QtQuick.LocalStorage
 import "./persistence.js" as Persistence
 import "./persistence.store.sql.js" as PersistenceStoreSql
 

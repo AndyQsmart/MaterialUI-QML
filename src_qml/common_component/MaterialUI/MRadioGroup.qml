@@ -52,7 +52,7 @@ Rectangle {
             return ans
         }
 
-        onClicked: {
+        onClicked: function(button) {
             value = button.value
             change(value)
         }

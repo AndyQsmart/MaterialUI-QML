@@ -1,4 +1,4 @@
-import QtQuick 2.15
+import QtQuick
 
 BaseApi {
     name: "TextField"
@@ -37,7 +37,7 @@ BaseApi {
     demos_list: [
         {
             name: "Text Fields",
-             url: "/textfieldpage",
+            url: "/textfieldpage",
         },
     ]
 }

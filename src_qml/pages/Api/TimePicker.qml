@@ -1,4 +1,4 @@
-import QtQuick 2.15
+import QtQuick
 
 BaseApi {
     name: "TimePicker"
@@ -37,7 +37,7 @@ BaseApi {
     demos_list: [
         {
             name: "Date/Time Pickers",
-             url: "/datetimepickerpage",
+            url: "/datetimepickerpage",
         },
     ]
 }

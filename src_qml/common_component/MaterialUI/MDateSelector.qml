@@ -1,47 +1,67 @@
-import QtQuick 2.15
-import QtQuick.Controls 1.4
-import QtQuick.Controls.Styles 1.4
-import QtQuick.Controls.Material 2.15
-import QtQuick.Controls.Material.impl 2.15
-import QtQuick.Layouts 1.15
-import QtGraphicalEffects 1.15
+import QtQuick
+import QtQuick.Controls
+// import QtQuick.Controls.Styles 1.4
+// import QtQuick.Controls.Material 2.15
+// import QtQuick.Controls.Material.impl 2.15
+import QtQuick.Layouts
 import "./styles"
 import "./colors"
 
-Calendar {
+MPaper {
     id: root
-    frameVisible: false
+    property date selectedDate: new Date()
+    property int currentYear: (new Date()).getFullYear()
+    property int currentMonth: (new Date()).getMonth()
+    property var monthName: [
+        "一月", "二月", "三月", "四月", "五月", "六月",
+        "七月", "八月", "九月", "十月", "十一月", "十二月"
+    ]
 
-    style: CalendarStyle {
-        gridVisible: false
+    signal clicked(date vDate)
 
-        background: Rectangle {
-            implicitWidth: 310
-            implicitHeight: 305
-            color: '#00ffffff'
+    function clickDate(vDate) {
+        root.selectedDate = vDate
+        root.currentYear = root.selectedDate.getFullYear()
+        root.currentMonth = root.selectedDate.getMonth()
 
-            Rectangle {
-                anchors.top: parent.top
-                anchors.horizontalCenter: parent.horizontalCenter
-                width: parent.width+20
-                height: parent.height+10
-                radius: MPalette.borderRadius
-                color: Colors.commonWhite
+        root.clicked(vDate)
+    }
 
-                layer.enabled: true
-                layer.effect: MShadow {
-                    elevation: 1
-                }
-            }
+    function showPreviousMonth() {
+        if (root.currentMonth > 0) {
+            root.currentMonth -= 1
         }
+        else {
+            root.currentMonth = 11
+            root.currentYear -= 1
+        }
+    }
 
-        navigationBar: RowLayout {
-            width: parent.width
+    function showNextMonth() {
+        if (root.currentMonth < 11) {
+            root.currentMonth += 1
+        }
+        else {
+            root.currentMonth = 0
+            root.currentYear += 1
+        }
+    }
+
+    width: childrenRect.width
+    height: childrenRect.height
+
+    ColumnLayout {
+        spacing: 0
+
+        RowLayout {
+            Layout.topMargin: 4
+            Layout.leftMargin: 10
+            Layout.rightMargin: 10
+            Layout.fillWidth: true
             spacing: 10
 
             MIconButton {
                 id: left_year_button
-                Layout.topMargin: 5
 
                 Item {
                     width: 20
@@ -63,7 +83,7 @@ Calendar {
             MTypography{
                 Layout.fillWidth: true
                 align: "center"
-                text: styleData.title
+                text: `${monthName[root.currentMonth]} ${root.currentYear}`
             }
 
             MIconButton {
@@ -87,62 +107,85 @@ Calendar {
             }
         }
 
-        dayOfWeekDelegate: MTypography {
-            align: 'center'
-            variant: "caption"
-            textColor: "textSecondary"
-            gutterBottom: true
-            text: {
-                switch (styleData.dayOfWeek) {
-                    case Locale.Sunday: return "周日"
-                    case Locale.Monday: return "周一"
-                    case Locale.Tuesday: return "周二"
-                    case Locale.Wednesday: return "周三"
-                    case Locale.Thursday: return "周四"
-                    case Locale.Friday: return "周五"
-                    case Locale.Saturday: return "周六"
-                }
+        DayOfWeekRow {
+            Layout.leftMargin: 10
+            Layout.rightMargin: 10
+            spacing: 0
+
+            delegate: MTypography {
+                width: 44
+                align: 'center'
+                variant: "caption"
+                textColor: "textSecondary"
+                gutterBottom: true
+                text: shortName
+                horizontalAlignment: Text.AlignHCenter
             }
         }
 
-        dayDelegate: Item {
-            Rectangle {
-                id: day_item
+        MonthGrid {
+            Layout.leftMargin: 10
+            Layout.rightMargin: 10
+            Layout.bottomMargin: 10
 
-                anchors.centerIn: parent
-                width: 36
+            year: root.currentYear
+            month: root.currentMonth
+            spacing: 0
+
+            delegate: Item {
+                width: 44
                 height: 36
-                radius: width/2
-                color: styleData.selected ? MPalette.primaryMain : (styleData.hovered ? Colors.alpha("#000000", 0.04) : "#00ffffff")
 
-                MTypography {
+                Rectangle {
+                    id: day_item
+                    property bool selected: model.year === root.selectedDate.getFullYear() && model.month === root.selectedDate.getMonth() && model.day === root.selectedDate.getDate()
+                    property bool visibleMonth: model.year === root.currentYear && model.month === root.currentMonth
+
                     anchors.centerIn: parent
-                    textColor: styleData.selected ? "#ffffff" : (!styleData.valid || !styleData.visibleMonth ? "textSecondary" : "textPrimary")
+                    width: 36
+                    height: 36
+                    radius: width/2
+                    color: day_item.selected ? MPalette.primaryMain : (mouse_area.containsMouse ? Colors.alpha("#000000", 0.04) : "#00ffffff")
 
-                    text: styleData.date.getDate()
-                }
+                    MTypography {
+                        anchors.centerIn: parent
+                        textColor: day_item.selected ? "#ffffff" : (!day_item.visibleMonth ? "textSecondary" : "textPrimary")
 
-                MouseArea {
-                    anchors.fill: parent
-                    cursorShape: !styleData.valid ? Qt.ArrowCursor : Qt.PointingHandCursor
-                    enabled: false
-                }
+                        text: model.day
+                    }
 
-                Ripple {
-                    clipRadius: 4
-                    width: parent.width
-                    height: parent.height
-                    pressed: styleData.pressed
-                    anchor: parent
-                    color: Colors.alpha(styleData.selected ? MPalette.primaryMain : Colors.commonBlack, 0.3)
-                }
+                    MouseArea {
+                        id: mouse_area
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        hoverEnabled: true
 
-                layer.enabled: true
-                layer.effect: OpacityMask {
-                    maskSource: Rectangle {
-                        width: day_item.width
-                        height: day_item.height
-                        radius: day_item.radius
+                        onClicked: {
+                            root.clickDate(model.date)
+                        }
+
+                        onPressed: {
+                            touch_ripple.start(mouse_area.mouseX, mouse_area.mouseY)
+                        }
+
+                        onReleased: {
+                            touch_ripple.stop()
+                        }
+                    }
+
+                    MTouchRipple {
+                        id: touch_ripple
+                        anchors.fill: parent
+                        currentColor: day_item.selected ? MPalette.primaryMain : Colors.commonBlack
+                    }
+
+                    layer.enabled: true
+                    layer.effect: MOpacityMask {
+                        maskSource: Rectangle {
+                            width: day_item.width
+                            height: day_item.height
+                            radius: day_item.radius
+                        }
                     }
                 }
             }

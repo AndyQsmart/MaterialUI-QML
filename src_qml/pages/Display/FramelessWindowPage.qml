@@ -20,11 +20,12 @@ Pane {
         spacing: 0
 
         MOverflowYBox {
+            id: scroll_list
             Layout.fillHeight: true
             Layout.fillWidth: true
 
             ColumnLayout {
-                width: main_area.width
+                width: scroll_list.availableWidth
                 spacing: 0
 
                 Column {

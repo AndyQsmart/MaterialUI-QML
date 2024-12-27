@@ -1,5 +1,5 @@
-import QtQuick 2.15
-import QtQuick.Shapes 1.15
+import QtQuick
+import QtQuick.Shapes
 import "../styles"
 import "../"
 
@@ -17,8 +17,8 @@ Item {
     anchors.fill: parent
 
     property int strokeStyle: disabled ? ShapePath.DashLine : ShapePath.SolidLine
-    property int strokeWidth: hover ? 2 : 1
-    property string strokeColor: hover ? MPalette.lightTextPrimary : '#3B000000'
+    property int strokeWidth: hover && !disabled ? 2 : 1
+    property string strokeColor: hover && !disabled ? MPalette.lightTextPrimary : '#3B000000'
 
     // 下划线
     Shape {

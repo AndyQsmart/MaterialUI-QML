@@ -1,4 +1,4 @@
-import QtQuick 2.15
+import QtQuick
 
 BaseApi {
     name: "Complex Select"
@@ -67,7 +67,7 @@ BaseApi {
     demos_list: [
         {
             name: "Selects",
-             url: "/selectpage",
+            url: "/selectpage",
         },
     ]
 }

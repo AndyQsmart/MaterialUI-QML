@@ -1,7 +1,6 @@
 import QtQuick
 import QtQuick.Window
 import QtQuick.Controls
-import Qt5Compat.GraphicalEffects
 import QtQuick.Shapes
 import "./StyleComponent"
 
@@ -66,7 +65,7 @@ Window {
         elevation: 0
 
         layer.enabled: true
-        layer.effect: OpacityMask {
+        layer.effect: MOpacityMask {
             maskSource: Rectangle {
                 width: bg_container.width
                 height: bg_container.height

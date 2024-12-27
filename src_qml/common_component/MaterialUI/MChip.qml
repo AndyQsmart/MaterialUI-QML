@@ -1,8 +1,7 @@
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
-import QtQuick.Controls 2.15
-import QtQuick.Controls.Material 2.15
-import QtQuick.Controls.Material.impl 2.15
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls
+import QtQuick.Controls.Material
 import "./styles"
 import "./colors"
 
@@ -82,8 +81,8 @@ Control {
             visible: control.avatar ? true : false
             width: control.size == 'small' ? 18 : 24
             height: width
-            RowLayout.alignment: Qt.AlignVCenter
-            RowLayout.leftMargin: {
+            Layout.alignment: Qt.AlignVCenter
+            Layout.leftMargin: {
                 if (control.variant == 'outlined') {
                     return control.size == 'small' ? 4 : 5
                 }
@@ -91,7 +90,7 @@ Control {
                     return control.size == 'small' ? 2 : 4
                 }
             }
-            RowLayout.rightMargin: control.size == 'small' ? -4 : -6
+            Layout.rightMargin: control.size == 'small' ? -4 : -6
             // property int _fontSize: 12
             // color: @grey700
             color: Colors.commonTransparent
@@ -105,8 +104,8 @@ Control {
             visible: control.icon ? true : false
             width: control.size == 'small' ? 18 : 24
             height: width
-            RowLayout.alignment: Qt.AlignVCenter
-            RowLayout.leftMargin: {
+            Layout.alignment: Qt.AlignVCenter
+            Layout.leftMargin: {
                 if (control.variant == 'outlined') {
                     return control.size == 'small' ? 4 : 5
                 }
@@ -114,7 +113,7 @@ Control {
                     return control.size == 'small' ? 2 : 4
                 }
             }
-            RowLayout.rightMargin: control.size == 'small' ? -4 : -6
+            Layout.rightMargin: control.size == 'small' ? -4 : -6
             color: Colors.commonTransparent
             Loader {
                 id: iconItem
@@ -123,7 +122,7 @@ Control {
         }
 
         MTypography {
-            RowLayout.alignment: Qt.AlignVCenter
+            Layout.alignment: Qt.AlignVCenter
             text: control.label
             fontSize: 13
             lineHeight: 1
@@ -158,9 +157,9 @@ Control {
             visible: control.deletable
             width: control.size == 'small' ? 16 : 22
             height: width
-            RowLayout.alignment: Qt.AlignVCenter
-            RowLayout.leftMargin: control.size == 'small' ? -4 : -6
-            RowLayout.rightMargin: {
+            Layout.alignment: Qt.AlignVCenter
+            Layout.leftMargin: control.size == 'small' ? -4 : -6
+            Layout.rightMargin: {
                 if (control.variant == 'outlined') {
                     return control.size == 'small' ? 3 : 5
                 }
@@ -194,35 +193,49 @@ Control {
         }
     }
 
-    Ripple {
-        visible: clickable && !disabled
-        clipRadius: control.height/2
-        width: parent.width
-        height: parent.height
-        pressed: touch_area.pressed
-        anchor: control
-        color: {
-            let the_color = MPalette.lightTextPrimary
-            if (control.variant == 'outlined') {
-                if (control.color != 'default') {
-                    the_color = control._color
+
+    Rectangle {
+        anchors.fill: parent
+        radius: control.height/2
+        color: "#00ffffff"
+
+        layer.enabled: true
+        layer.effect: MOpacityMask {
+            maskSource: Rectangle {
+                width: control.width
+                height: control.height
+                radius: control.height/2
+            }
+        }
+
+        MTouchRipple {
+            id: ripple
+            visible: clickable && !disabled
+            width: parent.width
+            height: parent.height
+            currentColor: {
+                let the_color = MPalette.lightTextPrimary
+                if (control.variant == 'outlined') {
+                    if (control.color != 'default') {
+                        the_color = control._color
+                    }
+                    else {
+                        the_color = MPalette.lightTextPrimary
+                    }
                 }
                 else {
-                    the_color = MPalette.lightTextPrimary
+                    if (control.color == 'primary') {
+                        the_color = MPalette.darkTextPrimary
+                    }
+                    else if (control.color == 'secondary') {
+                        the_color = MPalette.darkTextSecondary
+                    }
+                    else {
+                        the_color = MPalette.lightTextPrimary
+                    }
                 }
+                return the_color
             }
-            else {
-                if (control.color == 'primary') {
-                    the_color = MPalette.darkTextPrimary
-                }
-                else if (control.color == 'secondary') {
-                    the_color = MPalette.darkTextSecondary
-                }
-                else {
-                    the_color = MPalette.lightTextPrimary
-                }
-            }
-            return Colors.alpha(the_color, 0.3)
         }
     }
 
@@ -232,8 +245,17 @@ Control {
         cursorShape: clickable ? Qt.PointingHandCursor : Qt.ArrowCursor
         anchors.fill: parent
         enabled: clickable
+
         onClicked: {
             control.clicked()
+        }
+
+        onPressed: {
+            ripple.start(mouseX, mouseY)
+        }
+
+        onReleased: {
+            ripple.stop()
         }
     }
 }

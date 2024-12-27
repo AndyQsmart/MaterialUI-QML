@@ -1,8 +1,6 @@
 import QtQuick
 import QtQuick.Controls
-import QtQuick.Controls.Material 2.15
-import QtQuick.Controls.Material.impl 2.15
-import Qt5Compat.GraphicalEffects
+import QtQuick.Controls.Material
 import "./styles"
 import "./colors"
 
@@ -88,6 +86,18 @@ RadioButton {
         }
     }
 
+    onPressed: {
+        if (!checkbox.disabled) {
+            touch_ripple.start()
+        }
+    }
+
+    onReleased: {
+        if (!checkbox.disabled) {
+            touch_ripple.stop()
+        }
+    }
+
     Rectangle {
         id: ripple
         clip: true
@@ -96,7 +106,7 @@ RadioButton {
         color: Colors.commonTransparent
 
         layer.enabled: true
-        layer.effect: OpacityMask {
+        layer.effect: MOpacityMask {
             maskSource: Rectangle {
                 width: ripple.width
                 height: ripple.height
@@ -104,24 +114,21 @@ RadioButton {
             }
         }
 
-        Ripple {
-            visible: !disableRipple && !checkbox.disabled
-            clipRadius: checkbox.width/2
-            x: parent.width/2 - width/2
-            y: parent.height/2 - height/2
-            width: checkbox.width
-            height: checkbox.height
-            pressed: checkbox.pressed
-            anchor: ripple
-            color: {
-                if (checkbox.checked) {
-                    return Colors.alpha(MPalette.string2Color(checkbox.color, Grey._600), 0.3)
-                }
-                else {
-                    return Colors.alpha(Grey._600, 0.3)
-                }
-            }
-        }
+        MTouchRipple {
+           id: touch_ripple
+           visible: !disableRipple && !checkbox.disabled
+           width: checkbox.width
+           height: checkbox.height
+           center: true
+           currentColor: {
+               if (checkbox.checked) {
+                   return MPalette.string2Color(checkbox.color, Grey._600)
+               }
+               else {
+                   return Grey._600
+               }
+           }
+       }
     }
 
     MouseArea {

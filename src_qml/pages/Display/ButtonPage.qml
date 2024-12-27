@@ -20,12 +20,12 @@ Pane {
         spacing: 0
 
         MOverflowYBox {
+            id: srcoll_list
             Layout.fillHeight: true
             Layout.fillWidth: true
-            contentWidth: main_area.width
 
             ColumnLayout {
-                width: main_area.width
+                width: srcoll_list.availableWidth
                 spacing: 0
 
                 Column {

@@ -43,7 +43,7 @@ Item {
         })
     }
 
-    function start(x, y, options={}) {
+    function start(x=0, y=0, options={}) {
         let isPulsate = options.pulsate ? true : false
         let center = root.center || isPulsate
         let rippleX = 0

@@ -65,7 +65,7 @@ Button {
         MTouchRipple {
             id: ripple
             anchors.fill: parent
-            currentColor: button.textColor
+            currentColor: button.textColor && button.textColor != '' ? button.textColor : Colors.commonBlack
         }
     }
 

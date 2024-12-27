@@ -26,6 +26,14 @@ Pane {
                 anchors.fill: parent
                 spacing: 0
 
+                Image {
+                    width: 100
+                    height: 100
+                    sourceSize.width: 200
+                    sourceSize.height: 200
+                    source: ":/images/logo.png"
+                }
+
                 Rectangle {
                     Layout.fillHeight: true
                 }
