@@ -19,7 +19,7 @@ Item {
         enabled: false
         color: Colors.commonTransparent
         border.width: active ? 2 : 1
-        border.color: active ? root._main_color : (hover ? Palette.lightTextPrimary : '#3B000000')
+        border.color: active ? root._main_color : (hover && !disabled ? Palette.lightTextPrimary : '#3B000000')
         anchors.fill: parent
         radius: Palette.borderRadius
     }

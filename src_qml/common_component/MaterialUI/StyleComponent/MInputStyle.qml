@@ -17,8 +17,8 @@ Item {
     anchors.fill: parent
 
     property int strokeStyle: disabled ? ShapePath.DashLine : ShapePath.SolidLine
-    property int strokeWidth: hover ? 2 : 1
-    property string strokeColor: hover ? Palette.lightTextPrimary : '#3B000000'
+    property int strokeWidth: hover && !disabled ? 2 : 1
+    property string strokeColor: hover && !disabled ? Palette.lightTextPrimary : '#3B000000'
 
     // 下划线
     Shape {

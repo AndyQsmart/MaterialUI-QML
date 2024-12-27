@@ -22,6 +22,7 @@ Slider {
     to: max
     stepSize: step
     enabled: !disabled
+    snapMode: control.marks ? Slider.SnapAlways : Slider.NoSnap
     property int _handleSize: disabled ? 8 : 12
     property string currentColor: Palette.string2Color(control.color, Palette.primaryMain)
 

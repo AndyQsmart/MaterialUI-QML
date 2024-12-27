@@ -5,6 +5,9 @@ This is a material ui written by Qt QML
 
 I try to deliver a set of QML UI components that implement the material design specification for use in Qt QML applications.
 
+# Qt version
+This branch is written for Qt5(PySide2). You can use the branch for [Qt6(PySide6)](https://github.com/AndyQsmart/MaterialUI-QML/tree/Qt6).
+
 # Usage
 Import package in your project
 ```
