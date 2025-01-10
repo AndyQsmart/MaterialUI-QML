@@ -46,15 +46,14 @@ Button {
         radius: 4
     }
 
-    onPressed: {
+    onPressedChanged: {
         if (!button.disabled) {
-            ripple.start(mouse_area.mouseX, mouse_area.mouseY)
-        }
-    }
-
-    onReleased: {
-        if (!button.disabled) {
-            ripple.stop()
+            if (button.pressed) {
+                ripple.start(mouse_area.mouseX, mouse_area.mouseY)
+            }
+            else {
+                ripple.stop()
+            }
         }
     }
 

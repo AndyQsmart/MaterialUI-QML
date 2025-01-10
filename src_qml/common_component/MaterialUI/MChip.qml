@@ -250,12 +250,13 @@ Control {
             control.clicked()
         }
 
-        onPressed: {
-            ripple.start(mouseX, mouseY)
-        }
-
-        onReleased: {
-            ripple.stop()
+        onPressedChanged: {
+            if (touch_area.pressed) {
+                ripple.start(mouseX, mouseY)
+            }
+            else {
+                ripple.stop()
+            }
         }
     }
 }

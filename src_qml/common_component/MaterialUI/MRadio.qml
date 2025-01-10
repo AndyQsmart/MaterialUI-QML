@@ -86,15 +86,14 @@ RadioButton {
         }
     }
 
-    onPressed: {
+    onPressedChanged: {
         if (!checkbox.disabled) {
-            touch_ripple.start()
-        }
-    }
-
-    onReleased: {
-        if (!checkbox.disabled) {
-            touch_ripple.stop()
+            if (checkbox.pressed) {
+                touch_ripple.start()
+            }
+            else {
+                touch_ripple.stop()
+            }
         }
     }
 
