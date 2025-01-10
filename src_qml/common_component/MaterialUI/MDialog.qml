@@ -8,6 +8,7 @@ Popup {
     property bool fullScreen: false
     property bool fullWidth: false
     property bool disableBackdropClick: false
+    property bool backdropInvisible: false // new
     property string maxWidth: 'sm' //'lg' 'md' 'sm' 'xl' 'xs' false
     property MAnimation transitionComponent: MFade { }
     parent: Overlay.overlay
@@ -34,6 +35,10 @@ Popup {
     modal: true
     focus: true
     closePolicy: disableBackdropClick ? Popup.CloseOnEscape : (Popup.CloseOnEscape | Popup.CloseOnPressOutside)
+
+    Overlay.modal: Rectangle {
+        color: backdropInvisible ? "#00ffffff" : "#80000000"
+    }
 
     background: MPaper {
         elevation: 24
